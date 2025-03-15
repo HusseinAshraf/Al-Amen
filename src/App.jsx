@@ -21,7 +21,7 @@ function App() {
           <Route path="contact" element={<Contact />} />
         </Route>
       </Routes>
-      <ScrollToTopButton /> {/* زر الرجوع للأعلى */}
+      <ScrollToTopButton /> 
     </Router>
   );
 }

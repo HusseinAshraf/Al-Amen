@@ -10,6 +10,7 @@ import About from "../About/About";
 function Home() {
   return (
     <>
+   
       <Hero />
       <About />
       <Features />
