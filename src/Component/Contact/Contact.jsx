@@ -6,7 +6,9 @@ function Contact() {
   return (
     <section className="bg-gray-100 py-10">
       <div className="container mx-auto p-6" dir="rtl">
-        <TitleWithLeaves title="اتصل بنا" />
+       <div className="max-w-5xl mx-auto text-center pt-10 ">
+       <TitleWithLeaves title="اتصل بنا" />
+       </div>
 
         <div className="grid md:grid-cols-2 gap-10 pt-6">
           {/* Form Section */}

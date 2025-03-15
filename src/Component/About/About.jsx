@@ -11,23 +11,23 @@ const About = () => {
           className="min-h-screen flex flex-col justify-center items-center text-gray-900 w-full py-10"
           dir="rtl"
         >
-          <div className="max-w-5xl mx-auto text-center">
+          <div className="max-w-5xl mx-auto text-center pt-10 md:pt-0  ">
             <TitleWithLeaves title="من نحن" />
-
-            <motion.p
-              className="text-lg mb-10 pt-5 leading-relaxed"
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 1, delay: 0.3 }}
-            >
-              تعتبر شركة{" "}
-              <span className="font-bold text-green-700">الأمين لاند سكيب</span>{" "}
-              واحدة من أبرز الشركات في تطوير اللاندسكيب في مصر. تأسست الشركة
-              بهدف تحويل الأراضي البيضاء إلى مجتمعات متكاملة حديثة تلبي احتياجات
-              المجتمع.
-            </motion.p>
           </div>
+
+          <motion.p
+            className="text-lg mb-10 pt-5 leading-relaxed"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1, delay: 0.3 }}
+          >
+            تعتبر شركة{" "}
+            <span className="font-bold text-green-700">الأمين لاند سكيب</span>{" "}
+            واحدة من أبرز الشركات في تطوير اللاندسكيب في مصر. تأسست الشركة بهدف
+            تحويل الأراضي البيضاء إلى مجتمعات متكاملة حديثة تلبي احتياجات
+            المجتمع.
+          </motion.p>
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
             {/* رؤيتنا */}

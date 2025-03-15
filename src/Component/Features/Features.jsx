@@ -45,7 +45,9 @@ function Features() {
       dir="rtl"
     >
       <div className="max-w-6xl mx-auto px-6">
+        <div className="max-w-5xl mx-auto text-center pt-10 ">
         <TitleWithLeaves title="مميزاتنا " />
+        </div>
 
         {/* بطاقات الميزات */}
         <div className="grid md:grid-cols-3 gap-8 pt-8">

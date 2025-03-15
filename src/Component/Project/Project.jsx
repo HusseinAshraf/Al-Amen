@@ -190,7 +190,7 @@ const Project = ({ limit }) => {
   return (
     <>
       <section id="project" className="py-16  text-center" dir="rtl">
-        <div>
+        <div className="max-w-5xl mx-auto text-center pt-10 ">
           <TitleWithLeaves title=" أعمالنا" />
         </div>
 
