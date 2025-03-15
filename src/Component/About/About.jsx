@@ -11,7 +11,7 @@ const About = () => {
           className="min-h-screen flex flex-col justify-center items-center text-gray-900 w-full py-10"
           dir="rtl"
         >
-          <div className="max-w-5xl mx-auto text-center pt-10 md:pt-0  ">
+          <div className="max-w-5xl mx-auto text-center pt-10">
             <TitleWithLeaves title="من نحن" />
           </div>
 
