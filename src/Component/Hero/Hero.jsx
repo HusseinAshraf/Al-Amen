@@ -8,7 +8,7 @@ function Hero() {
   const [loadedImages, setLoadedImages] = useState(0);
   const totalImages = 2; // عدد الصور التي ننتظر تحميلها
 
-  // دالة لتحديث عدد الصور المحملة
+ 
   const handleImageLoad = () => {
     setLoadedImages((prev) => prev + 1);
   };
@@ -17,7 +17,7 @@ function Hero() {
     if (loadedImages === totalImages) {
       
       const timer = setTimeout(() => setIsLoading(false), 1500);
-      return () => clearTimeout(timer); // تنظيف المؤقت عند الحاجة
+      return () => clearTimeout(timer);
     }
   }, [loadedImages]);
 
@@ -26,7 +26,7 @@ function Hero() {
       {isLoading && <LoadingScreen />}
       <section id="home" className={isLoading ? "hidden" : "block"}>
         <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-8">
-          {/* الخلفية */}
+          
           <div
             className="absolute inset-0 bg-cover bg-center bg-green-800 bg-blend-overlay"
             style={{ backgroundImage: `url(${backgroundImage})` }}
@@ -35,13 +35,13 @@ function Hero() {
               src={backgroundImage}
               alt="Background"
               className="hidden"
-              onLoad={handleImageLoad} // تحديث الحالة عند تحميل الخلفية
+              onLoad={handleImageLoad} 
             />
           </div>
 
-          {/* المحتوى */}
+         
           <div className="relative z-10 bg-white bg-opacity-95 p-6 sm:p-10 rounded-xl shadow-2xl max-w-3xl w-full flex flex-col sm:flex-row items-center sm:items-start border-t-4 border-green-600">
-            {/* صورة المؤسس */}
+           
             <div className="w-32 h-32 md:w-40 md:h-40 rounded-full overflow-hidden border-4 border-green-600 shadow-xl mb-4 md:mb-0">
               <img
                 src={founderImage}
@@ -51,7 +51,7 @@ function Hero() {
               />
             </div>
 
-            {/* النصوص */}
+           
             <div className="text-center sm:text-right sm:ml-6 max-w-lg">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-green-900">
                 م. أمين حسين

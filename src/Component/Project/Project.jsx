@@ -189,7 +189,7 @@ const Project = ({ limit }) => {
   const projectsToShow = limit ? projects.slice(0, limit) : projects;
   return (
     <>
-      <section id="project" className="py-16  text-center" dir="rtl">
+      <section id="project" className="py-16 text-center" dir="rtl">
         <div className="max-w-5xl mx-auto text-center pt-10 ">
           <TitleWithLeaves title=" أعمالنا" />
         </div>

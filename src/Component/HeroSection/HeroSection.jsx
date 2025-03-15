@@ -26,7 +26,7 @@ function HeroSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         viewport={{ once: true }}
       >
-        <div className="ml-96 text-center">
+        <div className="md:ml-96 text-center">
           <motion.h1
             className="text-8xl md:text-6xl font-bold"
             initial={{ opacity: 0, y: -20 }}

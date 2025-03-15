@@ -30,7 +30,7 @@ const About = () => {
           </motion.p>
 
           <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
-            {/* رؤيتنا */}
+            
             <motion.div
               className="bg-white shadow-lg rounded-xl p-6 text-right border-t-4 border-green-600"
               initial={{ opacity: 0, scale: 0.9 }}
