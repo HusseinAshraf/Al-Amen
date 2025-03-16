@@ -8,10 +8,10 @@ const About = () => {
     <>
       <BackGround>
         <section
-          className="min-h-screen flex flex-col justify-center items-center text-gray-900 w-full py-10"
+          className="min-h-screen py-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center text-gray-900 w-full"
           dir="rtl"
         >
-          <div className="max-w-5xl mx-auto text-center pt-10">
+          <div className="max-w-5xl mx-auto text-center pt-10 mb-10 ">
             <TitleWithLeaves title="من نحن" />
           </div>
 
@@ -29,67 +29,44 @@ const About = () => {
             المجتمع.
           </motion.p>
 
-          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6">
-            
-            <motion.div
-              className="bg-white shadow-lg rounded-xl p-6 text-right border-t-4 border-green-600"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.6 }}
-            >
-              <div className="flex items-center mb-4">
-                <FaEye className="text-green-600 text-2xl ml-2" />
-                <h3 className="text-2xl font-semibold text-green-700">
-                  رؤيتنا
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                نسعى لتحقيق التميز في تطوير اللاندسكيب من خلال مشاريع مبتكرة
-                ومستدامة تلبي توقعات العملاء.
-              </p>
-            </motion.div>
-
-            {/* إنجازاتنا */}
-            <motion.div
-              className="bg-white shadow-lg rounded-xl p-6 text-right border-t-4 border-green-600"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-            >
-              <div className="flex items-center mb-4">
-                <FaTrophy className="text-green-600 text-2xl ml-2" />
-                <h3 className="text-2xl font-semibold text-green-700">
-                  إنجازاتنا
-                </h3>
-              </div>
-              <ul className="list-disc pl-5 text-gray-700 leading-loose">
-                <li>تنفيذ مشاريع سكنية فاخرة بتصاميم عصرية.</li>
-                <li>إنشاء مجمعات تجارية وترفيهية متكاملة.</li>
-                <li>دمج مفهوم الاستدامة في جميع المشاريع.</li>
-              </ul>
-            </motion.div>
-
-            {/* التزامنا */}
-            <motion.div
-              className="bg-white shadow-lg rounded-xl p-6 text-right border-t-4 border-green-600"
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8, delay: 1 }}
-            >
-              <div className="flex items-center mb-4">
-                <FaHandsHelping className="text-green-600 text-2xl ml-2" />
-                <h3 className="text-2xl font-semibold text-green-700">
-                  التزامنا
-                </h3>
-              </div>
-              <p className="text-gray-700">
-                نحرص على استخدام التكنولوجيا الخضراء والممارسات البيئية الصديقة
-                لتحقيق الاستدامة وضمان بيئة متكاملة.
-              </p>
-            </motion.div>
+          <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-8 px-6 sm:px-8 lg:px-12">
+            {[
+              {
+                icon: FaEye,
+                title: "رؤيتنا",
+                description:
+                  "نسعى لتحقيق التميز في تطوير اللاندسكيب من خلال مشاريع مبتكرة ومستدامة تلبي توقعات العملاء.",
+              },
+              {
+                icon: FaTrophy,
+                title: "إنجازاتنا",
+                description:
+                  "تنفيذ مشاريع سكنية فاخرة بتصاميم عصرية.\nإنشاء مجمعات تجارية وترفيهية متكاملة.\nدمج مفهوم الاستدامة في جميع المشاريع.",
+              },
+              {
+                icon: FaHandsHelping,
+                title: "التزامنا",
+                description:
+                  "نحرص على استخدام التكنولوجيا الخضراء والممارسات البيئية الصديقة لتحقيق الاستدامة وضمان بيئة متكاملة.",
+              },
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                className="bg-white shadow-lg rounded-xl p-6 text-right border-t-4 border-green-600"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.8, delay: 0.6 + index * 0.2 }}
+              >
+                <div className="flex items-center mb-4">
+                  <item.icon className="text-green-600 text-2xl ml-2" />
+                  <h3 className="text-2xl font-semibold text-green-700">
+                    {item.title}
+                  </h3>
+                </div>
+                <p className="text-gray-700">{item.description}</p>
+              </motion.div>
+            ))}
           </div>
         </section>
       </BackGround>

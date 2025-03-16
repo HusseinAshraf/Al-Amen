@@ -6,13 +6,15 @@ import HeroSection from "../HeroSection/HeroSection";
 import Features from "../Features/Features.jsx";
 import Contact from "../Contact/Contact";
 import About from "../About/About";
+import AboutSection from "../About/AboutSection.jsx";
 
 function Home() {
   return (
     <>
    
       <Hero />
-      <About />
+      <AboutSection/>
+      {/* <About /> */}
       <Features />
       <Services />
       <HeroSection />

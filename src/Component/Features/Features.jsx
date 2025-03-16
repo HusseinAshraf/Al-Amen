@@ -38,14 +38,17 @@ function Features() {
   ];
 
   return (
-    <section id="features" className="py-20  w-full overflow-hidden" dir="rtl">
-      <div className="max-w-6xl mx-auto px-4 sm:px-0">
+    <section
+      id="features"
+      className="py-20 px-6 sm:px-8 lg:px-12 w-full overflow-hidden"
+      dir="rtl"
+    >
+      <div className="max-w-6xl mx-auto">
         <div className="max-w-5xl mx-auto text-center pt-10">
           <TitleWithLeaves title="مميزاتنا" />
         </div>
 
-        {/* بطاقات الميزات */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 pt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
           {featuresData.map((feature, index) => (
             <motion.div
               key={index}
@@ -58,8 +61,12 @@ function Features() {
               <div className="mb-4 flex justify-center">
                 <feature.icon className="text-5xl text-green-700" />
               </div>
-              <h3 className="text-2xl font-semibold text-green-700 mb-3">{feature.title}</h3>
-              <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              <h3 className="text-2xl font-semibold text-green-700 mb-3">
+                {feature.title}
+              </h3>
+              <p className="text-gray-600 leading-relaxed">
+                {feature.description}
+              </p>
             </motion.div>
           ))}
         </div>
