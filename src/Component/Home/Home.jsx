@@ -7,14 +7,14 @@ import Features from "../Features/Features.jsx";
 import Contact from "../Contact/Contact";
 import About from "../About/About";
 import AboutSection from "../About/AboutSection.jsx";
+import WhyUS from "../WhyUs/WhyUS.jsx";
 
 function Home() {
   return (
     <>
-   
       <Hero />
-      <AboutSection/>
-      {/* <About /> */}
+      <AboutSection />
+      <WhyUS />
       <Features />
       <Services />
       <HeroSection />
