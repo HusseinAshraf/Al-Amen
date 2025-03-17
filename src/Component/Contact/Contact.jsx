@@ -5,13 +5,12 @@ import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 function Contact() {
   return (
     <section className="bg-gray-100 py-10">
-      <div className="container mx-auto p-6" dir="rtl">
-       <div className="max-w-5xl mx-auto text-center pt-10 ">
-       <TitleWithLeaves title="اتصل بنا" />
-       </div>
+      <div className="container mx-auto p-6">
+        <div className="max-w-5xl mx-auto text-center pt-10 ">
+          <TitleWithLeaves title="اتصل بنا" />
+        </div>
 
         <div className="grid md:grid-cols-2 gap-10 pt-6">
-          {/* Form Section */}
           <form className="bg-white p-8 shadow-xl rounded-xl border-t-4 border-green-600 space-y-6">
             <div>
               <label className="block text-gray-700 text-right font-semibold mb-2">
@@ -69,12 +68,11 @@ function Contact() {
             </button>
           </form>
 
-          {/* Company Info Section */}
           <div className="bg-white p-6 shadow-lg rounded-lg border-t-4 border-green-600 flex flex-col items-center">
             <div className="w-full h-80 overflow-hidden rounded-lg mb-4">
               <iframe
                 className="w-full h-full border-0 rounded-lg"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d27616.45607308616!2d31.235711!3d30.044420!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzDCsDAyJzM5LjkiTiAzMcKwMTQnMTYuMiJF!5e0!3m2!1sen!2seg!4v1617880935000!5m2!1sen!2seg"
+                src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3455.7542061559698!2d30.97733048488625!3d29.986493081903365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU5JzExLjQiTiAzMMKwNTgnMzAuNSJF!5e0!3m2!1sar!2seg!4v1742208081314!5m2!1sar!2seg"
                 allowFullScreen=""
                 loading="lazy"
               ></iframe>
@@ -87,23 +85,25 @@ function Contact() {
               ومبتكرة.
             </p>
 
-            <div className="flex items-center justify-end w-full mb-3">
-              <span className="ml-2 text-gray-700 font-medium">
-                القاهرة، مصر
-              </span>
-              <FaMapMarkerAlt className="text-green-700 ml-2 text-lg" />
-            </div>
-            <div className="flex items-center justify-end w-full mb-3">
-              <span className="ml-2 text-gray-700 font-medium">
-                +20 123 456 7890
-              </span>
-              <FaPhone className="text-green-700 ml-2 text-lg" />
-            </div>
-            <div className="flex items-center justify-end w-full">
-              <span className="ml-2 text-gray-700 font-medium">
-                info@landscape-eg.com
-              </span>
-              <FaEnvelope className="text-green-700 ml-2 text-lg" />
+            <div className="w-full flex flex-col gap-3 items-start ">
+              <div className="flex items-center justify-end">
+                <FaMapMarkerAlt className="text-green-700 text-lg" />
+                <span className="text-gray-700 font-medium mr-2">
+                  الجيزة- اكتوبر- الحي المتميز-عمارة 28 الدور التالت
+                </span>
+              </div>
+              <div className="flex items-center justify-end">
+                <FaPhone className="text-green-700 text-lg" />
+                <span className="text-gray-700 font-medium mr-2">
+                  01001243084 - 01114423163
+                </span>
+              </div>
+              <div className="flex items-center justify-end">
+                <FaEnvelope className="text-green-700 text-lg" />
+                <span className="text-gray-700 font-medium mr-2">
+                  info@landscape-eg.com
+                </span>
+              </div>
             </div>
           </div>
         </div>
