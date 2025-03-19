@@ -8,6 +8,7 @@ import Contact from "../Contact/Contact";
 import AboutSection from "../About/AboutSection.jsx";
 import WhyUS from "../WhyUs/WhyUS.jsx";
 import StatsSection from "../StatsSection/StatsSection.jsx";
+import TestimonialsSection from "../TestimonialsSection/TestimonialsSection.jsx";
 
 function Home() {
   return (
@@ -18,7 +19,7 @@ function Home() {
       <Features />
       <Services />
       <HeroSection />
-      
+    <TestimonialsSection/>
       <Project limit={6} />
       <StatsSection/>
       <Contact />

@@ -4,7 +4,7 @@ import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 
 function Contact() {
   return (
-    <section className="bg-gray-100 py-10">
+    <section className="bg-gray-100 py-10" dir="rtl">
       <div className="container mx-auto p-6">
         <div className="max-w-5xl mx-auto text-center pt-10 ">
           <TitleWithLeaves title="اتصل بنا" />
