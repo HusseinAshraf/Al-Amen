@@ -87,7 +87,7 @@ function Footer() {
       </div>
 
       
-      <div className="text-center text-gray-400 text-xs mt-8 border-t border-gray-900 pt-4">
+      <div className="text-center text-gray-400 text-xs mt-8 border-t border-gray-800 pt-4">
         El Amen LandScaip © 2025 All Rights Reserved | By Hussein Ashraf
       </div>
     </footer>
