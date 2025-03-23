@@ -33,7 +33,7 @@ function NavBar() {
             menuOpen ? "block" : "hidden"
           } absolute top-full right-0 left-0 bg-green-600 md:bg-transparent md:static md:flex md:w-auto transition-all duration-300 ease-in-out`}
         >
-          <ul className="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-6 rtl:space-x-reverse text-white font-medium p-4 md:p-0 mt-2 md:mt-0">
+          <ul className="flex flex-col md:flex-row font-extrabold space-y-2 md:space-y-0 md:space-x-6 rtl:space-x-reverse text-white p-4 md:p-0 mt-2 md:mt-0">
             <li>
               <Link
                 to="/about"
