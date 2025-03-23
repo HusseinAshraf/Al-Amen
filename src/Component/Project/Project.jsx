@@ -4,6 +4,13 @@ import { motion } from "framer-motion";
 import Tellal from "../../assets/image/telal.jpg";
 import deglla from "../../assets/image/deglla.jpg";
 import mennaGarden from "../../assets/image/mennaGarden.jpg";
+import MenaRezdans from "../../assets/image/MenaRezdans.jpg";
+import OsamaBenZayed from "../../assets/image/OsamaBenZayed.jpg";
+import Berenses from "../../assets/image/Berenses.jpg";
+import grandcity from "../../assets/image/grandcity.jpg";
+import Mrmr from "../../assets/image/Mrmr.jpg";
+import SeseliaMatrouh from "../../assets/image/SeseliaMatrouh.jpg";
+import Zayed2000 from "../../assets/image/Zayed2000.jpg";
 import project3 from "../../assets/image/project 3.jpg";
 import project4 from "../../assets/image/project4.jpg";
 import project5 from "../../assets/image/project5.jpg";
@@ -56,12 +63,12 @@ const projects = [
     title: "كمبوند مينا ريزيدانس",
     description:
       "إنشاءات كمبوند مينا ريزيدانس في التجمع الخامس – القاهرة الجديدة.",
-    image: project6,
+    image: MenaRezdans,
   },
   {
     title: "جراند سيتي",
     description: "إنشاءات جراند سيتي على طريق الواحات – 6 أكتوبر.",
-    image: project3,
+    image: grandcity,
   },
   {
     title: "مدخل مدينة الشروق",
@@ -71,22 +78,22 @@ const projects = [
   {
     title: "صيانه قرية مرمر",
     description: "صيانة قرية مرمر بمساحة 135 ألف م² في الساحل الشمالي.",
-    image: project5,
+    image: Mrmr,
   },
   {
     title: "صيانه قرية برنسيس",
     description: "صيانة قرية برنسيس بمساحة 80 ألف م² في 6 أكتوبر - زايد.",
-    image: project6,
+    image: Berenses,
   },
   {
     title: "صيانه وانشاءات قرية سيلسيا",
     description: "صيانة وإنشاءات قرية سيلسيا بمساحة 100 ألف م² في مرسى مطروح.",
-    image: project3,
+    image: SeseliaMatrouh,
   },
   {
     title: "مدرسة الحي العاشر (أسامة بن زايد)",
     description: "إنشاءات مدرسة الحي العاشر (أسامة بن زايد) في 6 أكتوبر.",
-    image: project4,
+    image: OsamaBenZayed,
   },
   {
     title: "تطوير طريق شركة رايه القابضة",
@@ -181,7 +188,7 @@ const projects = [
   {
     title: "صيانه كمبوند زايد 2000",
     description: "صيانة كمبوند زايد 2000 بمساحة 135 ألف م² في 6 أكتوبر.",
-    image: project3,
+    image: Zayed2000,
   },
 ];
 
