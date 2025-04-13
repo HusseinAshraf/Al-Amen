@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import Hero from "../Hero/Hero";
 import Services from "../Services/Services";
 import Project from "../Project/Project";
@@ -11,22 +11,39 @@ import StatsSection from "../StatsSection/StatsSection.jsx";
 import TestimonialsSection from "../TestimonialsSection/TestimonialsSection.jsx";
 import PartnersSection from "../PartnersSection/PartnersSection .jsx";
 import ElAMen from "../ElAMen/ElAMen.jsx";
+import LoadingScreen from "../../UI/LoadingScreen/LoadingScreen";
 
 function Home() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 4000); 
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <>
-      <Hero />
-      <AboutSection />
-      <WhyUS />
-      <Features />
-      <Services />
-      <HeroSection />
-      <ElAMen />
-      <TestimonialsSection />
-      <Project limit={6} />
-      <StatsSection />
-      <PartnersSection />
-      <Contact />
+      {isLoading ? (
+        <LoadingScreen />
+      ) : (
+        <>
+          <Hero />
+          <AboutSection />
+          <WhyUS />
+          <Features />
+          <Services />
+          <HeroSection />
+          <ElAMen />
+          <TestimonialsSection />
+          <Project limit={6} />
+          <StatsSection />
+          <PartnersSection />
+          <Contact />
+        </>
+      )}
     </>
   );
 }
