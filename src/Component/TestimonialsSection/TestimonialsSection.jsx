@@ -7,7 +7,7 @@ import "swiper/css/autoplay";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import backgroundImage from "../../assets/image/background.jpg";
+import backgroundImage from "../../assets/image/image1.jpg";
 
 const testimonials = [
   {

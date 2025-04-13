@@ -8,6 +8,12 @@ import img2 from "../../assets/image/تركيب.jpg";
 import img3 from "../../assets/image/project5.jpg";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
+import Sport1 from "../../assets/image/sport1.jpg";
+import Sport2 from "../../assets/image/sport2.jpg";
+import Sport3 from "../../assets/image/sport3.jpg";
+import Sport4 from "../../assets/image/sport4.jpg";
+import Sport5 from "../../assets/image/sport5.jpg";
+import Sport6 from "../../assets/image/sport6.jpg";
 
 function Services() {
   const servicesData = [
@@ -37,92 +43,87 @@ function Services() {
     },
   ];
 
-  const sportsImages = [picture, picture, picture, picture, picture, picture];
+  const sportsImages = [Sport1, Sport2, Sport3, Sport4, Sport5, Sport6];
 
   return (
     <>
-    <BackGround>
-    <section
-      id="services"
-      className="py-20"
-      dir="rtl"
-    >
-      <div className="max-w-6xl mx-auto px-6">
-        <div className="max-w-5xl mx-auto text-center pt-10">
-          <TitleWithLeaves title="خدماتنا" />
-        </div>
+      <BackGround>
+        <section id="services" className="py-20" dir="rtl">
+          <div className="max-w-6xl mx-auto px-6">
+            <div className="max-w-5xl mx-auto text-center pt-10">
+              <TitleWithLeaves title="خدماتنا" />
+            </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
-          {servicesData.map((service, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 pt-8">
+              {servicesData.map((service, index) => (
+                <motion.div
+                  key={index}
+                  className="bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl transition transform hover:-translate-y-2 text-center border-t-4 border-green-600"
+                  initial={{ opacity: 0, y: 50 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.6, delay: index * 0.2 }}
+                >
+                  <div className="mb-4 flex justify-center">{service.icon}</div>
+                  <h3 className="text-2xl font-semibold text-green-700 mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed mb-4">
+                    {service.description}
+                  </p>
+                  <motion.img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-40 object-cover rounded-lg shadow-md"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                  />
+                </motion.div>
+              ))}
+            </div>
+
             <motion.div
-              key={index}
-              className="bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl transition transform hover:-translate-y-2 text-center border-t-4 border-green-600"
-              initial={{ opacity: 0, y: 50 }}
-              whileInView={{ opacity: 1, y: 0 }}
+              className="bg-white mt-12 p-8 rounded-3xl shadow-lg text-center border-t-4 border-green-600"
+              initial={{ opacity: 0, scale: 0.9 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              transition={{ duration: 0.7 }}
             >
-              <div className="mb-4 flex justify-center">{service.icon}</div>
+              <div className="text-5xl text-green-600 mb-4">
+                <FaFutbol />
+              </div>
               <h3 className="text-2xl font-semibold text-green-700 mb-3">
-                {service.title}
+                الإنشاءات الرياضية والملاعب
               </h3>
-              <p className="text-gray-600 leading-relaxed mb-4">
-                {service.description}
+              <p className="text-gray-600 leading-relaxed mb-6">
+                نقوم بتنفيذ جميع أنواع الإنشاءات الرياضية والملاعب بداية من
+                مرحلة التصميمات حتى التشغيل، مثل ملاعب النجيل الصناعي والملاعب
+                المتعددة وملاعب البادل تنس ومضمار الجري واكسسوارات الملاعب. نفذ
+                ملعبك بأفضل المعايير الدولية وبأنسب تكلفة وفي أقل وقت. نقوم
+                بتطوير وإنشاء وصيانة جميع الملاعب الرياضية في الأندية الرياضية
+                والجامعات والمدارس والمؤسسات والمشاريع الخاصة.
               </p>
-              <motion.img
-                src={service.image}
-                alt={service.title}
-                className="w-full h-40 object-cover rounded-lg shadow-md"
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              />
+
+              <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
+                {sportsImages.map((img, index) => (
+                  <motion.img
+                    key={index}
+                    src={img}
+                    alt={`الرياضة ${index + 1}`}
+                    className="w-full h-40 object-cover rounded-lg shadow-md"
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileInView={{ scale: 1, opacity: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.5, delay: index * 0.2 }}
+                  />
+                ))}
+              </div>
             </motion.div>
-          ))}
-        </div>
-
-        <motion.div
-          className="bg-white mt-12 p-8 rounded-3xl shadow-lg text-center border-t-4 border-green-600"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.7 }}
-        >
-          <div className="text-5xl text-green-600 mb-4">
-            <FaFutbol />
           </div>
-          <h3 className="text-2xl font-semibold text-green-700 mb-3">
-            الإنشاءات الرياضية والملاعب
-          </h3>
-          <p className="text-gray-600 leading-relaxed mb-6">
-            نقوم بتنفيذ جميع أنواع الإنشاءات الرياضية والملاعب بداية من مرحلة
-            التصميمات حتى التشغيل، مثل ملاعب النجيل الصناعي والملاعب المتعددة
-            وملاعب البادل تنس ومضمار الجري واكسسوارات الملاعب. نفذ ملعبك بأفضل
-            المعايير الدولية وبأنسب تكلفة وفي أقل وقت. نقوم بتطوير وإنشاء وصيانة
-            جميع الملاعب الرياضية في الأندية الرياضية والجامعات والمدارس
-            والمؤسسات والمشاريع الخاصة.
-          </p>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mt-6">
-            {sportsImages.map((img, index) => (
-              <motion.img
-                key={index}
-                src={img}
-                alt={`الرياضة ${index + 1}`}
-                className="w-full h-40 object-cover rounded-lg shadow-md"
-                initial={{ scale: 0.8, opacity: 0 }}
-                whileInView={{ scale: 1, opacity: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.5, delay: index * 0.2 }}
-              />
-            ))}
-          </div>
-        </motion.div>
-      </div>
-    </section>
-    </BackGround>
-    
+        </section>
+      </BackGround>
     </>
   );
 }

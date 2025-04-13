@@ -21,10 +21,10 @@ function Home() {
       <Features />
       <Services />
       <HeroSection />
-      <ElAMen/>
-    <TestimonialsSection/>
+      <ElAMen />
+      <TestimonialsSection />
       <Project limit={6} />
-      <StatsSection/>
+      <StatsSection />
       <PartnersSection />
       <Contact />
     </>

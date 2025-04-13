@@ -1,8 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-// import villaVideo from "../../assets/video/فيلا الفطيم.mp4";
 import Tellal from "../../assets/image/telal.jpg";
-import deglla from "../../assets/image/deglla.jpg";
 import mennaGarden from "../../assets/image/mennaGarden.jpg";
 import MenaRezdans from "../../assets/image/MenaRezdans.jpg";
 import OsamaBenZayed from "../../assets/image/OsamaBenZayed.jpg";
@@ -11,20 +9,17 @@ import grandcity from "../../assets/image/grandcity.jpg";
 import Mrmr from "../../assets/image/Mrmr.jpg";
 import SeseliaMatrouh from "../../assets/image/SeseliaMatrouh.jpg";
 import Zayed2000 from "../../assets/image/Zayed2000.jpg";
+import elmontag3 from "../../assets/image/المنتجع الطبي.jpg";
 import project3 from "../../assets/image/project 3.jpg";
 import project4 from "../../assets/image/project4.jpg";
 import project5 from "../../assets/image/project5.jpg";
 import project6 from "../../assets/image/project6.jpg";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
+
 import { Link } from "react-router-dom";
 
 const projects = [
-  // {
-  //   title: "فيلا الفطيم",
-  //   description:
-  //     "إنشاء اللاندسكيب، وتوريد المعدات والأدوات الزراعية وتوريد الزرع والصيانة حتى الآن بمساحة ضخمة.",
-  //   video: villaVideo,
-  // },
+  
 
   {
     title: "تلال الفسطاط الجديدة",
@@ -44,6 +39,7 @@ const projects = [
   //     "صيانة كمبوند ستون ريزيدنس بمساحة 100 ألف م² في القطامية – التجمع الثالث.",
   //   image: project6,
   // },
+  
   {
     title: "كمبوند مينا جادرن سيتي",
     description: "إنشاءات كمبوند مينا جادرن سيتي في 6 أكتوبر.",
@@ -57,7 +53,7 @@ const projects = [
   {
     title: "المنتج الصحي للطب النفسي",
     description: "المنتج الصحي للطب النفسي في التجمع الأول – القاهرة الجديدة.",
-    image: project5,
+    image: elmontag3,
   },
   {
     title: "كمبوند مينا ريزيدانس",
