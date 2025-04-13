@@ -6,7 +6,7 @@ import LoadingScreen from "../../UI/LoadingScreen/LoadingScreen";
 function Hero() {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedImages, setLoadedImages] = useState(0);
-  const totalImages = 2; // عدد الصور التي ننتظر تحميلها
+  const totalImages = 2; 
 
  
   const handleImageLoad = () => {
@@ -16,7 +16,7 @@ function Hero() {
   useEffect(() => {
     if (loadedImages === totalImages) {
       
-      const timer = setTimeout(() => setIsLoading(false), 1500);
+      const timer = setTimeout(() => setIsLoading(false), 500);
       return () => clearTimeout(timer);
     }
   }, [loadedImages]);
