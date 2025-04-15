@@ -24,15 +24,15 @@ function Hero() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-green-900">
               م. أمين حسين
             </h2>
-            <p className="text-lg sm:text-xl font-semibold text-white  px-4 py-1 rounded-md inline-block mb-2">
+            <p className="text-lg sm:text-xl font-semibold text-gray-400  px-4 py-1 rounded-md inline-block mb-2">
               مؤسس الشركة
             </p>
             <p className="text-gray-800 leading-relaxed text-base sm:text-lg font-medium">
-              كل ما يخص الهارد سكيب والسوفت سكيب واللاند سكيب تحت سقف واحد.
+              كل ما يخص الهارد سكيب والسوفت سكيب واللاند سكيب تحت سقف واحد
             </p>
-            <p className="text-gray-700 mt-3 text-sm sm:text-base leading-loose">
+            <p className="text-gray-700 mt-1 text-sm sm:text-base leading-loose">
               متخصصون في أعمال الزراعة واللاند سكيب بفرق عمل محترفة من المهندسين
-              والفنيين.
+              والفنيين
             </p>
           </div>
         </div>

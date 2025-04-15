@@ -37,7 +37,7 @@ function NavBar() {
             <li>
               <Link
                 to="/about"
-                className="block py-2 px-4 rounded-md hover:bg-gray-700 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
+                className="block py-2 px-4 rounded-md hover:bg-green-400 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
               >
                 من نحن
               </Link>
@@ -45,7 +45,7 @@ function NavBar() {
             <li>
               <Link
                 to="/features"
-                className="block py-2 px-4 rounded-md hover:bg-gray-700 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
+                className="block py-2 px-4 rounded-md hover:bg-green-400 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
               >
                 مميزاتنا
               </Link>
@@ -53,7 +53,7 @@ function NavBar() {
             <li>
               <Link
                 to="/services"
-                className="block py-2 px-4 rounded-md hover:bg-gray-700 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
+                className="block py-2 px-4 rounded-md hover:bg-green-400 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
               >
                 خدماتنا
               </Link>
@@ -61,7 +61,7 @@ function NavBar() {
             <li>
               <Link
                 to="/project"
-                className="block py-2 px-4 rounded-md hover:bg-gray-700 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
+                className="block py-2 px-4 rounded-md hover:bg-green-400 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
               >
                 أعمالنا
               </Link>
@@ -69,7 +69,7 @@ function NavBar() {
             <li>
               <Link
                 to="/contact"
-                className="block py-2 px-4 rounded-md hover:bg-gray-700 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
+                className="block py-2 px-4 rounded-md hover:bg-green-400 md:hover:bg-transparent md:hover:text-yellow-400 transition-all"
               >
                 اتصل بنا
               </Link>
