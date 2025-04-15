@@ -16,11 +16,11 @@ function Footer() {
         {/* من نحن */}
         <div>
           <h3 className="text-xl font-bold mb-4">من نحن</h3>
-          <p className="text-gray-300 text-sm leading-relaxed">
+          <strong className="text-white text-sm leading-relaxed">
             في الأمين لاند سكيب نصنع مساحات خضراء تنبض بالجمال والحياة. نقدم خدمات
             تصميم وتنفيذ حدائق الفلل، الأماكن العامة والملاعب، مع توفير نباتات
             زينة وزهور وشبكات ري متطورة.
-          </p>
+          </strong>
           <div className="flex justify-center md:justify-start space-x-4 mt-4">
             <a href="#" className="text-white hover:text-gray-400 text-xl">
               <FaFacebook />

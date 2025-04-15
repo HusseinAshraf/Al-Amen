@@ -36,7 +36,6 @@ function Home() {
           <WhyUS />
           <Features />
           <ServicesSection/>
-          <Services />
           <HeroSection />
           <ElAMen />
           <TestimonialsSection />

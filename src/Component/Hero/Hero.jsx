@@ -24,7 +24,7 @@ function Hero() {
             <h2 className="text-2xl sm:text-3xl font-extrabold text-green-900">
               م. أمين حسين
             </h2>
-            <p className="text-lg sm:text-xl font-semibold text-white bg-green-700 px-4 py-1 rounded-md inline-block mb-2">
+            <p className="text-lg sm:text-xl font-semibold text-white  px-4 py-1 rounded-md inline-block mb-2">
               مؤسس الشركة
             </p>
             <p className="text-gray-800 leading-relaxed text-base sm:text-lg font-medium">

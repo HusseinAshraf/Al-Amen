@@ -8,6 +8,8 @@ import {
   Flower2,
   Boxes,
 } from "lucide-react";
+import { Link } from "react-router-dom";
+import BackGround from "../../UI/BackGround/BackGround";
 
 const services = [
   {
@@ -42,7 +44,8 @@ const services = [
 
 const ServicesSection = () => {
   return (
-    <section className="bg-white py-16 px-4 sm:px-6 md:px-16" dir="rtl">
+   <BackGround>
+     <section className=" py-16 px-4 sm:px-6 md:px-16" dir="rtl">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* النص */}
         <div className="text-center md:text-right space-y-4">
@@ -59,9 +62,9 @@ const ServicesSection = () => {
             خامات اللاندسكيب بجودة عالية. نعمل بأيدي محترفة وبأحدث التقنيات
             لنحول مساحتك إلى واحة تنبض بالجمال.
           </p>
-          <button className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow">
+          <Link to="/services" className="bg-green-600 hover:bg-green-700 text-white px-6 py-2 rounded-lg shadow">
             اعرف أكثر
-          </button>
+          </Link>
         </div>
 
         {/* عرض الفيديو */}
@@ -77,22 +80,24 @@ const ServicesSection = () => {
                 allowFullScreen
               ></iframe>
             </div>
-            <div className="absolute top-0 left-2/3 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-4">
+            <div className="absolute text-black top-0 left-2/3 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-4">
               {services[0].icon}
-              <p className="text-xs mt-1">{services[0].title}</p>
+              <p className="text-xs mt-1 ">{services[0].title}</p>
             </div>
-            <div className="absolute bottom-0 left-1/4 transform -translate-x-1/2 translate-y-1/2 bg-white rounded-full shadow-md p-4">
+            <div className="absolute bottom-0 text-black left-1/4 transform -translate-x-1/2 translate-y-1/2 bg-white rounded-full shadow-md p-4">
               {services[1].icon}
               <p className="text-xs mt-1">{services[1].title}</p>
             </div>
-            <div className="absolute bottom-0 right-1/4 transform translate-x-1/2 translate-y-1/2 bg-white rounded-full shadow-md p-4">
+            <div className="absolute bottom-0 text-black right-1/4 transform translate-x-1/2 translate-y-1/2 bg-white rounded-full shadow-md p-4">
               {services[2].icon}
               <p className="text-xs mt-1">{services[2].title}</p>
             </div>
+            
           </div>
         </div>
       </div>
     </section>
+   </BackGround>
   );
 };
 
