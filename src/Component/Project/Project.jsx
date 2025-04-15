@@ -144,7 +144,7 @@ const Project = ({ limit }) => {
     : filteredProjects;
 
   return (
-    <section id="projects" className="py-16 text-center" dir="rtl">
+    <section id="projects" className="py-16 text-center bg-gradient-to-b from-green-50 to-white" dir="rtl">
       <div className="max-w-5xl mx-auto text-center pt-10">
         <TitleWithLeaves title="أعمالنا" />
       </div>

@@ -95,7 +95,7 @@ function Services() {
             <TitleWithLeaves title="خدماتنا" />
           </div>
 
-          <div className="flex flex-wrap gap-3 justify-center mb-10 ">
+          <div className="flex flex-wrap gap-3 justify-center mb-10">
             {categories.map((category) => (
               <button
                 key={category}
@@ -115,7 +115,7 @@ function Services() {
             {filteredServices.map((service, index) => (
               <div
                 key={index}
-                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-transform hover:-translate-y-2 cursor-pointer"
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-transform hover:-translate-y-2 cursor-pointer"
                 onClick={() => setSelectedService(service)}
               >
                 <img
@@ -125,7 +125,7 @@ function Services() {
                 />
                 <div className="p-4 sm:p-6 space-y-3 text-center">
                   <div className="flex justify-center">
-                    <div className="bg-green-100 text-green-700 p-3 sm:p-4 rounded-full text-2xl sm:text-3xl">
+                    <div className="relative z-10 w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white text-2xl sm:text-3xl">
                       {service.icon}
                     </div>
                   </div>

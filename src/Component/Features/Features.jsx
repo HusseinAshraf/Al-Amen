@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaDollarSign, FaUsers, FaCog, FaClipboardCheck } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
+import BackGround from "../../UI/BackGround/BackGround";
 
 function Features() {
   const featuresData = [
@@ -32,9 +33,11 @@ function Features() {
   ];
 
   return (
+    <>
+    <BackGround>
     <section
       id="features"
-      className="py-20 px-4 sm:px-8 lg:px-12 bg-gradient-to-b from-green-50 to-white"
+      className="py-20 px-4 sm:px-8 lg:px-12 "
       dir="rtl"
     >
       <div className="max-w-6xl mx-auto">
@@ -72,6 +75,8 @@ function Features() {
         </div>
       </div>
     </section>
+    </BackGround>
+    </>
   );
 }
 

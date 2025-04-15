@@ -44,8 +44,8 @@ const services = [
 
 const ServicesSection = () => {
   return (
-   <BackGround>
-     <section className=" py-16 px-4 sm:px-6 md:px-16" dir="rtl">
+ 
+     <section className=" py-16 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-green-50 to-white " dir="rtl">
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
         {/* النص */}
         <div className="text-center md:text-right space-y-4">
@@ -97,7 +97,7 @@ const ServicesSection = () => {
         </div>
       </div>
     </section>
-   </BackGround>
+  
   );
 };
 
