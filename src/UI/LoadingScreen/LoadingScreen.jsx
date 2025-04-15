@@ -8,7 +8,7 @@ export default function LoadingScreen() {
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 5000);
-    return () => clearTimeout(timer); 
+    return () => clearTimeout(timer);
   }, []);
 
   if (!isLoading) return null;
@@ -26,7 +26,7 @@ export default function LoadingScreen() {
           alt="AL Amen Landscaping Logo"
           className="w-32 h-32 mb-4 animate-pulse"
         />
-        <p className="text-lg font-semibold">....... جارِ التحميل</p>
+        <strong className="text-lg font-semibold">....... جارِ التحميل</strong>
       </motion.div>
       <div className="absolute inset-0 opacity-20">
         <img

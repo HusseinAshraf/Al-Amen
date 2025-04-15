@@ -41,7 +41,7 @@ const StatsSection = () => {
               <h3 className="text-4xl font-extrabold">
                 {inView && <CountUp start={0} end={stat.number} duration={3} />}
               </h3>
-              <p className="text-sm font-medium opacity-85">{stat.label}</p>
+              <strong className="text-sm font-medium opacity-85">{stat.label}</strong>
             </div>
           ))}
         </div>

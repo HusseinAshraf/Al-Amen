@@ -35,14 +35,14 @@ function HeroSection() {
           >
             الأمين
           </motion.h1>
-          <motion.p
-            className="text-xl md:text-2xl mt-3"
+          <motion.strong
+            className="text-md md:text-md mt-3 text-gray-300 font-semibold"
             initial={{ opacity: 0, y: -10 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
             لأعمال اللاندسكيب
-          </motion.p>
+          </motion.strong>
         </div>
 
         <motion.button

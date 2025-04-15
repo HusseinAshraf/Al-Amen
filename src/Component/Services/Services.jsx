@@ -1,5 +1,4 @@
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useState } from "react";
 import { FaTools, FaWater, FaWrench, FaTruck, FaLeaf } from "react-icons/fa";
 import img1 from "../../assets/image/عشب-صناعي.jpg";
 import img2 from "../../assets/image/شلالات.jpg";
@@ -12,96 +11,165 @@ import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
 
 function Services() {
+  const [selectedService, setSelectedService] = useState(null);
+  const [selectedCategory, setSelectedCategory] = useState("الكل");
+
   const servicesData = [
     {
-      icon: <FaLeaf className="text-5xl text-green-700" />,
+      icon: <FaLeaf />,
       title: "تصميم وتنسيق الحدائق",
-      description:
-        "نحن نقدم خدمات تصميم وتنسيق حدائق الفلل والمنازل والحدائق العامة والملاعب، باستخدام أفضل المواد والأساليب الحديثة. يشمل عملنا تنسيق العشب الصناعي والطبيعي، تصميم النوافير والشلالات، تركيب المظلات والسواتر، وتنفيذ ديكورات زراعية لخلق بيئة خضراء ومريحة.",
+      description: "تنسيق حدائق المنازل باستخدام أفضل المواد والتصاميم.",
+      fullDescription:
+        "نحن نقدم خدمات تصميم وتنسيق حدائق الفلل والمنازل والحدائق العامة والملاعب، باستخدام أفضل المواد والأساليب الحديثة. يشمل عملنا تنسيق العشب الصناعي والطبيعي، تصميم النوافير والشلالات، تركيب المظلات والسواتر، وتنفيذ ديكورات زراعية لخلق بيئة خضراء ومريحة. ",
       image: img1,
+      category: "تنسيق الحدائق",
     },
     {
-      icon: <FaWater className="text-5xl text-green-700" />,
-      title: "خدمة الشلالات الصناعية",
-      description:
-        "نقوم بتركيب شلالات صناعية في حدائق المنازل، والقصور، والحدائق العامة، والملاعب. نوفّر أنواع مختلفة مثل الشلالات الكلاسيكية والجدارية، وكذلك الشلالات الموسيقية والزخرفية. يتم اختيار النوع والشكل والخامة حسب رغبة العميل، من خلال مواد مثل الأحجار، البورسلين، السيراميك، والرخام. يمكن تركيب الشلالات بأحجام مختلفة لتناسب المساحات الصغيرة والكبيرة.",
+      icon: <FaWater />,
+      title: "الشلالات الصناعية",
+      description: "تصميم وتركيب الشلالات بكل أنواعها.",
+      fullDescription:
+        "نقوم بتركيب شلالات صناعية في حدائق المنازل، والقصور، والحدائق العامة، والملاعب. نوفّر أنواع مختلفة مثل الشلالات الكلاسيكية والجدارية، وكذلك الشلالات الموسيقية والزخرفية...",
       image: img2,
+      category: "شلالات",
     },
     {
-      icon: <FaWrench className="text-5xl text-green-700" />,
-      title: "خدمة البرجولات والمظلات والسواتر",
-      description:
-        "نقدم خدمة تركيب المظلات، السواتر، والبرجولات بمختلف الأشكال والأحجام. تشمل خدماتنا تركيب مظلات لسيارات، حدائق، مسابح، قصور، مدارس، مساجد، وغيرها. نقوم أيضًا بتوفير سواتر حديدية وبلاستيكية وسواتر من القماش والخشب، بالإضافة إلى برجولات خشبية، حديدية، بلاستيكية، وقماشية. كل ذلك يتم باستخدام أفضل المواد وبأعلى المعايير الحديثة.",
+      icon: <FaWrench />,
+      title: "البرجولات والمظلات",
+      description: "تركيب برجولات وسواتر عالية الجودة.",
+      fullDescription:
+        "نقدم خدمة تركيب المظلات، السواتر، والبرجولات بمختلف الأشكال والأحجام...",
       image: img3,
+      category: "مظلات وبرجولات",
     },
     {
-      icon: <FaTruck className="text-5xl text-green-700" />,
-      title: "خدمة شبكات الري",
-      description:
-        "نوفر خدمات تركيب وصيانة شبكات الري الحديثة باستخدام شبكات الري بالتنقيط أو بالرش. نقدم حلول ري متكاملة لحدائق المنازل، القصور، الفلل، والملاعب. نقوم بتصميم أنظمة ري حسب طبيعة الأرض والنباتات، مع صيانة دورية لضمان استدامة النظام. كما نقدم استشارات هندسية لتحديد أفضل الخيارات لنظام الري المتوافق مع متطلبات كل عميل.",
+      icon: <FaTruck />,
+      title: "شبكات الري",
+      description: "شبكات ري حديثة بالتنقيط والرش.",
+      fullDescription:
+        "نوفر خدمات تركيب وصيانة شبكات الري الحديثة باستخدام شبكات الري بالتنقيط أو بالرش...",
       image: img4,
+      category: "الري",
     },
     {
-      icon: <FaTools className="text-5xl text-green-700" />,
-      title: "تركيب وصيانة الملاعب",
-      description:
-        "نقوم بتصميم، تركيب، وصيانة الملاعب الرياضية وفقًا لأعلى المعايير العالمية. نحن نستخدم مواد متميزة لضمان جودة الملاعب مثل الملاعب العشبية الصناعية والملاعب متعددة الأغراض. نهتم بتركيب وتطوير الملاعب في الأندية الرياضية، الجامعات، المدارس، والمشاريع الخاصة. خدماتنا تشمل أيضًا الصيانة المستمرة لضمان سلامة الملاعب وجودتها.",
+      icon: <FaTools />,
+      title: "الملاعب",
+      description: "تصميم وصيانة ملاعب رياضية.",
+      fullDescription:
+        "نقوم بتصميم، تركيب، وصيانة الملاعب الرياضية وفقًا لأعلى المعايير العالمية...",
       image: img5,
+      category: "ملاعب",
     },
     {
-      icon: <FaLeaf className="text-5xl text-green-700" />,
-      title: "خدمة الديكورات الزراعية",
-      description:
-        "نقوم بعمل تصميم وتركيب أجمل الديكورات الزراعية للحدائق والمنازل بأعلى جودة وأرخص أسعار الديكورات الزراعية في المملكة العربية السعودية. لدينا تشكيلة كبيرة من تصاميم الديكورات الزراعية سواء داخل المنزل أو لحديقة المنزل بإستخدام النباتات والأحجار الطبيعية والملونة. كما نقدم تصميم وتنفيذ جميع أنواع الممرات بالحديقة مثل الحجرية والزجاجية والحصى الملون، مع فريق عمل من أفضل المهندسين والفنيين باستخدام أحدث التقنيات والمعدات.",
+      icon: <FaLeaf />,
+      title: "الديكورات الزراعية",
+      description: "تصاميم حدائق ديكورية باستخدام نباتات وأحجار طبيعية.",
+      fullDescription:
+        "نقوم بعمل تصميم وتركيب أجمل الديكورات الزراعية للحدائق والمنازل...",
       image: img6,
+      category: "ديكورات",
     },
     {
-      icon: <FaTruck className="text-5xl text-green-700" />,
-      title: "توريد وتركيب خامات لاند سكيب",
-      description:
-        "تتميز شركة الأمين بتوفير جميع خامات اللاند سكيب من مواسير، رشاشات، خراطيم، وأكواع وغيرها من الخامات عالية الجودة، وذلك لأننا الموزع الرسمي لأكبر شركات نظم الري الحديث في مصر مثل شركة هنتر، شيرا، الوادي، الشامي، المصرية، وناسيكو. نحن نضمن للعملاء خامات أصلية بأسعار منافسة وخدمة تركيب احترافية بأيدي مهندسين وفنيين متخصصين.",
+      icon: <FaTruck />,
+      title: "توريد خامات لاند سكيب",
+      description: "توريد خامات معتمدة من كبرى الشركات.",
+      fullDescription:
+        "تتميز شركة الأمين بتوفير جميع خامات اللاند سكيب من مواسير، رشاشات، خراطيم، وأكواع...",
       image: img7,
+      category: "لاندسكيب",
     },
   ];
 
+  const categories = ["الكل", ...new Set(servicesData.map((s) => s.category))];
+
+  const filteredServices =
+    selectedCategory === "الكل"
+      ? servicesData
+      : servicesData.filter((s) => s.category === selectedCategory);
+
   return (
     <BackGround>
-      <section id="services" className="py-20" dir="rtl">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="max-w-5xl mx-auto text-center pt-10">
+      <section id="services" className="py-20 px-4 sm:px-6 md:px-16" dir="rtl">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="text-center mb-12 pt-7">
             <TitleWithLeaves title="خدماتنا" />
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
-            {servicesData.map((service, index) => (
-              <motion.div
-                key={index}
-                className="bg-white p-8 rounded-3xl shadow-md hover:shadow-2xl transition transform hover:-translate-y-2 text-center border-t-4 border-green-600"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: index * 0.2 }}
+          <div className="flex flex-wrap gap-3 justify-center mb-10 ">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm transition ${
+                  selectedCategory === category
+                    ? "bg-green-600 text-white shadow-md"
+                    : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
+                }`}
               >
-                <div className="mb-4 flex justify-center">{service.icon}</div>
-                <h3 className="text-2xl font-semibold text-green-700 mb-3">
-                  {service.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed mb-4">
-                  {service.description}
-                </p>
-                <motion.img
+                {category}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+            {filteredServices.map((service, index) => (
+              <div
+                key={index}
+                className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-transform hover:-translate-y-2 cursor-pointer"
+                onClick={() => setSelectedService(service)}
+              >
+                <img
                   src={service.image}
                   alt={service.title}
-                  className="w-full h-40 object-cover rounded-lg shadow-md"
-                  initial={{ scale: 0.8, opacity: 0 }}
-                  whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.5, delay: index * 0.2 }}
+                  className="w-full h-40 sm:h-48 md:h-56 object-cover"
                 />
-              </motion.div>
+                <div className="p-4 sm:p-6 space-y-3 text-center">
+                  <div className="flex justify-center">
+                    <div className="bg-green-100 text-green-700 p-3 sm:p-4 rounded-full text-2xl sm:text-3xl">
+                      {service.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-green-800">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
             ))}
           </div>
         </div>
+
+        {selectedService && (
+          <div
+            className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 pt-20"
+            onClick={() => setSelectedService(null)}
+          >
+            <div
+              className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-2xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[90vh]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute top-3 left-3 text-gray-500 hover:text-red-600 text-xl"
+                onClick={() => setSelectedService(null)}
+              >
+                ✕
+              </button>
+              <img
+                src={selectedService.image}
+                alt={selectedService.title}
+                className="w-full h-52 sm:h-60 md:h-72 object-cover rounded-xl mb-4"
+              />
+              <h2 className="text-xl sm:text-2xl font-bold text-green-800 mb-2">
+                {selectedService.title}
+              </h2>
+              <p className="text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base">
+                {selectedService.fullDescription || selectedService.description}
+              </p>
+            </div>
+          </div>
+        )}
       </section>
     </BackGround>
   );
