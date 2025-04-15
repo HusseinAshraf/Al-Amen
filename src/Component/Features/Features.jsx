@@ -1,39 +1,33 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaLandmark, FaTree, FaTint, FaBug } from "react-icons/fa";
+import { FaDollarSign, FaUsers, FaCog, FaClipboardCheck } from "react-icons/fa"; // استبدال الأيقونات
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 
 function Features() {
   const featuresData = [
     {
-      icon: FaLandmark,
-      title: "تصميم المناظر الطبيعية",
-      description: "تصميم وتنفيذ المناظر الطبيعية بأحدث الطرق والتقنيات.",
+      icon: FaDollarSign,
+      title: "أفضل أسعار تنسيق حدائق في مصر",
+      description:
+        "تضمن شركة الأمين لاند سكيب لتنسيق الحدائق أفضل العروض و الأسعار في جمهورية مصر العربية على جميع خدمات تنسيق وتصميم وصيانة الحدائق.",
     },
     {
-      icon: FaTree,
-      title: "زراعة النباتات",
-      description: "زراعة جميع أنواع النباتات الطبيعية والصناعية.",
+      icon: FaUsers,
+      title: "خدمات تنسيق حدائق عالية الجودة",
+      description:
+        "لدينا فريق متكامل من المهندسون الزراعيون والفنيين والعمال المتخصصين بخبرة 10 أعوام في تنسيق الحدائق وتصميمها بشكل احترافي.",
     },
     {
-      icon: FaTint,
-      title: "تنظيم الحدائق",
-      description: "تنظيم وترتيب الحدائق بأحدث الطرق والتقنيات.",
+      icon: FaCog,
+      title: "اختبار تصميمات الحدائق قبل التركيب",
+      description:
+        "تقوم شركة الأمين لاند سكيب لتنسيق الحدائق باختبار أي ديكور لأي حديقة قبل التركيب لتكوين وجهة نظر شاملة عن الديكور المناسب لحديقتك وتنسيقها.",
     },
     {
-      icon: FaBug,
-      title: "مبيدات الصحة العامة",
-      description: "تقديم خدمات مكافحة الحشرات والقوارض بأحدث الطرق والتقنيات.",
-    },
-    {
-      icon: FaTree,
-      title: "صيانة الحدائق",
-      description: "توفير خدمات صيانة ورعاية الحدائق للحفاظ على جودتها.",
-    },
-    {
-      icon: FaTint,
-      title: "أنظمة الري الحديثة",
-      description: "تصميم وتركيب أنظمة ري متطورة لترشيد استهلاك المياه.",
+      icon: FaClipboardCheck,
+      title: "أكثر من 1000 مشروع تم انجازه بنجاح",
+      description:
+        "قامت شركة الأمين لاند سكيب لتنسيق الحدائق بتنفيذ أكثر من 1000 مشروع في السعودية تتراوح بين تنسيق وتصميم وصيانة الحدائق وتوريد كافة الخامات المتعلقة بذلك.",
     },
   ];
 
@@ -48,7 +42,7 @@ function Features() {
           <TitleWithLeaves title="مميزاتنا" />
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 pt-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-8 pt-8">
           {featuresData.map((feature, index) => (
             <motion.div
               key={index}

@@ -7,6 +7,8 @@ import Services from "./Component/Services/Services";
 import Project from "./Component/Project/Project";
 import Layout from "./Layout/Layout";
 import ScrollToTopButton from "./UI/ScrollToTopButton/ScrollToTopButton";
+import Faq from "./Component/Faq/Faq";
+import History from "./Component/History/History";
 
 function App() {
   return (
@@ -19,9 +21,11 @@ function App() {
           <Route path="services" element={<Services />} />
           <Route path="project" element={<Project />} />
           <Route path="contact" element={<Contact />} />
+          <Route path="faq" element={<Faq />} />
+          <Route path="history" element={<History />} />
         </Route>
       </Routes>
-      <ScrollToTopButton /> 
+      <ScrollToTopButton />
     </Router>
   );
 }
