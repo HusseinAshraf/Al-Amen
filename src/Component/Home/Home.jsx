@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import Hero from "../Hero/Hero";
-import Services from "../Services/Services";
 import Project from "../Project/Project";
 import HeroSection from "../HeroSection/HeroSection";
 import Features from "../Features/Features.jsx";
@@ -20,7 +19,7 @@ function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 4000); 
+    }, 4000);
 
     return () => clearTimeout(timer);
   }, []);
@@ -35,7 +34,7 @@ function Home() {
           <AboutSection />
           <WhyUS />
           <Features />
-          <ServicesSection/>
+          <ServicesSection />
           <HeroSection />
           <ElAmen />
           <TestimonialsSection />
