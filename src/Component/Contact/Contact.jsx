@@ -101,7 +101,7 @@ function Contact() {
               <div className="flex items-center justify-end">
                 <FaEnvelope className="text-green-700 text-lg" />
                 <span className="text-gray-700 font-medium mr-2">
-                  info@landscape-eg.com
+                  amein2011@yahoo.com
                 </span>
               </div>
             </div>

@@ -8,6 +8,7 @@ import Shira from "../../assets/image/Shira.jpg";
 import ELShamy from "../../assets/image/el Shamy.png";
 import elwady from "../../assets/image/elwady.png";
 import neisco from "../../assets/image/neisco.png";
+import egyption from "../../assets/image/egyption.png";
 
 const partners = [
   { id: 1, name: "Hanter", image: Hanter },
@@ -15,6 +16,7 @@ const partners = [
   { id: 3, name: "EL Shamy", image: ELShamy },
   { id: 4, name: "El Wady", image: elwady },
   { id: 5, name: "Neisco", image: neisco },
+  { id: 5, name: "Egyption", image: egyption },
 ];
 
 const PartnersSection = () => {

@@ -17,9 +17,9 @@ function Footer() {
         <div>
           <h3 className="text-xl font-bold mb-4">من نحن</h3>
           <strong className="text-white text-sm leading-relaxed">
-            في الأمين لاند سكيب نصنع مساحات خضراء تنبض بالجمال والحياة. نقدم خدمات
-            تصميم وتنفيذ حدائق الفلل، الأماكن العامة والملاعب، مع توفير نباتات
-            زينة وزهور وشبكات ري متطورة.
+            في الأمين لاند سكيب نصنع مساحات خضراء تنبض بالجمال والحياة. نقدم
+            خدمات تصميم وتنفيذ حدائق الفلل، الأماكن العامة والملاعب، مع توفير
+            نباتات زينة وزهور وشبكات ري متطورة.
           </strong>
           <div className="flex justify-center md:justify-start space-x-4 mt-4">
             <a href="#" className="text-white hover:text-gray-400 text-xl">
@@ -77,16 +77,16 @@ function Footer() {
           <h3 className="text-xl font-bold mb-4">تواصل معنا</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center justify-center md:justify-start">
-              <FaPhone className="ml-2" /> 01011115940
+              <FaPhone className="ml-2" /> 01001243084 - 01114423163
+
             </li>
             <li className="flex items-center justify-center md:justify-start">
-              <FaEnvelope className="ml-2" /> info@greenlife-landscaping.com
+              <FaEnvelope className="ml-2" /> amein2011@yahoo.com
             </li>
           </ul>
         </div>
       </div>
 
-      
       <div className="text-center text-gray-400 text-xs mt-8 border-t border-gray-800 pt-4">
         El Amen LandScaip © 2025 All Rights Reserved | By Hussein Ashraf
       </div>
