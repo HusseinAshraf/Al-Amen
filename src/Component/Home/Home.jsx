@@ -12,6 +12,7 @@ import PartnersSection from "../PartnersSection/PartnersSection .jsx";
 import LoadingScreen from "../../UI/LoadingScreen/LoadingScreen";
 import ServicesSection from "../Services/ServicesSection.jsx";
 import ElAmen from "../ElAmen/ElAmen.jsx";
+import PlantsTestimonials from "../PlantsTestimonials/PlantsTestimonials.jsx";
 
 
 function Home() {
@@ -37,7 +38,7 @@ function Home() {
           <Features />
           <ServicesSection />
           <HeroSection />
-         
+           <PlantsTestimonials/>
           <ElAmen/>
           <TestimonialsSection />
           <Project limit={6} />

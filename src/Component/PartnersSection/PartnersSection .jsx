@@ -58,7 +58,7 @@ const PartnersSection = () => {
                   alt="Partner Logo"
                   className="w-auto h-full object-contain transition-transform duration-300 group-hover:scale-105"
                 />
-                
+
                 <div className="absolute inset-0 bg-transparent backdrop-blur-md flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <span className="text-green-950 text-lg font-semibold">
                     {partner.name}
@@ -69,8 +69,7 @@ const PartnersSection = () => {
           ))}
         </Swiper>
 
-        
-        <div className="custom-pagination mt-6 flex justify-center"></div>
+        <div className="custom-pagination mt-6 gap-3 flex justify-center"></div>
       </div>
     </section>
   );
