@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-function ElAMen() {
+function ElAmen() {
   return (
     <section className="grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-12 bg-gradient-to-br from-green-100 via-white to-green-50">
       {/* الفيديو */}
@@ -47,4 +47,4 @@ function ElAMen() {
   );
 }
 
-export default ElAMen;
+export default ElAmen;
