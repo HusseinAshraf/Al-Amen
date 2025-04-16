@@ -89,7 +89,7 @@ function Contact() {
               <div className="flex items-center justify-end">
                 <FaMapMarkerAlt className="text-green-700 text-lg" />
                 <span className="text-gray-700 font-medium mr-2">
-                  الجيزة- اكتوبر- الحي المتميز-عمارة 28 الدور التالت
+                  الجيزة- اكتوبر- الحي المتميز- سنتر الهدايا الدور الاول
                 </span>
               </div>
               <div className="flex items-center justify-end">
