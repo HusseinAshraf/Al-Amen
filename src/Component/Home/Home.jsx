@@ -11,7 +11,7 @@ import TestimonialsSection from "../TestimonialsSection/TestimonialsSection.jsx"
 import PartnersSection from "../PartnersSection/PartnersSection .jsx";
 import LoadingScreen from "../../UI/LoadingScreen/LoadingScreen";
 import ServicesSection from "../Services/ServicesSection.jsx";
-import ElAmen from "../ElAmen/ElAmen.jsx";
+
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -36,7 +36,7 @@ function Home() {
           <Features />
           <ServicesSection />
           <HeroSection />
-          <ElAmen />
+          {/* <ElAmen /> */}
           <TestimonialsSection />
           <Project limit={6} />
           <StatsSection />
