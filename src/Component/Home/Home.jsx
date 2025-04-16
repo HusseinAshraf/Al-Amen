@@ -36,7 +36,7 @@ function Home() {
           <Features />
           <ServicesSection />
           <HeroSection />
-          <ElAmen />
+          {/* <ElAmen /> */}
           <TestimonialsSection />
           <Project limit={6} />
           <StatsSection />
