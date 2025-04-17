@@ -10,7 +10,7 @@ function ElAmen() {
           <div className="overflow-hidden rounded-3xl shadow-lg hover:scale-[1.02] transition-transform duration-300">
             <iframe
               className="w-full h-64 md:h-96 rounded-xl"
-              src="https://www.youtube.com/embed/D2PZUB_lDCk?autoplay=1"
+              src="https://www.youtube.com/embed/n84AqxOodKg?autoplay=1&mute=1"
               title="YouTube video"
               allowFullScreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
