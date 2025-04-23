@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import logo from "../../assets/image/logo.png";
-import background from "../../assets/image/leaf-pattern.jpg";
+
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
@@ -22,7 +21,7 @@ export default function LoadingScreen() {
         className="flex flex-col items-center"
       >
         <img
-          src={logo}
+          src="https://ik.imagekit.io/hussein74/Al%20Amen/logo.png?updatedAt=1745446702466"
           alt="AL Amen Landscaping Logo"
           className="w-32 h-32 mb-4 animate-pulse"
         />
@@ -30,7 +29,7 @@ export default function LoadingScreen() {
       </motion.div>
       <div className="absolute inset-0 opacity-20">
         <img
-          src={background}
+          src="https://ik.imagekit.io/hussein74/Al%20Amen/leaf-pattern.jpg?updatedAt=1745446720640"
           alt="Background"
           className="w-full h-full object-cover"
         />

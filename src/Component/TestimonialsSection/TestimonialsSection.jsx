@@ -7,7 +7,6 @@ import "swiper/css/autoplay";
 import { Navigation, Autoplay, Pagination } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import backgroundImage from "../../assets/image/image1.jpg";
 
 const testimonials = [
   {
@@ -76,7 +75,7 @@ const TestimonialsSection = () => {
           <div
             className="absolute inset-0 w-full h-full bg-cover bg-center rounded-xl"
             style={{
-              backgroundImage: `url(${backgroundImage})`,
+              backgroundImage: `url(https://ik.imagekit.io/hussein74/Al%20Amen/image1.jpg?updatedAt=1745446687674)`,
             }}
           ></div>
 
@@ -97,37 +96,37 @@ const TestimonialsSection = () => {
               {testimonials.map((testimonial, index) => (
                 <SwiperSlide key={index}>
                   <div className="bg-white p-4 md:p-8 mt-6 rounded-xl shadow-xl border border-gray-300  max-w-md mx-auto">
-                    
-                      <p className="italic mb-4 text-sm md:text-lg leading-relaxed text-gray-700">
-                        {testimonial.review}
-                      </p>
-                      <div className="flex justify-center gap-1 text-yellow-500 mb-4">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <FaStar
-                            key={i}
-                            className={
-                              i < testimonial.rating
-                                ? "text-yellow-500"
-                                : "text-gray-300"
-                            }
-                          />
-                        ))}
-                      </div>
-                      <div className="flex flex-col items-center">
-                        <img
-                          src={testimonial.image}
-                          alt={testimonial.name}
-                          className="w-16 md:w-20 h-16 md:h-20 rounded-full border-4 border-green-500 mb-3 shadow-md"
+
+                    <p className="italic mb-4 text-sm md:text-lg leading-relaxed text-gray-700">
+                      {testimonial.review}
+                    </p>
+                    <div className="flex justify-center gap-1 text-yellow-500 mb-4">
+                      {Array.from({ length: 5 }).map((_, i) => (
+                        <FaStar
+                          key={i}
+                          className={
+                            i < testimonial.rating
+                              ? "text-yellow-500"
+                              : "text-gray-300"
+                          }
                         />
-                        <h4 className="text-lg md:text-xl font-semibold text-gray-900">
-                          {testimonial.name}
-                        </h4>
-                        <p className="text-xs md:text-sm text-gray-500">
-                          {testimonial.role}
-                        </p>
-                      </div>
+                      ))}
                     </div>
-                  
+                    <div className="flex flex-col items-center">
+                      <img
+                        src={testimonial.image}
+                        alt={testimonial.name}
+                        className="w-16 md:w-20 h-16 md:h-20 rounded-full border-4 border-green-500 mb-3 shadow-md"
+                      />
+                      <h4 className="text-lg md:text-xl font-semibold text-gray-900">
+                        {testimonial.name}
+                      </h4>
+                      <p className="text-xs md:text-sm text-gray-500">
+                        {testimonial.role}
+                      </p>
+                    </div>
+                  </div>
+
                 </SwiperSlide>
               ))}
             </Swiper>

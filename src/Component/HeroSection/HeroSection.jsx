@@ -1,14 +1,13 @@
 import React from "react";
 import { FaPhoneAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
-import background from "../../assets/image/background.jpg"; // استبدل بالصورة الخاصة بك
 
 function HeroSection() {
   return (
     <div
       className="relative h-[450px] flex items-center justify-start text-white"
       style={{
-        backgroundImage: `url(${background})`,
+        backgroundImage: `url(https://ik.imagekit.io/hussein74/Al%20Amen/background.jpg?updatedAt=1745448053754)`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}

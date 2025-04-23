@@ -1,46 +1,7 @@
 import React from "react";
-import {
-  Leaf,
-  Waves,
-  TentTree,
-  Trophy,
-  Sprout,
-  Flower2,
-  Boxes,
-} from "lucide-react";
 import { Link } from "react-router-dom";
-import BackGround from "../../UI/BackGround/BackGround";
 
-const services = [
-  {
-    icon: <Leaf className="w-6 h-6 text-green-600" />,
-    title: "تنسيق حدائق",
-  },
-  {
-    icon: <Waves className="w-6 h-6 text-green-600" />,
-    title: "شلالات صناعية",
-  },
-  {
-    icon: <TentTree className="w-6 h-6 text-green-600" />,
-    title: "برجولات ومظلات",
-  },
-  {
-    icon: <Sprout className="w-6 h-6 text-green-600" />,
-    title: "شبكات ري",
-  },
-  {
-    icon: <Trophy className="w-6 h-6 text-green-600" />,
-    title: "ملاعب رياضية",
-  },
-  {
-    icon: <Flower2 className="w-6 h-6 text-green-600" />,
-    title: "ديكورات زراعية",
-  },
-  {
-    icon: <Boxes className="w-6 h-6 text-green-600" />,
-    title: "توريد خامات",
-  },
-];
+
 
 const ServicesSection = () => {
   return (
@@ -86,18 +47,7 @@ const ServicesSection = () => {
               ></iframe>
             </div>
 
-            <div className="absolute text-black top-0 left-2/3 transform -translate-x-1/2 -translate-y-1/2 bg-white rounded-full shadow-md p-4">
-              {services[0].icon}
-              <p className="text-xs mt-1 ">{services[0].title}</p>
-            </div>
-            <div className="absolute bottom-0 text-black left-1/4 transform -translate-x-1/2 translate-y-1/2 bg-white rounded-full shadow-md p-4">
-              {services[1].icon}
-              <p className="text-xs mt-1">{services[1].title}</p>
-            </div>
-            <div className="absolute bottom-0 text-black right-1/4 transform translate-x-1/2 translate-y-1/2 bg-white rounded-full shadow-md p-4">
-              {services[2].icon}
-              <p className="text-xs mt-1">{services[2].title}</p>
-            </div>
+           
           </div>
         </div>
       </div>

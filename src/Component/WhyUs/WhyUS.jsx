@@ -1,6 +1,5 @@
 import React from "react";
 import { Leaf, Wrench, Target, Sprout } from "lucide-react";
-import Photo from "../../assets/image/whu.webp";
 
 function WhyUS() {
   const features = [
@@ -60,7 +59,7 @@ function WhyUS() {
         {/* Image Section */}
         <div>
           <img
-            src={Photo}
+            src="https://ik.imagekit.io/hussein74/Al%20Amen/whu.webp?updatedAt=1745446710919"
             alt="تصميم شجرة يعكس الجمال المستدام"
             className="w-full rounded-xl shadow-md transition-transform duration-300 hover:scale-105"
           />

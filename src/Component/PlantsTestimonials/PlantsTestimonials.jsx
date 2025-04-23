@@ -4,20 +4,13 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
-import صبار_اناناس from "../../assets/image/صبار اناناس.jpg";
-import فيكس_بنجامينا from "../../assets/image/فيكس بنجامينا.jpg";
-import dorantaLemony from "../../assets/image/دورنتا ليموني.jpg";
-import spiralCypressAndBall from "../../assets/image/سرو حلزوني و كور.jpg";
-import هيبسكس from "../../assets/image/هيبسكس.jpg";
-import جهنمية_شماسي from "../../assets/image/جهنمية شماسي.jpg";
-
 const plants = [
-  { id: 1, name: "صبار أناناس", image: صبار_اناناس },
-  { id: 2, name: "فيكس بنجامينا", image: فيكس_بنجامينا },
-  { id: 3, name: "دورنتا ليموني", image: dorantaLemony },
-  { id: 4, name: "سرو حلزوني مع كور", image: spiralCypressAndBall },
-  { id: 5, name: "هيبسكس", image: هيبسكس },
-  { id: 6, name: "جهنمية شماسي", image: جهنمية_شماسي },
+  { id: 1, name: "صبار أناناس", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B5%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3.jpg?updatedAt=1745446719675" },
+  { id: 2, name: "فيكس بنجامينا", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%81%D9%8A%D9%83%D8%B3%20%D8%A8%D9%86%D8%AC%D8%A7%D9%85%D9%8A%D9%86%D8%A7.jpg?updatedAt=1745446722376" },
+  { id: 3, name: "دورنتا ليموني", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AF%D9%88%D8%B1%D9%86%D8%AA%D8%A7%20%D9%84%D9%8A%D9%85%D9%88%D9%86%D9%8A.jpg?updatedAt=1745446719434" },
+  { id: 4, name: "سرو حلزوني مع كور", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B3%D8%B1%D9%88%20%D8%AD%D9%84%D8%B2%D9%88%D9%86%D9%8A%20%D9%88%20%D9%83%D9%88%D8%B1.jpg?updatedAt=1745446717816" },
+  { id: 5, name: "هيبسكس", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%87%D9%8A%D8%A8%D8%B3%D9%83%D8%B3.jpg?updatedAt=1745446723288" },
+  { id: 6, name: "جهنمية شماسي", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AC%D9%87%D9%86%D9%85%D9%8A%D8%A9%20%D8%B4%D9%85%D8%A7%D8%B3%D9%8A.jpg?updatedAt=1745446719565" },
 ];
 
 function PlantsTestimonials() {

@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Leaf, Paintbrush, Users } from "lucide-react";
-import aboutImage from "../../assets/image/about-1.webp";
+
 import { Link } from "react-router-dom";
 
 const AboutSection = () => {
@@ -39,7 +39,7 @@ const AboutSection = () => {
           {/* صورة دائرية */}
           <div className="w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-green-200 shadow-lg">
             <img
-              src={aboutImage}
+              src="https://ik.imagekit.io/hussein74/Al%20Amen/about-1.webp?updatedAt=1745447747249"
               alt="Plants"
               className="w-full h-full object-cover"
             />

@@ -1,18 +1,4 @@
 import React, { useState } from "react";
-import Tellal from "../../assets/image/telal.jpg";
-import mennaGarden from "../../assets/image/mennaGarden.jpg";
-import MenaRezdans from "../../assets/image/MenaRezdans.jpg";
-import OsamaBenZayed from "../../assets/image/OsamaBenZayed.jpg";
-import Berenses from "../../assets/image/Berenses.jpg";
-import grandcity from "../../assets/image/grandcity.jpg";
-import Mrmr from "../../assets/image/Mrmr.jpg";
-import SeseliaMatrouh from "../../assets/image/SeseliaMatrouh.jpg";
-import Zayed2000 from "../../assets/image/Zayed2000.jpg";
-import elmontag3 from "../../assets/image/المنتجع الطبي.jpg";
-import project3 from "../../assets/image/project 3.jpg";
-import project4 from "../../assets/image/project4.jpg";
-import project5 from "../../assets/image/project5.jpg";
-import project6 from "../../assets/image/project6.jpg";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import { Link } from "react-router-dom";
 
@@ -23,7 +9,7 @@ const projects = [
       "إنشاءات كمبوند تلال الفسطاط الجديدة بمساحة 100 ألف م² في الفسطاط الجديدة.",
     fullDescription:
       "انشاءات كمبوند تلال الفسطاط الجديدة بمساحة 100 ألف م² في الفسطاط الجديدة. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: Tellal,
+    image:"https://ik.imagekit.io/hussein74/Al%20Amen/telal.jpg?updatedAt=1745446710351",
     category: "إنشاءات",
   },
   {
@@ -31,7 +17,7 @@ const projects = [
     description: "إنشاءات كمبوند مينا جادرن سيتي في 6 أكتوبر.",
     fullDescription:
       "إنشاءات كمبوند مينا جادرن سيتي في 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: mennaGarden,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/mennaGarden.jpg?updatedAt=1745446690125",
     category: "إنشاءات",
   },
   {
@@ -39,7 +25,7 @@ const projects = [
     description: "إنشاءات نادي 6 أكتوبر.",
     fullDescription:
       "إنشاءات نادي 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: project4,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%86%D8%A7%D8%AF%D9%8A%206%20%D8%A7%D9%83%D8%AA%D9%88%D8%A8%D8%B1.jpeg?updatedAt=1745449239902",
     category: "إنشاءات",
   },
   {
@@ -47,7 +33,7 @@ const projects = [
     description: "المنتج الصحي للطب النفسي في التجمع الأول – القاهرة الجديدة.",
     fullDescription:
       "المنتج الصحي للطب النفسي في التجمع الأول – القاهرة الجديدة. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: elmontag3,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%B9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A.jpg?updatedAt=1745446713077",
     category: "إنشاءات",
   },
   {
@@ -56,7 +42,7 @@ const projects = [
       "إنشاءات كمبوند مينا ريزيدانس في التجمع الخامس – القاهرة الجديدة.",
     fullDescription:
       "إنشاءات كمبوند مينا ريزيدانس في التجمع الخامس – القاهرة الجديدة. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: MenaRezdans,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/MenaRezdans.jpg?updatedAt=1745446694930",
     category: "إنشاءات",
   },
   {
@@ -64,7 +50,7 @@ const projects = [
     description: "إنشاءات جراند سيتي على طريق الواحات – 6 أكتوبر.",
     fullDescription:
       "إنشاءات جراند سيتي على طريق الواحات – 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: grandcity,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/grandcity.jpg?updatedAt=1745446686024",
     category: "إنشاءات",
   },
   {
@@ -72,7 +58,7 @@ const projects = [
     description: "إنشاءات مدخل مدينة الشروق على طريق الإسماعيلية.",
     fullDescription:
       "إنشاءات مدخل مدينة الشروق على طريق الإسماعيلية. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: project4,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%AF%D8%AE%D9%84%20%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D9%82.jpg?updatedAt=1745449539025",
     category: "إنشاءات",
   },
   {
@@ -80,7 +66,7 @@ const projects = [
     description: "صيانة قرية مرمر بمساحة 135 ألف م² في الساحل الشمالي.",
     fullDescription:
       "صيانة قرية مرمر بمساحة 135 ألف م² في الساحل الشمالي. يشمل المشروع صيانة جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: Mrmr,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/Mrmr.jpg?updatedAt=1745446696101",
     category: "صيانة",
   },
   {
@@ -88,7 +74,7 @@ const projects = [
     description: "صيانة قرية برنسيس بمساحة 80 ألف م² في 6 أكتوبر - زايد.",
     fullDescription:
       "صيانة قرية برنسيس بمساحة 80 ألف م² في 6 أكتوبر - زايد. يشمل المشروع صيانة جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: Berenses,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/Berenses.jpg?updatedAt=1745446686033",
     category: "صيانة",
   },
   {
@@ -96,7 +82,7 @@ const projects = [
     description: "صيانة وإنشاءات قرية سيلسيا بمساحة 100 ألف م² في مرسى مطروح.",
     fullDescription:
       "صيانة وإنشاءات قرية سيلسيا بمساحة 100 ألف م² في مرسى مطروح. يشمل المشروع صيانة جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: SeseliaMatrouh,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/SeseliaMatrouh.jpg?updatedAt=1745446699371",
     category: "صيانة",
   },
   {
@@ -104,7 +90,7 @@ const projects = [
     description: "إنشاءات مدرسة الحي العاشر (أسامة بن زايد) في 6 أكتوبر.",
     fullDescription:
       "إنشاءات مدرسة الحي العاشر (أسامة بن زايد) في 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: OsamaBenZayed,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/OsamaBenZayed.jpg?updatedAt=1745446692188",
     category: "إنشاءات",
   },
   {
@@ -112,7 +98,7 @@ const projects = [
     description: "تطوير طريق شركة رايه القابضة في 6 أكتوبر.",
     fullDescription:
       "تطوير طريق شركة رايه القابضة في 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: project5,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/Raya6-optimized.webp",
     category: "تطوير",
   },
   {
@@ -120,7 +106,7 @@ const projects = [
     description: "إنشاءات مصنع لذة السادات في المنوفية.",
     fullDescription:
       "إنشاءات مصنع لذة السادات في المنوفية. يشمل المشذروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: project6,
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/project5.jpg?updatedAt=1745446697696",
     category: "إنشاءات",
   },
 ];

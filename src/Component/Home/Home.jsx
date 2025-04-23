@@ -37,7 +37,7 @@ function Home() {
           <WhyUS />
           <Features />
           <ServicesSection />
-          <HeroSection />
+          {/* <HeroSection /> */}
            <PlantsTestimonials/>
           <ElAmen/>
           <TestimonialsSection />
