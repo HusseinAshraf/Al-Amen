@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Hero from "../Hero/Hero";
 import Project from "../Project/Project";
-import HeroSection from "../HeroSection/HeroSection";
+// import HeroSection from "../HeroSection/HeroSection";
 import Features from "../Features/Features.jsx";
 import Contact from "../Contact/Contact";
 import AboutSection from "../About/AboutSection.jsx";

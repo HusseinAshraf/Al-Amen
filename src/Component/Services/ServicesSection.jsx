@@ -10,7 +10,7 @@ const ServicesSection = () => {
       dir="rtl"
     >
       <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
-        {/* النص */}
+        
         <div className="text-center md:text-right space-y-4">
           <h4 className="text-green-700 font-semibold text-base sm:text-lg">
             نبذة عن خدماتنا
@@ -33,7 +33,7 @@ const ServicesSection = () => {
           </Link>
         </div>
 
-        {/* عرض الفيديو */}
+        
         <div className="relative flex justify-center">
           <div className="w-full max-w-md">
             <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-green-200">

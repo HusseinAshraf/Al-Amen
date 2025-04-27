@@ -46,12 +46,12 @@ const About = () => {
           className="min-h-screen py-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center text-gray-900 w-full"
           dir="rtl"
         >
-          {/* عنوان رئيسي */}
+
           <div className="max-w-5xl mx-auto text-center pt-10 mb-10">
             <TitleWithLeaves title="من نحن" />
           </div>
 
-          {/* فقرة تعريف */}
+
           <div className="mb-12">
             <p className="text-lg pt-5 leading-relaxed mb-6">
               تعتبر شركة{" "}
@@ -101,18 +101,19 @@ const About = () => {
             ))}
           </div>
 
-          {/* خطوات العمل الجديدة */}
-          <div className="mt-32 w-full flex flex-col items-center">
-            <h2 className="text-3xl font-bold text-green-700 mb-16">
+
+          <div className="mt-32 w-full flex flex-col items-center px-4">
+            <h2 className="text-2xl md:text-3xl font-bold text-green-700 mb-12 md:mb-16 text-center">
               خطوات العمل في الامين لاند سكيب
             </h2>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 w-full max-w-7xl relative">
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8 md:gap-10 w-full max-w-7xl relative">
               {steps.map((step, index) => (
                 <div
                   key={index}
                   className={`relative text-center p-6 rounded-xl bg-white shadow-md transition-all duration-300 border-t-4 border-green-600
-                    ${index % 2 === 0 ? "translate-y-6" : "-translate-y-6"}
-                  `}
+          ${index % 2 === 0 ? "md:translate-y-6" : "md:-translate-y-6"}
+        `}
                 >
                   {/* رقم الخطوة */}
                   <div className="absolute -top-5 left-1/2 transform -translate-x-1/2">
@@ -121,15 +122,15 @@ const About = () => {
                     </div>
                   </div>
 
-                  {/* الأيقونة */}
-                  <step.icon className="text-green-600 text-3xl mb-4 mt-6" />
+                  {/* الايقونة */}
+                  <step.icon className="text-green-600 text-3xl mb-4 mt-8" />
 
                   {/* العنوان */}
                   <h3 className="text-green-800 font-bold text-lg mb-2">
                     {step.title}
                   </h3>
 
-                  {/* النص */}
+                  {/* الوصف */}
                   <p className="text-gray-700 text-sm leading-relaxed">
                     {step.description}
                   </p>
@@ -137,6 +138,7 @@ const About = () => {
               ))}
             </div>
           </div>
+
         </section>
       </BackGround>
     </>
