@@ -3,6 +3,9 @@ import { Leaf } from "lucide-react";
 
 export default function TitleWithLeaves({ title }) {
   return (
+   <>
+   
+
     <div className="relative flex flex-col items-center">
       <motion.h2
         className="text-4xl font-bold text-green-600 mb-6"
@@ -31,5 +34,6 @@ export default function TitleWithLeaves({ title }) {
         ))}
       </div>
     </div>
+   </>
   );
 }

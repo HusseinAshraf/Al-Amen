@@ -6,6 +6,7 @@ import {
 } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
+import { Helmet } from "react-helmet-async";
 
 const steps = [
   {
@@ -42,6 +43,23 @@ const About = () => {
   return (
     <>
       <BackGround>
+        <Helmet>
+          <title>من نحن - الأمين لاندسكيب</title>
+          <meta
+            name="description"
+            content="تعرف على شركة الأمين لاندسكيب، الشركة الرائدة في تصميم وتنفيذ مشاريع اللاندسكيب، الزراعة، الهارد سكيب، والصيانة المستدامة في مصر."
+          />
+          <meta
+            name="keywords"
+            content="الأمين لاندسكيب, لاندسكيب, تصميم حدائق, زراعة, تنسيق حدائق, هارد سكيب, خامات زراعية, شبكات ري, صيانة الحدائق, Landscape Egypt"
+          />
+          <meta name="author" content="الأمين لاندسكيب" />
+          <meta property="og:title" content="من نحن - الأمين لاندسكيب" />
+          <meta
+            property="og:description"
+            content="نحن شركة متخصصة في حلول اللاندسكيب المتكاملة من التصميم إلى التنفيذ والصيانة."
+          />
+        </Helmet>
         <section
           className="min-h-screen py-20 px-6 sm:px-8 lg:px-12 flex flex-col justify-center items-center text-gray-900 w-full"
           dir="rtl"

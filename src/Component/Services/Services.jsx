@@ -7,6 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
+import { Helmet } from "react-helmet-async";
 
 function Services() {
   const [selectedService, setSelectedService] = useState(null);
@@ -98,6 +99,22 @@ function Services() {
   return (
     <>
       <BackGround>
+        <Helmet>
+          {/* عنوان الصفحة */}
+          <title>خدماتنا - الأمين لاند سكيب</title>
+
+          {/* وصف الصفحة */}
+          <meta name="description" content="تعرف على خدماتنا المتنوعة في تنسيق الحدائق والشلالات الصناعية والري والملاعب. خدمات احترافية لضمان أفضل تجربة لعملائنا." />
+
+          {/* كلمات رئيسية */}
+          <meta name="keywords" content="تنسيق حدائق, شلالات صناعية, ري, ديكورات زراعية, ملاعب, لاند سكيب" />
+
+          {/* Open Graph metadata */}
+          <meta property="og:title" content="خدماتنا | شركتنا لتنسيق الحدائق" />
+          <meta property="og:description" content="نحن نقدم خدمات شاملة في مجال تنسيق الحدائق وتصميم الشلالات والري. اكتشف كل ما نقدمه لعملائنا." />
+          <meta property="og:image" content="رابط_الصورة_المعروضة_لخدماتنا" />
+          <meta property="og:url" content="رابط_موقعك_الالكتروني" />
+        </Helmet>
         <section id="services" className="py-20 px-4 sm:px-6 md:px-16" dir="rtl">
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-12 pt-7">

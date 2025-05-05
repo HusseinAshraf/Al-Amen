@@ -7,6 +7,7 @@ import "swiper/css/autoplay";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { Helmet } from "react-helmet-async";
 
 const testimonials = [
   {
@@ -46,6 +47,35 @@ const TestimonialsSection = () => {
 
   return (
     <>
+      <Helmet>
+        <title>آراء عملائنا - الأمين لاند سكيب</title>
+        <meta
+
+          name="description"
+
+          content="اكتشف آراء عملائنا حول خدماتنا في تنسيق الحدائق. نحن نعمل بجد لتقديم أفضل تجربة ممكنة."
+        />
+        <meta
+
+          name="keywords"
+
+          content="آراء عملائنا, تنسيق حدائق, تصميم حدائق, خدمات لاند سكيب, الأمين لاند سكيب"
+        />
+        <meta name="author" content="الأمين لاند سكيب" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          property="og:title"
+
+
+          content="آراء عملائنا - الأمين لاند سكيب"
+        />
+        <meta
+          property="og:description"
+          content="اكتشف آراء عملائنا حول خدماتنا في تنسيق الحدائق."
+        />
+        <meta property="og:image" content="رابط_الصورة_المعروضة_لآراء_عملائنا" />
+        <meta property="og:url" content="رابط_موقعك_الالكتروني" />
+      </Helmet>
       <section className="py-16 bg-cover bg-center" dir="rtl">
         <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between gap-10 px-4 md:px-6">
           <div className="w-full md:w-1/2 text-right pt-10">

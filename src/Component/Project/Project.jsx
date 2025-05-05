@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const projects = [
   {
@@ -9,7 +10,7 @@ const projects = [
       "إنشاءات كمبوند تلال الفسطاط الجديدة بمساحة 100 ألف م² في الفسطاط الجديدة.",
     fullDescription:
       "انشاءات كمبوند تلال الفسطاط الجديدة بمساحة 100 ألف م² في الفسطاط الجديدة. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image:"https://ik.imagekit.io/hussein74/Al%20Amen/telal.jpg?updatedAt=1745446710351",
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/telal.jpg?updatedAt=1745446710351",
     category: "إنشاءات",
   },
   {
@@ -130,7 +131,24 @@ const Project = ({ limit }) => {
     : filteredProjects;
 
   return (
-    <section id="projects" className="py-16 text-center bg-gradient-to-b from-green-50 to-white" dir="rtl">
+    <section
+      id="projects"
+      className="py-16 text-center bg-gradient-to-b from-green-50 to-white"
+      dir="rtl"
+    >
+      <Helmet>
+        <title>أعمالنا - الأمين لاند سكيب</title>
+        <meta
+          name="description"
+          content="اكتشف أعمالنا في مشاريع الإنشاءات والصيانة. تصفح أحدث مشاريعنا واكتشف تفاصيلها."
+        />
+        <meta
+          name="keywords"
+          content="مشاريع, إنشاءات, صيانة, أعمالنا, مشاريع بناء"
+        />
+        <link rel="canonical" href="https://www.yoursite.com/projects" />
+      </Helmet>
+
       <div className="max-w-5xl mx-auto text-center pt-10">
         <TitleWithLeaves title="أعمالنا" />
       </div>
@@ -140,11 +158,10 @@ const Project = ({ limit }) => {
           <button
             key={category}
             onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full text-sm transition ${
-              selectedCategory === category
+            className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
                 ? "bg-green-600 text-white shadow-md"
                 : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
-            }`}
+              }`}
           >
             {category}
           </button>
@@ -161,6 +178,7 @@ const Project = ({ limit }) => {
             <img
               src={project.image}
               alt={project.title}
+              title={project.title}
               className="w-full h-40 object-cover rounded-xl"
             />
             <h3 className="text-xl font-semibold text-green-800 mt-4">
