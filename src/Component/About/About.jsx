@@ -122,15 +122,15 @@ const About = () => {
                     </div>
                   </div>
 
-                  {/* الايقونة */}
+
                   <step.icon className="text-green-600 text-3xl mb-4 mt-8" />
 
-                  {/* العنوان */}
+
                   <h3 className="text-green-800 font-bold text-lg mb-2">
                     {step.title}
                   </h3>
 
-                  {/* الوصف */}
+
                   <p className="text-gray-700 text-sm leading-relaxed">
                     {step.description}
                   </p>
