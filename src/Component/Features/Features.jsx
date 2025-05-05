@@ -4,6 +4,7 @@ import { FaDollarSign, FaUsers, FaCog, FaClipboardCheck } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
 import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+import { useLocation } from "react-router-dom";
 
 function Features() {
   const featuresData = [
@@ -33,32 +34,37 @@ function Features() {
     },
   ];
 
+  const location = useLocation();
+  const isFeaturesPage = location.pathname === "/features";
+
   return (
     <>
-      <Helmet>
-        <title>مميزاتنا -  الأمين لاند سكيب</title>
-        <meta
-          name="description"
-          content="اكتشف مميزات شركة الأمين لاند سكيب في تصميم وتنفيذ وصيانة الحدائق. نقدم أفضل الأسعار، فريق متخصص، تصميمات مرئية، وأكثر من 1000 مشروع ناجح."
-        />
-        <meta
-          name="keywords"
-          content="مميزاتنا, تنسيق حدائق, تصميم حدائق, صيانة حدائق, أسعار تنسيق حدائق, مشروع ناجح, محاكاة تصميم, فريق محترف"
-        />
-        <meta name="author" content="الأمين لاند سكيب" />
-        <meta
-          property="og:title"
-          content="مميزاتنا - شركة الأمين لاند سكيب"
-        />
-        <meta
-          property="og:description"
-          content="تعرف على مميزاتنا في تقديم خدمات تصميم وصيانة الحدائق والمشاريع الناجحة لدينا."
-        />
-        <meta
-          property="og:image"
-          content="https://ik.imagekit.io/hussein74/Al%20Amen/features-image.jpg?updatedAt=1745447747249"
-        />
-      </Helmet>
+      {isFeaturesPage && (
+        <Helmet>
+          <title>مميزاتنا -  الأمين لاند سكيب</title>
+          <meta
+            name="description"
+            content="اكتشف مميزات شركة الأمين لاند سكيب في تصميم وتنفيذ وصيانة الحدائق. نقدم أفضل الأسعار، فريق متخصص، تصميمات مرئية، وأكثر من 1000 مشروع ناجح."
+          />
+          <meta
+            name="keywords"
+            content="مميزاتنا, تنسيق حدائق, تصميم حدائق, صيانة حدائق, أسعار تنسيق حدائق, مشروع ناجح, محاكاة تصميم, فريق محترف"
+          />
+          <meta name="author" content="الأمين لاند سكيب" />
+          <meta
+            property="og:title"
+            content="مميزاتنا - شركة الأمين لاند سكيب"
+          />
+          <meta
+            property="og:description"
+            content="تعرف على مميزاتنا في تقديم خدمات تصميم وصيانة الحدائق والمشاريع الناجحة لدينا."
+          />
+          <meta
+            property="og:image"
+            content="https://ik.imagekit.io/hussein74/Al%20Amen/features-image.jpg?updatedAt=1745447747249"
+          />
+        </Helmet>)
+      }
 
       <BackGround>
         <section

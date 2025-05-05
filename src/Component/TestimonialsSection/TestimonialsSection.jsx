@@ -7,7 +7,7 @@ import "swiper/css/autoplay";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Helmet } from "react-helmet";
+// import { Helmet } from "react-helmet";
 
 const testimonials = [
   {
@@ -47,7 +47,7 @@ const TestimonialsSection = () => {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>آراء عملائنا - الأمين لاند سكيب</title>
         <meta
 
@@ -75,7 +75,7 @@ const TestimonialsSection = () => {
         />
         <meta property="og:image" content="رابط_الصورة_المعروضة_لآراء_عملائنا" />
         <meta property="og:url" content="رابط_موقعك_الالكتروني" />
-      </Helmet>
+      </Helmet> */}
       <section className="py-16 bg-cover bg-center" dir="rtl">
         <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between gap-10 px-4 md:px-6">
           <div className="w-full md:w-1/2 text-right pt-10">

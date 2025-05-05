@@ -2,12 +2,12 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Leaf, Paintbrush, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+// import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 const AboutSection = () => {
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>الأمين لاند سكيب</title>
         <meta
           name="description"
@@ -23,7 +23,7 @@ const AboutSection = () => {
           property="og:description"
           content="اكتشف خدمات شركة الأمين لاند سكيب في تقديم حلول لاندسكيب متكاملة وتحويل المساحات إلى بيئة خضراء رائعة."
         />
-      </Helmet>
+      </Helmet> */}
 
       <section className="bg-white py-16 px-4 sm:px-6 md:px-16" dir="rtl">
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">

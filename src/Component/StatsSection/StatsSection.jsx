@@ -3,8 +3,8 @@ import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { FaAward, FaUsers, FaLeaf, FaUserTie } from "react-icons/fa";
 
-import BackGround from "../../UI/BackGround/BackGround";
-import { Helmet } from "react-helmet";
+// import BackGround from "../../UI/BackGround/BackGround";
+// import { Helmet } from "react-helmet";
 
 const StatsSection = () => {
   const stats = [
@@ -34,7 +34,7 @@ const StatsSection = () => {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>أرقامنا وإنجازاتنا - الأمين لاند سكيب</title>
         <meta
           name="description"
@@ -51,7 +51,7 @@ const StatsSection = () => {
         />
         <meta property="og:image" content="رابط_الصورة_المعروضة_لأرقامنا_وإنجازاتنا" />
         <meta property="og:url" content="رابط_موقعك_الالكتروني" />
-      </Helmet>
+      </Helmet> */}
 
       <section
         ref={ref}

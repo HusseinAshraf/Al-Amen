@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+// import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -24,7 +24,7 @@ function PlantsTestimonials() {
 
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>تنسيق النباتات - الأمين لاند سكيب</title>
         <meta
           name="description"
@@ -46,7 +46,7 @@ function PlantsTestimonials() {
           property="og:image"
           content="https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B5%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3.jpg?updatedAt=1745446719675"
         />
-      </Helmet>
+      </Helmet> */}
 
       <section className="py-20 bg-gradient-to-b from-green-50 to-white text-center relative">
         <h3 className="text-green-700 text-xl font-semibold mb-2">
