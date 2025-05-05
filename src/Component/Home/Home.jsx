@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from "react";
-import { Helmet } from "react-helmet-async";
 import { useInView } from 'react-intersection-observer';
 import Hero from "../Hero/Hero";
 import Project from "../Project/Project";
@@ -14,6 +13,7 @@ import LoadingScreen from "../../UI/LoadingScreen/LoadingScreen";
 import ServicesSection from "../Services/ServicesSection.jsx";
 import ElAmen from "../ElAmen/ElAmen.jsx";
 import PlantsTestimonials from "../PlantsTestimonials/PlantsTestimonials.jsx";
+import { Helmet } from "react-helmet";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);

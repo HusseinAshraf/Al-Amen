@@ -2,7 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Leaf, Paintbrush, Users } from "lucide-react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 const AboutSection = () => {
   return (

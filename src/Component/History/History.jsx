@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet-async"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 const timeline = [
   {

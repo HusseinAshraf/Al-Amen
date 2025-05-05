@@ -7,7 +7,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 function Services() {
   const [selectedService, setSelectedService] = useState(null);

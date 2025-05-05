@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const projects = [
   {

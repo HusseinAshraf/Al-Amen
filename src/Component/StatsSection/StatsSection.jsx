@@ -4,7 +4,7 @@ import { useInView } from "react-intersection-observer";
 import { FaAward, FaUsers, FaLeaf, FaUserTie } from "react-icons/fa";
 
 import BackGround from "../../UI/BackGround/BackGround";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const StatsSection = () => {
   const stats = [

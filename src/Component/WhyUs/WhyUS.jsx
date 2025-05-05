@@ -1,6 +1,6 @@
 import React from "react";
 import { Leaf, Wrench, Target, Sprout } from "lucide-react";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 
 function WhyUS() {

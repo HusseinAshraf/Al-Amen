@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet-async"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 function ElAmen() {
   return (

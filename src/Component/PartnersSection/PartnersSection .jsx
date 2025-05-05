@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet-async"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";

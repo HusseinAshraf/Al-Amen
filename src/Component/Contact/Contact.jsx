@@ -1,7 +1,7 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
-import { Helmet } from "react-helmet-async"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 function Contact() {
   return (

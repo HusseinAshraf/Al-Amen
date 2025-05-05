@@ -6,7 +6,7 @@ import {
 } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const steps = [
   {

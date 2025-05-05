@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaDollarSign, FaUsers, FaCog, FaClipboardCheck } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
-import { Helmet } from "react-helmet-async"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 function Features() {
   const featuresData = [

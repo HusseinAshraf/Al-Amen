@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { FaChevronDown } from "react-icons/fa";
 import plantImage from "../../assets/image/برجولات.jpg";
 import girlImage from "../../assets/image/ديكورات-زراعية.jpg";
-import { Helmet } from "react-helmet-async"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 const faqs = [
   {

@@ -7,7 +7,7 @@ import "swiper/css/autoplay";
 import { Autoplay, Pagination } from "swiper/modules";
 import { FaStar } from "react-icons/fa";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import { Helmet } from "react-helmet-async";
+import { Helmet } from "react-helmet";
 
 const testimonials = [
   {

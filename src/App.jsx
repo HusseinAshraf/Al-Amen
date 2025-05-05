@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { Suspense, lazy } from "react";
+import {  lazy } from "react";
 import Layout from "./Layout/Layout";
 import ScrollToTopButton from "./UI/ScrollToTopButton/ScrollToTopButton";
 import ScrollToTop from "./UI/ScrollToTop/ScrollToTop";
