@@ -1,7 +1,21 @@
 {
   "homepage": "https://HusseinAshraf.github.io/Al-Amen",
   "name": "al-amen",
-  "description": "Al-Amin Company for Agriculture, Trade, Export and Import",
+  "description": "Al-Amen is a website that provides information about the Al-Amen company, its services, and its contact details. It is designed to be user-friendly and informative, with a focus on showcasing the company's offerings.",
+  "author": "Hussein Ashraf",
+  "license": "MIT",
+  "keywords": [
+    "Al-Amen",
+    "company",
+    "services",
+    "contact",
+    "information",
+    "website"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HusseinAshraf/al-amen.git"
+  },
   "private": true,
   "version": "0.0.0",
   "type": "module",
