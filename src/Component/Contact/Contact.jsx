@@ -1,32 +1,38 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
-import { Helmet } from "react-helmet"; 
+import { Helmet } from "react-helmet";
+import { useLocation } from "react-router-dom"; // ✅
 
 function Contact() {
+  const location = useLocation();
+  const isContactPage = location.pathname === "/contact";
   return (
     <>
-      <Helmet>
-        <title>اتصل بنا - الأمين لاند سكيب</title>
-        <meta
-          name="description"
-          content="تواصل مع شركة الأمين لاند سكيب للحصول على استشارات مجانية في مجال اللاندسكيب والزراعة. نحن هنا لخدمتك وتقديم أفضل الحلول لتجميل مساحاتك."
-        />
-        <meta
-          name="keywords"
-          content="اتصل بنا, شركة الأمين لاند سكيب, خدمات لاندسكيب, استشارات لاندسكيب, تنسيق حدائق, زراعة, صيانة حدائق"
-        />
-        <meta name="author" content="الأمين لاند سكيب" />
-        <meta property="og:title" content="اتصل بنا - الأمين لاند سكيب" />
-        <meta
-          property="og:description"
-          content="تواصل مع فريقنا للحصول على استشارات مخصصة في مجال اللاندسكيب وتصميم الحدائق."
-        />
-        <meta
-          property="og:image"
-          content="https://ik.imagekit.io/hussein74/Al%20Amen/contact-us.jpg?updatedAt=1745447747249"
-        />
-      </Helmet>
+      {isContactPage && (
+        <Helmet>
+          <title>اتصل بنا - الأمين لاند سكيب</title>
+          <meta
+            name="description"
+            content="تواصل مع شركة الأمين لاند سكيب للحصول على استشارات مجانية في مجال اللاندسكيب والزراعة. نحن هنا لخدمتك وتقديم أفضل الحلول لتجميل مساحاتك."
+          />
+          <meta
+            name="keywords"
+            content="اتصل بنا, شركة الأمين لاند سكيب, خدمات لاندسكيب, استشارات لاندسكيب, تنسيق حدائق, زراعة, صيانة حدائق"
+          />
+          <meta name="author" content="الأمين لاند سكيب" />
+          <meta property="og:title" content="اتصل بنا - الأمين لاند سكيب" />
+          <meta
+            property="og:description"
+            content="تواصل مع فريقنا للحصول على استشارات مخصصة في مجال اللاندسكيب وتصميم الحدائق."
+          />
+          <meta
+            property="og:image"
+            content="https://ik.imagekit.io/hussein74/Al%20Amen/contact-us.jpg?updatedAt=1745447747249"
+          />
+        </Helmet>
+      )}
+
 
       <section className="bg-gray-100 py-10" dir="rtl">
         <div className="container mx-auto p-6">

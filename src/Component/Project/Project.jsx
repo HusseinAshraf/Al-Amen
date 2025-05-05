@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 const projects = [
@@ -130,106 +130,114 @@ const Project = ({ limit }) => {
     ? filteredProjects.slice(0, limit)
     : filteredProjects;
 
+  const location = useLocation();
+  const isProjectPage = location.pathname === "/project";
   return (
-    <section
-      id="projects"
-      className="py-16 text-center bg-gradient-to-b from-green-50 to-white"
-      dir="rtl"
-    >
-      <Helmet>
-        <title>أعمالنا - الأمين لاند سكيب</title>
-        <meta
-          name="description"
-          content="اكتشف أعمالنا في مشاريع الإنشاءات والصيانة. تصفح أحدث مشاريعنا واكتشف تفاصيلها."
-        />
-        <meta
-          name="keywords"
-          content="مشاريع, إنشاءات, صيانة, أعمالنا, مشاريع بناء"
-        />
-        <link rel="canonical" href="https://www.yoursite.com/projects" />
-      </Helmet>
+    <>
+      {isProjectPage && (
+        <Helmet>
+          <title>أعمالنا - الأمين لاند سكيب</title>
+          <meta
+            name="description"
+            content="اكتشف أعمالنا في مشاريع الإنشاءات والصيانة. تصفح أحدث مشاريعنا واكتشف تفاصيلها."
+          />
+          <meta
+            name="keywords"
+            content="مشاريع, إنشاءات, صيانة, أعمالنا, مشاريع بناء"
+          />
+          <link rel="canonical" href="https://www.yoursite.com/projects" />
+        </Helmet>)}
 
-      <div className="max-w-5xl mx-auto text-center pt-10">
-        <TitleWithLeaves title="أعمالنا" />
-      </div>
+      <section
+        id="projects"
+        className="py-16 text-center bg-gradient-to-b from-green-50 to-white"
+        dir="rtl"
+      >
 
-      <div className="flex flex-wrap gap-3 justify-center mb-10 pt-5">
-        {categories.map((category) => (
-          <button
-            key={category}
-            onClick={() => setSelectedCategory(category)}
-            className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
+
+        <div className="max-w-5xl mx-auto text-center pt-10">
+          <TitleWithLeaves title="أعمالنا" />
+        </div>
+
+        <div className="flex flex-wrap gap-3 justify-center mb-10 pt-5">
+          {categories.map((category) => (
+            <button
+              key={category}
+              onClick={() => setSelectedCategory(category)}
+              className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
                 ? "bg-green-600 text-white shadow-md"
                 : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
-              }`}
-          >
-            {category}
-          </button>
-        ))}
-      </div>
-
-      <div className="container mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-5">
-        {projectsToShow.map((project, index) => (
-          <div
-            key={index}
-            className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-300 border-t-4 border-green-600"
-            onClick={() => setSelectedProject(project)}
-          >
-            <img
-              src={project.image}
-              alt={project.title}
-              title={project.title}
-              className="w-full h-40 object-cover rounded-xl"
-            />
-            <h3 className="text-xl font-semibold text-green-800 mt-4">
-              {project.title}
-            </h3>
-            <p className="text-gray-600 mt-2">{project.description}</p>
-          </div>
-        ))}
-
-        {selectedProject && (
-          <div
-            className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 pt-20"
-            onClick={() => setSelectedProject(null)}
-          >
-            <div
-              className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-2xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[90vh]"
-              onClick={(e) => e.stopPropagation()}
+                }`}
             >
-              <button
-                className="absolute top-3 left-3 text-gray-500 hover:text-red-600 text-xl"
-                onClick={() => setSelectedProject(null)}
-              >
-                ✕
-              </button>
+              {category}
+            </button>
+          ))}
+        </div>
+
+        <div className="container mx-auto px-4 grid md:grid-cols-2 lg:grid-cols-3 gap-8 pt-5">
+          {projectsToShow.map((project, index) => (
+            <div
+              key={index}
+              className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-300 border-t-4 border-green-600"
+              onClick={() => setSelectedProject(project)}
+            >
               <img
-                src={selectedProject.image}
-                alt={selectedProject.title}
-                className="w-full h-52 sm:h-60 md:h-72 object-cover rounded-xl mb-4"
+                src={project.image}
+                alt={project.title}
+                title={project.title}
+                className="w-full h-40 object-cover rounded-xl"
               />
-              <h2 className="text-xl sm:text-2xl font-bold text-green-800 mb-2">
-                {selectedProject.title}
-              </h2>
-              <p className="text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base">
-                {selectedProject.fullDescription || selectedProject.description}
-              </p>
+              <h3 className="text-xl font-semibold text-green-800 mt-4">
+                {project.title}
+              </h3>
+              <p className="text-gray-600 mt-2">{project.description}</p>
             </div>
+          ))}
+
+          {selectedProject && (
+            <div
+              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 pt-20"
+              onClick={() => setSelectedProject(null)}
+            >
+              <div
+                className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-2xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[90vh]"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <button
+                  className="absolute top-3 left-3 text-gray-500 hover:text-red-600 text-xl"
+                  onClick={() => setSelectedProject(null)}
+                >
+                  ✕
+                </button>
+                <img
+                  src={selectedProject.image}
+                  alt={selectedProject.title}
+                  className="w-full h-52 sm:h-60 md:h-72 object-cover rounded-xl mb-4"
+                />
+                <h2 className="text-xl sm:text-2xl font-bold text-green-800 mb-2">
+                  {selectedProject.title}
+                </h2>
+                <p className="text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base">
+                  {selectedProject.fullDescription || selectedProject.description}
+                </p>
+              </div>
+            </div>
+          )}
+        </div>
+
+        {limit && projects.length > limit && (
+          <div className="mt-10">
+            <Link
+              to="/project"
+              className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-colors duration-300"
+            >
+              عرض المزيد
+            </Link>
           </div>
         )}
-      </div>
+      </section>
+    </>
 
-      {limit && projects.length > limit && (
-        <div className="mt-10">
-          <Link
-            to="/project"
-            className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-colors duration-300"
-          >
-            عرض المزيد
-          </Link>
-        </div>
-      )}
-    </section>
   );
 };
 
