@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-// import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 function ElAmen() {
   return (
     <>
-      {/* <Helmet>
-        <title>شركة الأمين لاند سكيب - خبراء الهاردسكيب والسوفت سكيب</title>
+      <Helmet>
+
         <meta
           name="description"
           content="شركة الأمين لاند سكيب تقدم خدمات تصميم وتنفيذ الحدائق والمساحات الخضراء، بما في ذلك الري، الحوائط الزراعية، والصيانة الدورية. تواصل معنا لتحويل مساحاتك."
@@ -25,7 +25,7 @@ function ElAmen() {
           property="og:image"
           content="https://ik.imagekit.io/hussein74/Al%20Amen/amen-landscape.jpg?updatedAt=1745447747249"
         />
-      </Helmet> */}
+      </Helmet>
 
       <section className="grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-12 bg-gradient-to-br from-green-100 via-white to-green-50">
 

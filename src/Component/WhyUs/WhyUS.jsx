@@ -1,6 +1,6 @@
 import React from "react";
 import { Leaf, Wrench, Target, Sprout } from "lucide-react";
-// import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet";
 
 
 function WhyUS() {
@@ -29,8 +29,8 @@ function WhyUS() {
 
   return (
     <>
-      {/* <Helmet>
-        <title>لماذا نحن؟ - الأمين لاند سكيب</title>
+      <Helmet>
+        
         <meta
           name="description"
           content="اكتشف لماذا نحن الخيار الأمثل في تصميم وتنفيذ الحدائق. ابتكار مستمر، خدمات متكاملة، التزام واحترافية، ورؤية مستقبلية في مجال اللاندسكيب."
@@ -49,7 +49,7 @@ function WhyUS() {
           content="https://ik.imagekit.io/hussein74/Al%20Amen/whu.webp?updatedAt=1745446710919"
         />
         <meta property="og:url" content="رابط_موقعك_الالكتروني" />
-      </Helmet> */}
+      </Helmet>
 
       <section className="bg-gray-100 py-12 px-4 md:px-8" dir="rtl">
         <div className="max-w-5xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

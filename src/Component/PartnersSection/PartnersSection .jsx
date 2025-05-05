@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-// import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
@@ -30,8 +30,8 @@ const PartnersSection = () => {
 
   return (
     <>
-      {/* <Helmet>
-        <title>شركاء النجاح - الأمين لاند سكيب</title>
+      <Helmet>
+        
         <meta
           name="description"
           content="تعرف على شركاء النجاح الذين ساهموا في مشاريعنا الناجحة في مجال تنسيق وتصميم الحدائق والمسطحات الخضراء."
@@ -52,7 +52,7 @@ const PartnersSection = () => {
           property="og:image"
           content="https://ik.imagekit.io/hussein74/Al%20Amen/background.jpg"
         />
-      </Helmet> */}
+      </Helmet>
 
       <section className="py-16 text-center">
         <h3 className="text-green-600 text-lg font-semibold mb-2">

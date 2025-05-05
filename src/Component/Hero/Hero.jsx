@@ -1,11 +1,11 @@
 import React from "react";
-// import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet"; // استيراد react-helmet-async
 
 function Hero() {
   return (
     <>
-      {/* <Helmet>
-        <title>مؤسس شركة الأمين لاند سكيب - م. أمين حسين</title>
+      <Helmet>
+        
         <meta
           name="description"
           content="تعرف على م. أمين حسين، مؤسس شركة الأمين لاند سكيب. نحن نقدم خدمات اللاند سكيب والهارد سكيب والسوفت سكيب بفرق محترفة."
@@ -27,7 +27,7 @@ function Hero() {
           property="og:image"
           content="https://ik.imagekit.io/hussein74/Al%20Amen/owner.jpg?updatedAt=1745446694807"
         />
-      </Helmet> */}
+      </Helmet>
 
       <section id="home">
         <div className="relative min-h-screen flex items-center justify-center px-4 sm:px-8">
