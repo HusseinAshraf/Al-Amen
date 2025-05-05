@@ -1,7 +1,14 @@
 {
   "homepage": "https://HusseinAshraf.github.io/Al-Amen",
   "name": "al-amen",
-  "description": "Al-Amen is a website that provides information about the Al-Amen company, its services, and its contact details. It is designed to be user-friendly and informative, with a focus on showcasing the company's offerings.",
+  "description": "موقع شركة الأمين للزراعة واللاند سكيب هو موقع يهدف إلى تقديم خدمات الزراعة والتنسيق الحدائقي بشكل احترافي. نحن نقدم مجموعة متنوعة من الخدمات التي تشمل تصميم الحدائق، تركيب أنظمة الري، وتنسيق المساحات الخضراء. نسعى لتقديم أفضل الحلول الزراعية لعملائنا من خلال استخدام أحدث التقنيات والمواد عالية الجودة.",
+  "keywords": [
+    "الزراعة",
+    "التنسيق الحدائقي",
+    "تصميم الحدائق",
+    "أنظمة الري",
+    "المساحات الخضراء"
+  ],
   "author": "Hussein Ashraf",
   "license": "MIT",
   "private": true,
