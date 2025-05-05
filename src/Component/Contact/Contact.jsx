@@ -1,12 +1,12 @@
 import React from "react";
 import { FaMapMarkerAlt, FaEnvelope, FaPhone } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
-import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+// import { Helmet } from "react-helmet"; 
 
 function Contact() {
   return (
     <>
-      <Helmet>
+      {/* <Helmet>
         <title>اتصل بنا - الأمين لاند سكيب</title>
         <meta
           name="description"
@@ -26,7 +26,7 @@ function Contact() {
           property="og:image"
           content="https://ik.imagekit.io/hussein74/Al%20Amen/contact-us.jpg?updatedAt=1745447747249"
         />
-      </Helmet>
+      </Helmet> */}
 
       <section className="bg-gray-100 py-10" dir="rtl">
         <div className="container mx-auto p-6">
