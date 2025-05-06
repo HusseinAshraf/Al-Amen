@@ -20,7 +20,12 @@ function Services() {
       description: "تنسيق حدائق المنازل باستخدام أفضل المواد والتصاميم.",
       fullDescription:
         "نقدم خدمة تركيب العشب الصناعي طبيعي على أعلى مستوى لجميع عملائنا؛ حيث نوفر مختلف أنواعه سواء كان عشب  أرضي أو عشب جداري، بجميع ألوانه وكثافاته المتنوعة، والذي يتم الاختيار من بينها وفقًا لرأي العميل مع تعليمات المُهندس المختص بتعيين المكان المُراد تركيب النجيل فيختلف تركيب العشب الصناعي داخل المنازل عن حدائق المنازل والقصور والفلل، عن الحدائق العامة، عن النوادي، حيث يفضل تركيب العشب الجداري والعشب قليل الكثافة داخل المنازل، بينما يتم تركيب العشب  متوسط الكثافة في حدائق المنازل والقصور والفلل، ويستخدم العشب ذات الكثافة الأكبر في النوادي والحدائق العامة حتى يتحمل الضغط عليه، ولا تعتمد الشركة على اسلوب واحد ثابت في تركيبه، وإنما تبتكر كل ما هو جديد وحديث حتى يظهر بشكل لائق وجذاب خاطف للعيون وساحر للقلوب، حيث تقوم بقصه على هيئة أشكال جميلة تتناسب مع ذوق العميل مثل الأشكال المربعة، والدائرية، يجعل من الحديقة لوحة فنية غاية في الجمال، وتعتمد شركة الأمين لاند سكيب في عملها على أفضل الأدوات والأجهزة التكنولوجية الرائعة لقياس المساحات، ودك الأرض وتركيب النجيل بدقة وسرعة فائقة.",
-      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B9%D8%B4%D8%A8-%D8%B5%D9%86%D8%A7%D8%B9%D9%8A.jpg?updatedAt=1745446721590",],
+      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B9%D8%B4%D8%A8-%D8%B5%D9%86%D8%A7%D8%B9%D9%8A.jpg?updatedAt=1745446721590",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%86%D8%AC%D9%8A%D9%84%D8%A9%20%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A.jpg?updatedAt=1745446722979",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/project4.jpg?updatedAt=1745446697841",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/OsamaBenZayed.jpg?updatedAt=1745446692188"
+
+      ],
       category: "تنسيق الحدائق",
     },
     {
@@ -29,7 +34,13 @@ function Services() {
       description: "تصميم وتركيب الشلالات بكل أنواعها.",
       fullDescription:
         "نقدم خدمة تركيب شلالات صناعية في حدائق القصور والفلل، والحدائق العامة، وداخل المنازل وخارجها لتزيينها وزيادة قيمتها وإضافة لمسة جمالية عليها. ونوفر باقة متنوعة من أنواعها ومن أهمها ( الشلالات الكلاسيكية، والشلالات الجدارية، والشلالات الموسيقية، والشلالات الزخرفية، وغيرها) ونستخدم العديد من الخامات المختلفة في صناعة الشلال مثل ( الأحجار، والبورسلين، والسيراميك، والرخام وغيرها)، ويتم اختيار نوع الشلال وشكله والمادة المُستخدمة في صنعه بناءً على رغبة واختيار العميل. وتقدم شركة الامين لاند سكيب لتنسيق الحدائق أقوى عروضها وأفضل أسعار الشلالات، فقد يظن البعض أن تصميم وتركيب الشلالات الصناعية يحتاج إلى مساحات كبيرة وأموال كثيرة، ولكن هذا الاعتقاد خاطئ؛ حيث يمكن تركيب الشلالات في أي مكان داخل المنازل وخارجها، وفي أي مساحة متوفرة، فتقدم الشركة عدة أحجام مختلفة منه ( صغير – متوسط – كبير) حتى يتناسب مع مختلف المساحات، وفي حالة عدم ملاءمة لمساحة لتركيب الشلال يتم تصميم الشلال المعلّق أو الجداري، وهو الذي يُركب على الجدران ولا يحتاج سوى حوض صغير يصٌّب به مياهه.",
-      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D9%84%D8%A7%D9%84%D8%A7%D8%AA.jpg?updatedAt=1745446716766",],
+      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D9%84%D8%A7%D9%84%D8%A7%D8%AA.jpg?updatedAt=1745446716766",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A7%D9%84%D8%A743.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A7%D9%84%D8%A7%D8%AA5.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A7%D9%84%D8%A7%D8%AA1.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A7%D9%84%D8%A7%D8%AA2.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A7%D9%84%D8%A7%D8%AA3.jpg"
+      ],
       category: "شلالات",
     },
     {
@@ -38,7 +49,13 @@ function Services() {
       description: "تركيب برجولات وسواتر عالية الجودة.",
       fullDescription:
         "تعد خدمة تركيب المظلات والسواتر والبرجولات من أهم أعمال شركتنا الأساسية، ونُقدمها بأشكال وبأحجام مختلفة وتتناسب للعديد من الأغراض؛ حيث نوفر المظلات بمختلف أنواعها وأشكالها مثل (مظلات سيارات ومظلات قصور ومظلات مدارس ومظلات مسابح ومظلات مساجد ومظلات حدائق ومظلات مواقف سيارات ومظلات متحركة ومظلات الشد الإنشائي)، ويتم تصنيعها من خامات مختلفة وفقًا لرأي العميل مثل (المعدن، الحديد، والخشب، والبلاستيك، والقماش، وتوفر العديد من أنواع السواتر المختلفة من أهمها (سواتر حديد وسواتر بلاستيك وسواتر شرائح حديد وسواتر مجدول حديد وسواتر شرائح بلاستيك وسواتر مجدول بلاستيك وسواتر شنكو وسواتر قماش وسواتر المنيوم وسواتر خشبية)، إلى جانب العديد من أنواع البرجولات المختلفة مثل (برجولات خشبية وبرجولات حديد وبرجولات بلاستيك وبرجولات قماش وبرجولات لكسان) وغيرها، وتقوم بتركيبها جميعًا وفق الأساليب الحديثة والطرق المبتكرة بأقصى سرعة وكفاءة ودقة وفي أقل وقت ممكن.",
-      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%B1%D8%AC%D9%88%D9%84%D8%A7%D8%AA.jpg?updatedAt=1745446709223",],
+      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%B1%D8%AC%D9%88%D9%84%D8%A7%D8%AA.jpg?updatedAt=1745446709223",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%A7%D8%B1%D8%AC%D9%88%D9%84%D8%A72%20.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%A7%D8%B1%D8%AC%D9%88%D9%84%D8%A73.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%A7%D8%B1%D8%AC%D9%88%D9%84%D8%A74.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%A7%D8%B1%D8%AC%D9%88%D9%84%D8%A77.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%A7%D8%B1%D8%AC%D9%88%D9%84%D8%A71%20.jpg",
+      ],
       category: "مظلات وبرجولات",
     },
     {
@@ -47,7 +64,14 @@ function Services() {
       description: "شبكات ري حديثة بالتنقيط والرش.",
       fullDescription:
         "نوفر خدمة شبكات الري لحدائق المنازل والقصور والفلل، والحدائق العامة، وتقدم جميع أساسيات السباكة الزراعية، وجميع معدات الري المختلفة، وشبكات الري بالتنقيط، وشبكات الري بالرش، والتي يتم الاختيار من بينها وفقًا لطبيعة الأرض ونوع النباتات المزروعة، وتعتمد في عملها على الأساليب المبتكرة والحديثة من أجل تصميم شبكة ري مثالية قادرة على ري النباتات بكفاءة وبطرقة صحيحة، ولا يقتصر دورها على تركيب شبكات الري فقط، وإنما توفر فريق متخصص بصيانة هذه الشبكات عند تعرضها للتلف، كما توفر دويات شهرية وربع سنوية ونصف سنوية للاطمئنان على نظام الري، وتقوم بتركيب شبكات الري على أيدي كبار المهندسين والفنيين وفقًا لأصول الصناعة والطرق الجديدة في التركيب.",
-      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A8%D9%83%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A.jpg?updatedAt=1745446720365",],
+      images: [
+        "https://ik.imagekit.io/hussein74/Al%20Amen/111212.png",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A8%D9%83%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A.jpg?updatedAt=1745446720365",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A3%D9%86%D8%B8%D9%85%D8%A9-%D8%A7%D9%84%D8%B1%D9%8A.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A7%D9%86%D8%B8%D9%85%D8%A9%20%D8%B1%D9%8A.jpeg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/1.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B1%D9%8A-%D9%85%D8%BA%D9%84%D9%82.jpg"
+      ],
       category: "الري",
     },
     {
@@ -75,7 +99,12 @@ function Services() {
       description: "تصاميم حدائق ديكورية باستخدام نباتات وأحجار طبيعية.",
       fullDescription:
         "نقوم بعمل تصميم وتركيب أجمل الديكورات الزراعية للحدائق والمنازل بأعلى جودة وأرخص أسعار الديكورات الزراعية في المملكة العربية السعودية. لدينا تشكيلة كبيرة من تصاميم الديكورات الزراعية سواء داخل المنزل أو لحديقة المنزل بإستخدام النباتات والأحجار الطبيعية والملونة.  كما تقدم شركة أبشر لتنسيق الحدائق كافة الخدمات المتعلقة بتنظيم وتنسيق وديكورات الحدائق عامة وديكورات حدائق منزلية بصفة خاصة. وتقوم الشركة أيضاً بتصميم وتنفيذ كافة أنواع الممرات بالحديقة سواء الحجرية أو الزجاجية أو الحصى الملون أو الأحجار أو الرخام وغيرها من الأنواع. كل ذلك وأكثر يتم من خلال فريق عمل مجهز ومدرب من أفضل الفنيين والمهندسين الزراعيين ذوي الخبرة والمدربين للتعامل مع أفضل التقنيات وأحدث المعدات في مجال الديكورات الزراعية.",
-      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AF%D9%8A%D9%83%D9%88%D8%B1%D8%A7%D8%AA-%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A%D8%A9.jpg?updatedAt=1745446720627",],
+      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AF%D9%8A%D9%83%D9%88%D8%B1%D8%A7%D8%AA-%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A%D8%A9.jpg?updatedAt=1745446720627",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A7%D9%84%D8%A7%D8%AA1.jpg?updatedAt=1746549679149",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%A7%D8%B1%D8%AC%D9%88%D9%84%D8%A72%20.jpg?updatedAt=1746549357624",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8.jpg?updatedAt=1745446710369",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/image1.jpg?updatedAt=1745446687674"
+      ],
       category: "ديكورات",
     },
     {
@@ -84,7 +113,20 @@ function Services() {
       description: "توريد خامات معتمدة من كبرى الشركات.",
       fullDescription:
         " تتميز شركة الأمين بتوفير جميع خامات لاند سكيب من  مواسير و رشاشات و خراطيم واكواع  وماكينات قص و غيرها من خامات اللاند سكيب  التي تتميز بجوده  عالية وذلك لأننا الموزع الرسمي لي اكبر شركات نظم ري حديث في مصر مثل شركة هنتر و شيرا و الوادي و الشامي و المصرية و ناسيكو",
-      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AA%D8%B7%D9%88%D9%8A%D8%B1.jpg?updatedAt=1745446710627",],
+      images: [
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%A7%D9%83%D9%8A%D9%86%D8%A9%20%D9%82%D8%B5.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA%20%D8%B3%D8%A8%D8%A7%D8%AD%D8%A9.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%A8%D9%8A%D8%AF%D8%A7%D8%AA.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A7%D9%86%D8%AA%D9%84%D9%88%D9%83.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA%20%D8%B3%D8%A8%D8%A7%D8%AD%D8%A9%203.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA%20%D8%B3%D8%A8%D8%A7%D8%AD%D8%A92.jpg"
+        , "https://ik.imagekit.io/hussein74/Al%20Amen/33.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/444.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/55.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/66.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/77.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/99.jpg"
+      ],
       category: "لاندسكيب",
     },
   ];
@@ -127,8 +169,8 @@ function Services() {
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
-                    ? "bg-green-600 text-white shadow-md"
-                    : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
+                      ? "bg-green-600 text-white shadow-md"
+                      : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
                     }`}
                 >
                   {category}
@@ -146,7 +188,7 @@ function Services() {
                   <img
                     src={service.images[0]}
                     alt={service.title}
-                    className="w-full h-40 sm:h-48 md:h-56 object-cover"
+                    className="w-full h-56 object-fill bg-white"
                   />
                   <div className="p-4 sm:p-6 text-center space-y-3">
                     <div className="flex justify-center">
@@ -193,7 +235,7 @@ function Services() {
                         <img
                           src={img}
                           alt={`slide-${idx}`}
-                          className="w-full h-64 object-cover rounded-xl"
+                          className="w-full h-72 object-fill bg-white rounded-xl"
                         />
                       </SwiperSlide>
                     ))}
@@ -202,7 +244,7 @@ function Services() {
                   <img
                     src={selectedService.image}
                     alt={selectedService.title}
-                    className="w-full h-64 object-cover rounded-xl"
+                    className="w-full h-72 object-fill bg-white rounded-xl"
                   />
                 ) : null}
                 <div className="text-center">
@@ -211,13 +253,12 @@ function Services() {
                     {selectedService.fullDescription}
                   </p>
                 </div>
-
-
               </div>
             </div>
           )}
-
         </section>
+
+
       </BackGround>
     </>
   )
