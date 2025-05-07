@@ -31,7 +31,7 @@ const PartnersSection = () => {
   return (
     <>
       <Helmet>
-        
+
         <meta
           name="description"
           content="تعرف على شركاء النجاح الذين ساهموا في مشاريعنا الناجحة في مجال تنسيق وتصميم الحدائق والمسطحات الخضراء."
@@ -55,14 +55,14 @@ const PartnersSection = () => {
       </Helmet>
 
       <section className="py-16 text-center">
-        <h3 className="text-green-600 text-lg font-semibold mb-2">
+        <h3 className="text-green-600 text-base md:text-lg font-semibold mb-2">
           سابقة أعمالنا
         </h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-10">
           شركاء النجاح
         </h2>
 
-        <div className="container mx-auto px-4 md:px-40">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-40">
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={3}
@@ -70,6 +70,7 @@ const PartnersSection = () => {
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ clickable: true, el: ".custom-pagination" }}
             breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 10 },
               640: { slidesPerView: 1, spaceBetween: 10 },
               768: { slidesPerView: 2, spaceBetween: 20 },
               1024: { slidesPerView: 3, spaceBetween: 30 },
@@ -78,15 +79,14 @@ const PartnersSection = () => {
           >
             {partners.map((partner) => (
               <SwiperSlide key={partner.id}>
-                <div className="relative bg-white p-6 border border-gray-300 rounded-xl flex justify-center items-center shadow-md h-40 overflow-hidden group">
+                <div className="relative bg-white p-4 sm:p-5 md:p-6 border border-gray-300 rounded-xl flex justify-center items-center shadow-md h-32 sm:h-36 md:h-40 overflow-hidden group">
                   <img
                     src={partner.image}
                     alt={`${partner.name} Logo`}
                     className="w-auto h-full object-contain transition-transform duration-300 group-hover:scale-105"
                   />
-
                   <div className="absolute inset-0 bg-transparent backdrop-blur-md flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                    <span className="text-green-950 text-lg font-semibold">
+                    <span className="text-green-950 text-sm sm:text-base font-semibold">
                       {partner.name}
                     </span>
                   </div>
@@ -95,9 +95,10 @@ const PartnersSection = () => {
             ))}
           </Swiper>
 
-          <div className="custom-pagination mt-6 gap-3 flex justify-center"></div>
+          <div className="custom-pagination mt-6 gap-3 flex justify-center [&>.swiper-pagination-bullet]:w-3 [&>.swiper-pagination-bullet]:h-3 [&>.swiper-pagination-bullet]:bg-green-300 [&>.swiper-pagination-bullet-active]:bg-green-600 transition-all" />
         </div>
       </section>
+
     </>
   );
 };

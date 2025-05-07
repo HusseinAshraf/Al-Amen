@@ -25,7 +25,7 @@ function PlantsTestimonials() {
   return (
     <>
       <Helmet>
-        
+
         <meta
           name="description"
           content="استعرض مجموعة من النباتات التي تم تنسيقها في مشاريعنا السابقة مع معلومات عن كل نوع."
@@ -49,14 +49,14 @@ function PlantsTestimonials() {
       </Helmet>
 
       <section className="py-20 bg-gradient-to-b from-green-50 to-white text-center relative">
-        <h3 className="text-green-700 text-xl font-semibold mb-2">
+        <h3 className="text-green-700 text-base md:text-xl font-semibold mb-2">
           لمسة خضراء في كل مكان
         </h3>
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-8 md:mb-12">
           من أعمالنا السابقة في تنسيق النباتات
         </h2>
 
-        <div className="container mx-auto px-4 md:px-20">
+        <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={3}
@@ -64,6 +64,7 @@ function PlantsTestimonials() {
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ clickable: true, el: ".custom-pagination" }}
             breakpoints={{
+              0: { slidesPerView: 1, spaceBetween: 10 },
               640: { slidesPerView: 1, spaceBetween: 10 },
               768: { slidesPerView: 2, spaceBetween: 20 },
               1024: { slidesPerView: 3, spaceBetween: 30 },
@@ -73,13 +74,13 @@ function PlantsTestimonials() {
             {plants.map((plant) => (
               <SwiperSlide key={plant.id}>
                 <div
-                  className="relative bg-white rounded-3xl shadow-lg overflow-hidden group h-80 flex items-center justify-center cursor-pointer"
+                  className="relative bg-white rounded-3xl shadow-lg overflow-hidden group h-64 sm:h-72 md:h-80 flex items-center justify-center cursor-pointer"
                   onClick={() => setSelectedPlant(plant)}
                 >
                   <img
                     src={plant.image}
                     alt={plant.name}
-                    className="w-auto h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                     <span className="text-white text-xl font-bold drop-shadow-md">
@@ -102,7 +103,7 @@ function PlantsTestimonials() {
             onClick={() => setSelectedPlant(null)}
           >
             <div
-              className="bg-white rounded-2xl shadow-2xl max-w-md w-full p-4 relative"
+              className="bg-white rounded-2xl shadow-2xl w-[90%] max-w-md p-4 relative"
               onClick={(e) => e.stopPropagation()}
             >
               <button
@@ -123,6 +124,7 @@ function PlantsTestimonials() {
           </div>
         )}
       </section>
+
     </>
   );
 }

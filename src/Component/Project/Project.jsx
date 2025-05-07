@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
+import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
@@ -164,7 +165,7 @@ const Project = ({ limit }) => {
             <button
               key={category}
               onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
+              className={`px-4 py-2 rounded-full text-sm transition cursor-pointer ${selectedCategory === category
                 ? "bg-green-600 text-white shadow-md"
                 : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
                 }`}
@@ -195,33 +196,48 @@ const Project = ({ limit }) => {
           ))}
 
           {selectedProject && (
-            <div
-              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 pt-20"
-              onClick={() => setSelectedProject(null)}
-            >
-              <div
-                className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-2xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[90vh]"
-                onClick={(e) => e.stopPropagation()}
+            <AnimatePresence>
+              <motion.div
+                className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 pt-20"
+                onClick={() => setSelectedProject(null)}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
               >
-                <button
-                  className="absolute top-3 left-3 text-gray-500 hover:text-red-600 text-xl"
-                  onClick={() => setSelectedProject(null)}
+                <motion.div
+                  className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-3xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[85vh] space-y-6"
+                  onClick={(e) => e.stopPropagation()}
+                  initial={{ y: 50, opacity: 0 }}
+                  animate={{ y: 0, opacity: 1 }}
+                  exit={{ y: 50, opacity: 0 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  ✕
-                </button>
-                <img
-                  src={selectedProject.image}
-                  alt={selectedProject.title}
-                  className="w-full h-52 sm:h-60 md:h-72 object-cover rounded-xl mb-4"
-                />
-                <h2 className="text-xl sm:text-2xl font-bold text-green-800 mb-2">
-                  {selectedProject.title}
-                </h2>
-                <p className="text-gray-700 leading-relaxed text-xs sm:text-sm md:text-base">
-                  {selectedProject.fullDescription || selectedProject.description}
-                </p>
-              </div>
-            </div>
+                  <button
+                    className="absolute top-3 left-3 text-gray-500 hover:text-red-600 text-2xl font-bold"
+                    onClick={() => setSelectedProject(null)}
+                  >
+                    ✕
+                  </button>
+
+                  <div className="w-full aspect-video max-h-[60vh] overflow-hidden rounded-xl">
+                    <img
+                      src={selectedProject.image}
+                      alt={selectedProject.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+
+                  <div className="px-2 sm:px-4 text-center">
+                    <h2 className="text-2xl sm:text-3xl font-bold text-green-800 mb-3">
+                      {selectedProject.title}
+                    </h2>
+                    <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
+                      {selectedProject.fullDescription || selectedProject.description}
+                    </p>
+                  </div>
+                </motion.div>
+              </motion.div>
+            </AnimatePresence>
           )}
         </div>
 

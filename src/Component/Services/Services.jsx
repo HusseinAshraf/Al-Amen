@@ -5,6 +5,8 @@ import { Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
+import { motion, AnimatePresence } from "framer-motion";
+
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
 import { Helmet } from "react-helmet";
@@ -146,89 +148,100 @@ function Services() {
 
   return (
     <>
-      <BackGround>
-        <Helmet>
-          {/* عنوان الصفحة */}
-          <title>خدماتنا - الأمين لاند سكيب</title>
 
-          {/* وصف الصفحة */}
-          <meta name="description" content="تعرف على خدماتنا المتنوعة في تنسيق الحدائق والشلالات الصناعية والري والملاعب. خدمات احترافية لضمان أفضل تجربة لعملائنا." />
+      <Helmet>
+        {/* عنوان الصفحة */}
+        <title>خدماتنا - الأمين لاند سكيب</title>
 
-          {/* كلمات رئيسية */}
-          <meta name="keywords" content="تنسيق حدائق, شلالات صناعية, ري, ديكورات زراعية, ملاعب, لاند سكيب" />
+        {/* وصف الصفحة */}
+        <meta name="description" content="تعرف على خدماتنا المتنوعة في تنسيق الحدائق والشلالات الصناعية والري والملاعب. خدمات احترافية لضمان أفضل تجربة لعملائنا." />
 
-          {/* Open Graph metadata */}
-          <meta property="og:title" content="خدماتنا | شركتنا لتنسيق الحدائق" />
-          <meta property="og:description" content="نحن نقدم خدمات شاملة في مجال تنسيق الحدائق وتصميم الشلالات والري. اكتشف كل ما نقدمه لعملائنا." />
-          <meta property="og:image" content="رابط_الصورة_المعروضة_لخدماتنا" />
-          <meta property="og:url" content="رابط_موقعك_الالكتروني" />
-        </Helmet>
-        <section id="services" className="py-20 px-4 sm:px-6 md:px-16" dir="rtl">
-          <div className="max-w-6xl mx-auto">
-            <div className="text-center mb-12 pt-7">
-              <TitleWithLeaves title="خدماتنا" />
-            </div>
+        {/* كلمات رئيسية */}
+        <meta name="keywords" content="تنسيق حدائق, شلالات صناعية, ري, ديكورات زراعية, ملاعب, لاند سكيب" />
 
-            <div className="flex flex-wrap gap-3 justify-center mb-10">
-              {categories.map((category) => (
-                <button
-                  key={category}
-                  onClick={() => setSelectedCategory(category)}
-                  className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
-                    ? "bg-green-600 text-white shadow-md"
-                    : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
-                    }`}
-                >
-                  {category}
-                </button>
-              ))}
-            </div>
+        {/* Open Graph metadata */}
+        <meta property="og:title" content="خدماتنا | شركتنا لتنسيق الحدائق" />
+        <meta property="og:description" content="نحن نقدم خدمات شاملة في مجال تنسيق الحدائق وتصميم الشلالات والري. اكتشف كل ما نقدمه لعملائنا." />
+        <meta property="og:image" content="رابط_الصورة_المعروضة_لخدماتنا" />
+        <meta property="og:url" content="رابط_موقعك_الالكتروني" />
+      </Helmet>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
-              {filteredServices.map((service, index) => (
-                <div
-                  key={index}
-                  className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-transform hover:-translate-y-2 cursor-pointer"
-                  onClick={() => setSelectedService(service)}
-                >
-                  <img
-                    src={service.images[0]}
-                    alt={service.title}
-                    className="w-full h-56 object-fill bg-white"
-                  />
-                  <div className="p-4 sm:p-6 text-center space-y-3">
-                    <div className="flex justify-center">
-                      <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white text-2xl sm:text-3xl">
-                        {service.icon}
-                      </div>
-                    </div>
-                    <h3 className="text-lg sm:text-xl font-bold text-green-800">
-                      {service.title}
-                    </h3>
-                    <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
-                      {service.description}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
+
+      <section id="services" className="py-20 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-green-50 to-white" dir="rtl">
+        <div className="max-w-6xl mx-auto">
+          <div className="text-center mb-12 pt-7">
+            <TitleWithLeaves title="خدماتنا" />
           </div>
 
-          {selectedService && (
-            <div
-              className="fixed inset-0 z-50 bg-black/40 backdrop-blur-sm flex items-center justify-center p-4 pt-20"
-              onClick={() => setSelectedService(null)}
-            >
+          <div className="flex flex-wrap gap-3 justify-center mb-10">
+            {categories.map((category) => (
+              <button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                className={`px-4 py-2 rounded-full text-sm transition cursor-pointer ${selectedCategory === category
+                  ? "bg-green-600 text-white shadow-md"
+                  : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
+                  }`}
+              >
+                {category}
+              </button>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+            {filteredServices.map((service, index) => (
               <div
-                className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-3xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[80vh] space-y-4"
+                key={index}
+                className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-transform hover:-translate-y-2 cursor-pointer"
+                onClick={() => setSelectedService(service)}
+              >
+                <img
+                  src={service.images[0]}
+                  alt={service.title}
+                  className="w-full h-56 object-fill bg-white"
+                />
+                <div className="p-4 sm:p-6 text-center space-y-3">
+                  <div className="flex justify-center">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white text-2xl sm:text-3xl">
+                      {service.icon}
+                    </div>
+                  </div>
+                  <h3 className="text-lg sm:text-xl font-bold text-green-800">
+                    {service.title}
+                  </h3>
+                  <p className="text-gray-600 text-xs sm:text-sm leading-relaxed">
+                    {service.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {selectedService && (
+          <AnimatePresence>
+            <motion.div
+              className="fixed inset-0 z-50 bg-black/50 backdrop-blur-md flex items-center justify-center p-4 pt-20"
+              onClick={() => setSelectedService(null)}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+            >
+              <motion.div
+                className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-3xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[85vh] space-y-6 z-[99999]"
                 onClick={(e) => e.stopPropagation()}
+                initial={{ y: 50, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                exit={{ y: 50, opacity: 0 }}
+                transition={{ duration: 0.3 }}
               >
                 <button
-                  className="absolute top-2 left-2 text-gray-500 hover:text-red-500 text-xl font-bold"
+                  className="absolute top-3 left-3 text-gray-500 hover:text-red-500 text-2xl font-bold"
                   onClick={() => setSelectedService(null)}
                 >
                   &times;
                 </button>
+
                 {selectedService.images ? (
                   <Swiper
                     modules={[Navigation, Pagination]}
@@ -238,34 +251,46 @@ function Services() {
                   >
                     {selectedService.images.map((img, idx) => (
                       <SwiperSlide key={idx}>
-                        <img
-                          src={img}
-                          alt={`slide-${idx}`}
-                          className="w-full h-96 object-fill bg-white rounded-xl"
-                        />
+                        <div className="w-full aspect-video max-h-[60vh] overflow-hidden rounded-xl">
+                          <img
+                            src={img}
+                            alt={`slide-${idx}`}
+                            className="w-full h-full object-cover"
+                          />
+                        </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
                 ) : selectedService.image ? (
-                  <img
-                    src={selectedService.image}
-                    alt={selectedService.title}
-                    className="w-full h-96 object-fill bg-white rounded-xl"
-                  />
+                  <div className="w-full aspect-video max-h-[60vh] overflow-hidden rounded-xl">
+                    <img
+                      src={selectedService.image}
+                      alt={selectedService.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
                 ) : null}
-                <div className="text-center">
-                  <h2 className="text-2xl font-bold text-green-800 mb-2">{selectedService.title}</h2>
+
+                <div className="text-center px-2 sm:px-4">
+                  <h2 className="text-2xl sm:text-3xl font-bold text-green-800 mb-3">
+                    {selectedService.title}
+                  </h2>
                   <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
                     {selectedService.fullDescription}
                   </p>
                 </div>
-              </div>
-            </div>
-          )}
-        </section>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
+        )}
+      </section>
 
 
-      </BackGround>
+
+
+
+
+
     </>
   )
 }
