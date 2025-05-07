@@ -20,7 +20,9 @@ function Services() {
       description: "تنسيق حدائق المنازل باستخدام أفضل المواد والتصاميم.",
       fullDescription:
         "نقدم خدمة تركيب العشب الصناعي طبيعي على أعلى مستوى لجميع عملائنا؛ حيث نوفر مختلف أنواعه سواء كان عشب  أرضي أو عشب جداري، بجميع ألوانه وكثافاته المتنوعة، والذي يتم الاختيار من بينها وفقًا لرأي العميل مع تعليمات المُهندس المختص بتعيين المكان المُراد تركيب النجيل فيختلف تركيب العشب الصناعي داخل المنازل عن حدائق المنازل والقصور والفلل، عن الحدائق العامة، عن النوادي، حيث يفضل تركيب العشب الجداري والعشب قليل الكثافة داخل المنازل، بينما يتم تركيب العشب  متوسط الكثافة في حدائق المنازل والقصور والفلل، ويستخدم العشب ذات الكثافة الأكبر في النوادي والحدائق العامة حتى يتحمل الضغط عليه، ولا تعتمد الشركة على اسلوب واحد ثابت في تركيبه، وإنما تبتكر كل ما هو جديد وحديث حتى يظهر بشكل لائق وجذاب خاطف للعيون وساحر للقلوب، حيث تقوم بقصه على هيئة أشكال جميلة تتناسب مع ذوق العميل مثل الأشكال المربعة، والدائرية، يجعل من الحديقة لوحة فنية غاية في الجمال، وتعتمد شركة الأمين لاند سكيب في عملها على أفضل الأدوات والأجهزة التكنولوجية الرائعة لقياس المساحات، ودك الأرض وتركيب النجيل بدقة وسرعة فائقة.",
-      images: ["https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B9%D8%B4%D8%A8-%D8%B5%D9%86%D8%A7%D8%B9%D9%8A.jpg?updatedAt=1745446721590",
+      images: [
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AA%D9%86%D8%B3%D9%8A%D9%82%20%D8%A7%D9%84%D8%AD%D8%AF%D8%A7%D8%A6%D9%82.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B9%D8%B4%D8%A8-%D8%B5%D9%86%D8%A7%D8%B9%D9%8A.jpg?updatedAt=1745446721590",
         "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%86%D8%AC%D9%8A%D9%84%D8%A9%20%D8%B7%D8%A8%D9%8A%D8%B9%D9%8A.jpg?updatedAt=1745446722979",
         "https://ik.imagekit.io/hussein74/Al%20Amen/project4.jpg?updatedAt=1745446697841",
         "https://ik.imagekit.io/hussein74/Al%20Amen/OsamaBenZayed.jpg?updatedAt=1745446692188"
@@ -68,7 +70,9 @@ function Services() {
         "https://ik.imagekit.io/hussein74/Al%20Amen/111212.png",
         "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A8%D9%83%D8%A7%D8%AA%20%D8%A7%D9%84%D8%B1%D9%8A.jpg?updatedAt=1745446720365",
         "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A3%D9%86%D8%B8%D9%85%D8%A9-%D8%A7%D9%84%D8%B1%D9%8A.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A7%D9%86%D8%B8%D9%85%D8%A9%20%D8%B1%D9%8A.jpeg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A7%D9%85%D9%8A%D9%86%203.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A7%D9%85%D9%8A%D9%86.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B1%D9%8A%20%D8%A7%D9%84%D8%A7%D9%85%D9%8A%D9%86%202.jpg",
         "https://ik.imagekit.io/hussein74/Al%20Amen/1.jpg",
         "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B1%D9%8A-%D9%85%D8%BA%D9%84%D9%82.jpg"
       ],
@@ -103,7 +107,8 @@ function Services() {
         "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B4%D8%A7%D9%84%D8%A7%D8%AA1.jpg?updatedAt=1746549679149",
         "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A8%D8%A7%D8%B1%D8%AC%D9%88%D9%84%D8%A72%20.jpg?updatedAt=1746549357624",
         "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8.jpg?updatedAt=1745446710369",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/image1.jpg?updatedAt=1745446687674"
+        "https://ik.imagekit.io/hussein74/Al%20Amen/image1.jpg?updatedAt=1745446687674",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AF%D9%8A%D9%83%D9%88%D8%B1%20%D8%B2%D8%B1%D8%A7%D8%B9%D9%8A.jpg"
       ],
       category: "ديكورات",
     },
@@ -114,18 +119,19 @@ function Services() {
       fullDescription:
         " تتميز شركة الأمين بتوفير جميع خامات لاند سكيب من  مواسير و رشاشات و خراطيم واكواع  وماكينات قص و غيرها من خامات اللاند سكيب  التي تتميز بجوده  عالية وذلك لأننا الموزع الرسمي لي اكبر شركات نظم ري حديث في مصر مثل شركة هنتر و شيرا و الوادي و الشامي و المصرية و ناسيكو",
       images: [
-        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%A7%D9%83%D9%8A%D9%86%D8%A9%20%D9%82%D8%B5.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA%20%D8%B3%D8%A8%D8%A7%D8%AD%D8%A9.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%A8%D9%8A%D8%AF%D8%A7%D8%AA.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D9%88%D8%A7%D8%AA%D9%8A%D8%B1.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%84%D9%88%D8%AD%D8%A9%20%D8%AA%D8%AC%D9%83%D9%85.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%AD%D8%A8%D8%B3.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%84%D9%88%D8%AD%D8%A9%20%D8%AA%D8%AD%D9%83%D9%85.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B1%D8%B4%D8%A7%D8%B4%D8%A7%D8%AA.jpg",
         "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A7%D9%86%D8%AA%D9%84%D9%88%D9%83.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA%20%D8%B3%D8%A8%D8%A7%D8%AD%D8%A9%203.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AD%D9%85%D8%A7%D9%85%D8%A7%D8%AA%20%D8%B3%D8%A8%D8%A7%D8%AD%D8%A92.jpg"
-        , "https://ik.imagekit.io/hussein74/Al%20Amen/33.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/444.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/55.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/66.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/77.jpg",
-        "https://ik.imagekit.io/hussein74/Al%20Amen/99.jpg"
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AE%D8%B1%D8%A7%D8%B7%D9%8A%D9%85%20%D8%AA%D9%86%D9%82%D9%8A%D8%B7.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B1%D8%B4%D8%A7%D8%B4.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AE%D8%B1%D8%A7%D8%B7%D9%8A%D9%85.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D9%88%D8%A7%D8%B3%D9%8A%D8%B1.jpg",
+        "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%A7%D9%83%D9%8A%D9%86%D8%A9%20%D9%82%D8%B5.jpg",
+
+
       ],
       category: "لاندسكيب",
     },
@@ -169,8 +175,8 @@ function Services() {
                   key={category}
                   onClick={() => setSelectedCategory(category)}
                   className={`px-4 py-2 rounded-full text-sm transition ${selectedCategory === category
-                      ? "bg-green-600 text-white shadow-md"
-                      : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
+                    ? "bg-green-600 text-white shadow-md"
+                    : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
                     }`}
                 >
                   {category}
@@ -235,7 +241,7 @@ function Services() {
                         <img
                           src={img}
                           alt={`slide-${idx}`}
-                          className="w-full h-72 object-fill bg-white rounded-xl"
+                          className="w-full h-96 object-fill bg-white rounded-xl"
                         />
                       </SwiperSlide>
                     ))}
@@ -244,7 +250,7 @@ function Services() {
                   <img
                     src={selectedService.image}
                     alt={selectedService.title}
-                    className="w-full h-72 object-fill bg-white rounded-xl"
+                    className="w-full h-96 object-fill bg-white rounded-xl"
                   />
                 ) : null}
                 <div className="text-center">
