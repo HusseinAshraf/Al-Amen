@@ -43,39 +43,38 @@ function NavBar() {
           <ul className="flex flex-col md:flex-row gap-3 md:gap-6 p-4 md:p-0 font-semibold text-white">
 
             {/* Dropdown About */}
-            <li className="relative">
-              <button
-                onClick={() => setAboutOpen(!aboutOpen)}
-                className="flex items-center gap-1 py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:text-yellow-300 "
-              >
-                من نحن <ChevronDown size={18} />
-              </button>
+            <li className="relative group">
+              <div className="flex items-center gap-1 py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:text-yellow-300 cursor-pointer">
+                من نحن
+                <span className="transition-transform duration-300 group-hover:rotate-180">
+                  <ChevronDown size={18} />
+                </span>
+              </div>
 
-              {aboutOpen && (
-                <ul className="absolute right-0 mt-2 w-40  bg-green-800 rounded-lg shadow-md z-50">
-                  <li>
-                    <Link
-                      to="/about/company"
-                      className={`block px-4 py-2 hover:bg-green-600 transition ${location.pathname === "/about/company" ? "text-yellow-300" : ""
-                        }`}
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      عن الشركة
-                    </Link>
-                  </li>
-                  <li>
-                    <Link
-                      to="/about/founder"
-                      className={`block px-4 py-2 hover:bg-green-600 transition ${location.pathname === "/about/founder" ? "text-yellow-300" : ""
-                        }`}
-                      onClick={() => setMenuOpen(false)}
-                    >
-                      عن المؤسس
-                    </Link>
-                  </li>
-                </ul>
-              )}
+              <ul className="absolute right-0 mt-2 w-40 bg-green-800 rounded-lg shadow-md z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
+                <li>
+                  <Link
+                    to="/about/company"
+                    className={`block px-4 py-2 hover:bg-green-600 transition ${location.pathname === "/about/company" ? "text-yellow-300" : ""
+                      }`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    عن الشركة
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    to="/about/founder"
+                    className={`block px-4 py-2 hover:bg-green-600 transition ${location.pathname === "/about/founder" ? "text-yellow-300" : ""
+                      }`}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    عن المؤسس
+                  </Link>
+                </li>
+              </ul>
             </li>
+
 
             {/* Other Links */}
             {navLinks.map(({ to, label }) => {
