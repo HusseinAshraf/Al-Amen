@@ -45,16 +45,16 @@ function Contact() {
       from_email: formData.email,
       phone_number: formData.phone,
       message: formData.message,
-      to_email: "amein2011@yahoo.com" 
+      to_email: "amein2011@yahoo.com" // البريد الإلكتروني الذي سيتم إرسال الرسائل إليه
     };
 
     // استخدام EmailJS لإرسال البريد الإلكتروني
     // تحتاج لتسجيل حساب في EmailJS والحصول على SERVICE_ID و TEMPLATE_ID و USER_ID
     emailjs.send(
-      "service_a8zjfwm", // قم بتغيير هذا
-      "template_uey9ud9", // قم بتغيير هذا
+      "YOUR_SERVICE_ID", // قم بتغيير هذا
+      "YOUR_TEMPLATE_ID", // قم بتغيير هذا
       templateParams,
-      "XTyipkAa6MqkpnVAe" // قم بتغيير هذا
+      "YOUR_USER_ID" // قم بتغيير هذا
     )
       .then((response) => {
         console.log("SUCCESS!", response.status, response.text);
@@ -244,4 +244,4 @@ function Contact() {
   );
 }
 
-export default Contact;
+export d
