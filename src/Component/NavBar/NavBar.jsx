@@ -29,7 +29,7 @@ function NavBar() {
 
   return (
     <nav
-      className="fixed top-0 w-full bg-green-600 bg-opacity-95 backdrop-blur-md shadow-xl z-50"
+      className="fixed top-0 w-full bg-green-800 bg-opacity-95 backdrop-blur-md shadow-xl z-50"
       dir="rtl"
     >
       <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
@@ -53,7 +53,7 @@ function NavBar() {
         <div
           className={`${menuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"
             } md:opacity-100 md:translate-y-0 md:pointer-events-auto
-          absolute md:static top-full right-0 left-0 bg-green-700 md:bg-transparent transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
+          absolute md:static top-full right-0 left-0 bg-green-900 md:bg-transparent transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
         >
           <ul className="flex flex-col md:flex-row gap-3 md:gap-6 p-4 md:p-0 font-semibold text-white">
 
@@ -61,7 +61,7 @@ function NavBar() {
             <li ref={aboutRef} className="relative w-full md:w-auto">
               <button
                 onClick={() => setAboutOpen(!aboutOpen)}
-                className="flex items-center gap-1 py-2 px-4 w-full text-right rounded-lg transition-all duration-300 hover:scale-105 hover:text-yellow-300 cursor-pointer"
+                className="flex items-center gap-1 py-2 px-4 w-full text-right rounded-lg transition-all duration-300 hover:bg-green-700 hover:text-yellow-300 cursor-pointer"
                 aria-expanded={aboutOpen}
                 aria-controls="about-menu"
               >
@@ -75,12 +75,12 @@ function NavBar() {
               <ul
                 id="about-menu"
                 className={`transition-all duration-300 ${aboutOpen ? "block" : "hidden"} w-full md:w-40 
-                bg-green-800 bg-opacity-95 rounded-lg shadow-md z-50 md:absolute md:right-0 md:mt-2`}
+                bg-green-900 bg-opacity-95 rounded-lg shadow-md z-50 md:absolute md:right-0 md:mt-2`}
               >
                 <li>
                   <Link
                     to="/about/company"
-                    className={`block px-4 py-2 hover:bg-green-600 transition ${location.pathname === "/about/company" ? "text-yellow-300" : ""
+                    className={`block px-4 py-2 hover:bg-green-800 transition ${location.pathname === "/about/company" ? "text-yellow-300" : "text-white"
                       }`}
                     onClick={() => {
                       setMenuOpen(false);
@@ -93,7 +93,7 @@ function NavBar() {
                 <li>
                   <Link
                     to="/about/founder"
-                    className={`block px-4 py-2 hover:bg-green-600 transition ${location.pathname === "/about/founder" ? "text-yellow-300" : ""
+                    className={`block px-4 py-2 hover:bg-green-800 transition ${location.pathname === "/about/founder" ? "text-yellow-300" : "text-white"
                       }`}
                     onClick={() => {
                       setMenuOpen(false);
@@ -113,7 +113,7 @@ function NavBar() {
                 <li key={to}>
                   <Link
                     to={to}
-                    className={`block py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105  ${isActive
+                    className={`block py-2 px-4 rounded-lg transition-all duration-300 hover:bg-green-700 ${isActive
                       ? "text-yellow-300 underline underline-offset-6 decoration-2 "
                       : "hover:text-yellow-300"
                       }`}
