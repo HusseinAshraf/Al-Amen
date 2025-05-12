@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
-import Hero from "../Hero/Hero";
+import Hero from "../Founder/Founder.jsx";
 import Project from "../Project/Project";
 import Features from "../Features/Features.jsx";
 import Contact from "../Contact/Contact";
@@ -14,6 +14,7 @@ import ServicesSection from "../Services/ServicesSection.jsx";
 import ElAmen from "../ElAmen/ElAmen.jsx";
 import PlantsTestimonials from "../PlantsTestimonials/PlantsTestimonials.jsx";
 import { Helmet } from "react-helmet";
+import HeroSlider from "../HeroSlider/HeroSlider.jsx";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -66,7 +67,8 @@ function Home() {
         <LoadingScreen />
       ) : (
         <>
-          <Hero />
+          {/* <Hero /> */}
+          <HeroSlider/>
           <div ref={aboutRef} className={`section ${aboutInView ? 'fadeInUp' : ''}`}>
             <AboutSection />
           </div>

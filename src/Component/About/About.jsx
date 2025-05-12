@@ -7,6 +7,8 @@ import {
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
 import { Helmet } from "react-helmet";
+import { Link } from "react-router-dom";
+
 
 const steps = [
   {
@@ -154,6 +156,15 @@ const About = () => {
                   </p>
                 </div>
               ))}
+            </div>
+
+            <div className="mt-16">
+              <Link
+                to="/hero" 
+                className="px-8 py-3 bg-green-700 text-white text-xl rounded-full shadow-md hover:bg-green-800 transition"
+              >
+                تعرف على المؤسس
+              </Link>
             </div>
           </div>
 

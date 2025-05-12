@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../../assets/image/logo1.png";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [aboutOpen, setAboutOpen] = useState(false);
   const location = useLocation();
 
   const navLinks = [
-    { to: "/about", label: "من نحن" },
     { to: "/features", label: "مميزاتنا" },
     { to: "/services", label: "خدماتنا" },
     { to: "/project", label: "أعمالنا" },
@@ -35,12 +35,49 @@ function NavBar() {
         {/* Menu Links */}
         <div
           className={`${menuOpen
-              ? "opacity-100 translate-y-0 pointer-events-auto"
-              : "opacity-0 -translate-y-4 pointer-events-none"
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-4 pointer-events-none"
             } md:opacity-100 md:translate-y-0 md:pointer-events-auto
           absolute md:static top-full right-0 left-0 bg-green-700 md:bg-transparent transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
         >
           <ul className="flex flex-col md:flex-row gap-3 md:gap-6 p-4 md:p-0 font-semibold text-white">
+
+            {/* Dropdown About */}
+            <li className="relative">
+              <button
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className="flex items-center gap-1 py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:text-yellow-300 "
+              >
+                من نحن <ChevronDown size={18} />
+              </button>
+
+              {aboutOpen && (
+                <ul className="absolute right-0 mt-2 w-40  bg-green-800 rounded-lg shadow-md z-50">
+                  <li>
+                    <Link
+                      to="/about/company"
+                      className={`block px-4 py-2 hover:bg-green-600 transition ${location.pathname === "/about/company" ? "text-yellow-300" : ""
+                        }`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      عن الشركة
+                    </Link>
+                  </li>
+                  <li>
+                    <Link
+                      to="/about/founder"
+                      className={`block px-4 py-2 hover:bg-green-600 transition ${location.pathname === "/about/founder" ? "text-yellow-300" : ""
+                        }`}
+                      onClick={() => setMenuOpen(false)}
+                    >
+                      عن المؤسس
+                    </Link>
+                  </li>
+                </ul>
+              )}
+            </li>
+
+            {/* Other Links */}
             {navLinks.map(({ to, label }) => {
               const isActive = location.pathname === to;
               return (
@@ -48,9 +85,10 @@ function NavBar() {
                   <Link
                     to={to}
                     className={`block py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105  ${isActive
-                        ? "text-yellow-300 underline underline-offset-6 decoration-2 " 
-                        : "hover:text-yellow-300"
+                      ? "text-yellow-300 underline underline-offset-6 decoration-2 "
+                      : "hover:text-yellow-300"
                       }`}
+                    onClick={() => setMenuOpen(false)}
                   >
                     {label}
                   </Link>

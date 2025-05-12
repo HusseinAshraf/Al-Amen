@@ -1,8 +1,9 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import {  lazy } from "react";
+import { lazy } from "react";
 import Layout from "./Layout/Layout";
 import ScrollToTopButton from "./UI/ScrollToTopButton/ScrollToTopButton";
 import ScrollToTop from "./UI/ScrollToTop/ScrollToTop";
+
 
 // Lazy-loaded components
 const Home = lazy(() => import("./Component/Home/Home"));
@@ -13,25 +14,32 @@ const Project = lazy(() => import("./Component/Project/Project"));
 const Contact = lazy(() => import("./Component/Contact/Contact"));
 const Faq = lazy(() => import("./Component/Faq/Faq"));
 const History = lazy(() => import("./Component/History/History"));
+const Hero = lazy(() => import("./Component/Founder/Founder"));
+
+
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Home />} />
-            <Route path="about" element={<About />} />
-            <Route path="features" element={<Features />} />
-            <Route path="services" element={<Services />} />
-            <Route path="project" element={<Project />} />
-            <Route path="contact" element={<Contact />} />
-            <Route path="faq" element={<Faq />} />
-            <Route path="history" element={<History />} />
-          </Route>
-        </Routes>
-      
+
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="about/company" element={<About />} />
+          <Route path="about/founder" element={<Hero />} />
+          <Route path="features" element={<Features />} />
+          <Route path="services" element={<Services />} />
+          <Route path="project" element={<Project />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="faq" element={<Faq />} />
+          <Route path="history" element={<History />} />
+          <Route path="hero" element={<Hero />} />
+        </Route>
+      </Routes>
+
+
       <ScrollToTopButton />
     </Router>
   );
