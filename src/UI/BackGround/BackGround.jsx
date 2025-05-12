@@ -1,4 +1,3 @@
-import myImage from "../../assets/image/leaf-pattern.jpg";
 
 const BackGround = ({ children }) => {
   return (
@@ -7,7 +6,7 @@ const BackGround = ({ children }) => {
       <div
         className="absolute inset-0"
         style={{
-          backgroundImage: `url(${myImage})`,
+          backgroundImage: `url('https://ik.imagekit.io/hussein74/Al%20Amen/leaf-pattern.jpg?updatedAt=1745446720640')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           opacity: 0.25,
