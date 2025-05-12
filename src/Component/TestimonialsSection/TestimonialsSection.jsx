@@ -5,8 +5,7 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/autoplay";
 import { Autoplay, Pagination } from "swiper/modules";
-import { FaStar } from "react-icons/fa";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaStar, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 
 const testimonials = [
@@ -48,36 +47,32 @@ const TestimonialsSection = () => {
   return (
     <>
       <Helmet>
-       
+        
         <meta
-
           name="description"
-
           content="اكتشف آراء عملائنا حول خدماتنا في تنسيق الحدائق. نحن نعمل بجد لتقديم أفضل تجربة ممكنة."
         />
         <meta
-
           name="keywords"
-
-          content="آراء عملائنا, تنسيق حدائق, تصميم حدائق, خدمات لاند سكيب, الأمين لاند سكيب"
+          content="آراء العملاء, تنسيق حدائق, تصميم حدائق, خدمات لاند سكيب, الأمين لاند سكيب"
         />
         <meta name="author" content="الأمين لاند سكيب" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta
-          property="og:title"
-
-
-          content="آراء عملائنا - الأمين لاند سكيب"
-        />
+        <meta property="og:title" content="آراء عملائنا - الأمين لاند سكيب" />
         <meta
           property="og:description"
           content="اكتشف آراء عملائنا حول خدماتنا في تنسيق الحدائق."
         />
-        <meta property="og:image" content="رابط_الصورة_المعروضة_لآراء_عملائنا" />
-        <meta property="og:url" content="رابط_موقعك_الالكتروني" />
+        <meta
+          property="og:image"
+          content="https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AA%D8%B1%D9%83%D9%8A%D8%A8.jpg"
+        />
+        <meta property="og:url" content="https://example.com/testimonials" />
       </Helmet>
+
       <section className="py-16 bg-cover bg-center" dir="rtl">
         <div className="container mx-auto flex flex-col md:flex-row md:items-start justify-between gap-10 px-4 md:px-6">
+          {/* النص */}
           <div className="w-full md:w-1/2 text-right pt-10">
             <h3 className="text-green-600 text-lg font-semibold mb-2">
               آراء عملائنا
@@ -88,12 +83,14 @@ const TestimonialsSection = () => {
 
             <div className="flex justify-center ml-52 mt-6 gap-4 pt-24">
               <button
+                aria-label="عرض التقييم السابق"
                 onClick={() => swiperRef.current?.slidePrev()}
                 className="bg-green-600 text-white p-2 rounded-full shadow-lg hover:bg-green-700 transition"
               >
                 <FaChevronRight className="w-6 h-6" />
               </button>
               <button
+                aria-label="عرض التقييم التالي"
                 onClick={() => swiperRef.current?.slideNext()}
                 className="bg-green-600 text-white p-2 rounded-full shadow-lg hover:bg-green-700 transition"
               >
@@ -102,6 +99,7 @@ const TestimonialsSection = () => {
             </div>
           </div>
 
+          {/* السلايدر */}
           <div className="w-full md:w-1/2 relative">
             <div
               className="absolute inset-0 w-full h-full bg-cover bg-center rounded-xl"
@@ -110,7 +108,9 @@ const TestimonialsSection = () => {
               }}
             ></div>
 
-            <div className="relative  p-4 md:p-6  rounded-xl z-10 transform translate-x-0 md:translate-x-60 ">
+            
+
+            <div className="relative p-4 md:p-6 rounded-xl z-10 translate-x-0 md:translate-x-60">
               <Swiper
                 onSwiper={(swiper) => (swiperRef.current = swiper)}
                 modules={[Autoplay, Pagination]}
@@ -126,8 +126,10 @@ const TestimonialsSection = () => {
               >
                 {testimonials.map((testimonial, index) => (
                   <SwiperSlide key={index}>
-                    <div className="bg-white p-4 md:p-8 mt-6 rounded-xl shadow-xl border border-gray-300  max-w-md mx-auto">
-
+                    <div
+                      className="bg-white p-4 md:p-8 mt-6 rounded-xl shadow-xl border border-gray-300 max-w-md mx-auto"
+                      aria-label={`مراجعة من ${testimonial.name}`}
+                    >
                       <p className="mb-4 text-sm md:text-lg leading-relaxed text-gray-700">
                         {testimonial.review}
                       </p>
@@ -146,7 +148,7 @@ const TestimonialsSection = () => {
                       <div className="flex flex-col items-center">
                         <img
                           src={testimonial.image}
-                          alt={testimonial.name}
+                          alt={`صورة ${testimonial.name}`}
                           className="w-16 md:w-20 h-16 md:h-20 rounded-full border-4 border-green-500 mb-3 shadow-md"
                         />
                         <h4 className="text-lg md:text-xl font-semibold text-gray-900">
@@ -157,7 +159,6 @@ const TestimonialsSection = () => {
                         </p>
                       </div>
                     </div>
-
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -166,8 +167,6 @@ const TestimonialsSection = () => {
         </div>
       </section>
     </>
-
-
   );
 };
 

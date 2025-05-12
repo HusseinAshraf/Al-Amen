@@ -1,10 +1,11 @@
 import React, { useEffect, useState } from "react";
-import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet";
 import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 
+// بيانات النباتات
 const plants = [
   { id: 1, name: "صبار أناناس", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B5%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3.jpg?updatedAt=1745446719675" },
   { id: 2, name: "فيكس بنجامينا", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%81%D9%8A%D9%83%D8%B3%20%D8%A8%D9%86%D8%AC%D8%A7%D9%85%D9%8A%D9%86%D8%A7.jpg?updatedAt=1745446722376" },
@@ -17,15 +18,24 @@ const plants = [
 function PlantsTestimonials() {
   const [selectedPlant, setSelectedPlant] = useState(null);
 
+  // تحسين مظهر النقاط الخاصة بالـ Pagination
   useEffect(() => {
     const pagination = document.querySelector(".custom-pagination");
-    if (pagination) pagination.classList.add("swiper-pagination-bullets");
+    if (pagination) {
+      pagination.classList.add("swiper-pagination-bullets");
+    }
+
+    // إغلاق المودال بزر Escape
+    const handleKeyDown = (e) => {
+      if (e.key === "Escape") setSelectedPlant(null);
+    };
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
   }, []);
 
   return (
     <>
       <Helmet>
-
         <meta
           name="description"
           content="استعرض مجموعة من النباتات التي تم تنسيقها في مشاريعنا السابقة مع معلومات عن كل نوع."
@@ -44,11 +54,12 @@ function PlantsTestimonials() {
         />
         <meta
           property="og:image"
-          content="https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B5%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3.jpg?updatedAt=1745446719675"
+          content={plants[0].image}
         />
       </Helmet>
 
-      <section className="py-20 bg-gradient-to-b from-green-50 to-white text-center relative">
+      <section className="py-20 bg-gradient-to-b from-green-50 to-white text-center relative" aria-label="معرض تنسيق النباتات">
+        {/* العنوان */}
         <h3 className="text-green-700 text-base md:text-xl font-semibold mb-2">
           لمسة خضراء في كل مكان
         </h3>
@@ -56,6 +67,7 @@ function PlantsTestimonials() {
           من أعمالنا السابقة في تنسيق النباتات
         </h2>
 
+        {/* سلايدر Swiper */}
         <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <Swiper
             modules={[Pagination, Autoplay]}
@@ -64,22 +76,28 @@ function PlantsTestimonials() {
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ clickable: true, el: ".custom-pagination" }}
             breakpoints={{
-              0: { slidesPerView: 1, spaceBetween: 10 },
-              640: { slidesPerView: 1, spaceBetween: 10 },
-              768: { slidesPerView: 2, spaceBetween: 20 },
-              1024: { slidesPerView: 3, spaceBetween: 30 },
+              0: { slidesPerView: 1 },
+              768: { slidesPerView: 2 },
+              1024: { slidesPerView: 3 },
             }}
             className="pb-12"
           >
             {plants.map((plant) => (
               <SwiperSlide key={plant.id}>
                 <div
-                  className="relative bg-white rounded-3xl shadow-lg overflow-hidden group h-64 sm:h-72 md:h-80 flex items-center justify-center cursor-pointer"
+                  className="relative bg-white rounded-3xl shadow-lg overflow-hidden group h-64 md:h-80 flex items-center justify-center cursor-pointer"
                   onClick={() => setSelectedPlant(plant)}
+                  role="button"
+                  aria-label={`عرض تفاصيل ${plant.name}`}
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter") setSelectedPlant(plant);
+                  }}
                 >
                   <img
                     src={plant.image}
-                    alt={plant.name}
+                    alt={`صورة ${plant.name}`}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-black/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
@@ -92,15 +110,17 @@ function PlantsTestimonials() {
             ))}
           </Swiper>
 
-          {/* Pagination Dots */}
+          {/* نقاط التمرير */}
           <div className="custom-pagination mt-8 flex justify-center gap-2 [&>.swiper-pagination-bullet]:w-3 [&>.swiper-pagination-bullet]:h-3 [&>.swiper-pagination-bullet]:bg-green-300 [&>.swiper-pagination-bullet-active]:bg-green-600 transition-all" />
         </div>
 
-        {/* Popup Modal */}
+        {/* نافذة منبثقة للمعلومات */}
         {selectedPlant && (
           <div
             className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50"
             onClick={() => setSelectedPlant(null)}
+            aria-modal="true"
+            role="dialog"
           >
             <div
               className="bg-white rounded-2xl shadow-2xl w-[90%] max-w-md p-4 relative"
@@ -109,12 +129,13 @@ function PlantsTestimonials() {
               <button
                 className="absolute top-2 left-2 text-gray-600 hover:text-red-500 text-xl"
                 onClick={() => setSelectedPlant(null)}
+                aria-label="إغلاق النافذة"
               >
                 &times;
               </button>
               <img
                 src={selectedPlant.image}
-                alt={selectedPlant.name}
+                alt={`عرض مكبّر لـ ${selectedPlant.name}`}
                 className="rounded-xl mb-4 max-h-[60vh] object-contain mx-auto"
               />
               <h3 className="text-lg font-bold text-gray-800">
@@ -124,7 +145,6 @@ function PlantsTestimonials() {
           </div>
         )}
       </section>
-
     </>
   );
 }

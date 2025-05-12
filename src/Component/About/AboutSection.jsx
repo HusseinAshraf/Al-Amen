@@ -8,7 +8,7 @@ const AboutSection = () => {
   return (
     <>
       <Helmet>
-        
+
         <meta
           name="description"
           content="شركة الأمين لاند سكيب تقدم خدمات اللاندسكيب المبتكرة، تصميم وتنفيذ حدائق الفلل والملاعب، توفير نباتات الزينة والمعدات اللازمة للصيانة."
@@ -48,6 +48,7 @@ const AboutSection = () => {
             <Link
               to="/about"
               className="inline-block mt-6 bg-green-600 text-white py-3 px-8 rounded-lg hover:bg-green-700 transition shadow-md text-base sm:text-lg"
+              aria-label="اعرف أكثر عن خدمات الأمين لاند سكيب"
             >
               اعرف أكثر
             </Link>
@@ -59,7 +60,7 @@ const AboutSection = () => {
             <div className="w-60 h-60 sm:w-72 sm:h-72 rounded-full overflow-hidden border-4 border-green-200 shadow-lg">
               <img
                 src="https://ik.imagekit.io/hussein74/Al%20Amen/about-1.webp?updatedAt=1745447747249"
-                alt="Plants"
+                alt="صورة لحديقة أو تصميم لاند سكيب"
                 className="w-full h-full object-cover"
               />
             </div>
@@ -73,7 +74,7 @@ const AboutSection = () => {
               {/* العناصر الثلاثة */}
               <div className="absolute w-full h-full flex items-center justify-center rounded-full">
                 {/* عنصر 1 */}
-                <div className="absolute top-0 bg-white shadow-lg p-4 sm:p-5 rounded-full flex flex-col items-center w-24 h-24 sm:w-28 sm:h-28 border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                <div className="absolute top-0 bg-white shadow-lg p-4 sm:p-5 rounded-full flex flex-col items-center w-24 h-24 sm:w-28 sm:h-28 border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl" aria-label="خبرة رائدة">
                   <Leaf className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 drop-shadow-lg" />
                   <p className="text-xs text-gray-700 mt-2 font-medium text-center">
                     خبرة رائدة
@@ -81,7 +82,7 @@ const AboutSection = () => {
                 </div>
 
                 {/* عنصر 2 */}
-                <div className="absolute bottom-0 left-0 bg-white shadow-lg p-4 sm:p-5 rounded-full flex flex-col items-center w-24 h-24 sm:w-28 sm:h-28 border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                <div className="absolute bottom-0 left-0 bg-white shadow-lg p-4 sm:p-5 rounded-full flex flex-col items-center w-24 h-24 sm:w-28 sm:h-28 border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl" aria-label="تصاميم مبتكرة">
                   <Paintbrush className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 drop-shadow-lg" />
                   <p className="text-xs text-gray-700 mt-2 font-medium text-center">
                     تصاميم مبتكرة
@@ -89,7 +90,7 @@ const AboutSection = () => {
                 </div>
 
                 {/* عنصر 3 */}
-                <div className="absolute bottom-0 right-0 bg-white shadow-lg p-4 sm:p-5 rounded-full flex flex-col items-center w-24 h-24 sm:w-28 sm:h-28 border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl">
+                <div className="absolute bottom-0 right-0 bg-white shadow-lg p-4 sm:p-5 rounded-full flex flex-col items-center w-24 h-24 sm:w-28 sm:h-28 border border-gray-200 transition-all duration-300 hover:scale-110 hover:shadow-2xl" aria-label="بيئة محفزة">
                   <Users className="text-green-600 w-6 h-6 sm:w-8 sm:h-8 drop-shadow-lg" />
                   <p className="text-xs text-gray-700 mt-2 font-medium text-center">
                     بيئة محفزة

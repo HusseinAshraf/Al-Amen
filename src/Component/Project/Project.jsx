@@ -1,19 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
 
 const projects = [
-  // {
-  //   title: "تلال الفسطاط الجديدة",
-  //   description:
-  //     "إنشاءات كمبوند تلال الفسطاط الجديدة بمساحة 100 ألف م² في الفسطاط الجديدة.",
-  //   fullDescription:
-  //     "انشاءات كمبوند تلال الفسطاط الجديدة بمساحة 100 ألف م² في الفسطاط الجديدة. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-  //   image: "https://ik.imagekit.io/hussein74/Al%20Amen/telal.jpg?updatedAt=1745446710351",
-  //   category: "إنشاءات",
-  // },
   {
     title: "كمبوند مينا جادرن سيتي",
     description: "إنشاءات كمبوند مينا جادرن سيتي في 6 أكتوبر.",
@@ -133,6 +124,16 @@ const Project = ({ limit }) => {
 
   const location = useLocation();
   const isProjectPage = location.pathname === "/project";
+
+  // منع التمرير عند فتح المودال
+  useEffect(() => {
+    if (selectedProject) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [selectedProject]);
+
   return (
     <>
       {isProjectPage && (
@@ -147,15 +148,14 @@ const Project = ({ limit }) => {
             content="مشاريع, إنشاءات, صيانة, أعمالنا, مشاريع بناء"
           />
           <link rel="canonical" href="https://www.yoursite.com/projects" />
-        </Helmet>)}
+        </Helmet>
+      )}
 
       <section
         id="projects"
         className="py-16 text-center bg-gradient-to-b from-green-50 to-white"
         dir="rtl"
       >
-
-
         <div className="max-w-5xl mx-auto text-center pt-10">
           <TitleWithLeaves title="أعمالنا" />
         </div>
@@ -169,6 +169,7 @@ const Project = ({ limit }) => {
                 ? "bg-green-600 text-white shadow-md"
                 : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
                 }`}
+              aria-label={`عرض مشاريع ${category}`} // إضافة aria-label
             >
               {category}
             </button>
@@ -181,11 +182,15 @@ const Project = ({ limit }) => {
               key={index}
               className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-300 border-t-4 border-green-600"
               onClick={() => setSelectedProject(project)}
+              aria-label={`عرض تفاصيل مشروع ${project.title}`} // إضافة aria-label
+              role="button" // تحديد العنصر كزر
+              tabIndex={0} // تمكين التنقل عبر لوحة المفاتيح
             >
               <img
                 src={project.image}
                 alt={project.title}
                 title={project.title}
+                loading="lazy"
                 className="w-full h-40 object-cover rounded-xl"
               />
               <h3 className="text-xl font-semibold text-green-800 mt-4">
@@ -205,16 +210,20 @@ const Project = ({ limit }) => {
                 exit={{ opacity: 0 }}
               >
                 <motion.div
-                  className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-3xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[85vh] space-y-6"
+                  className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-3xl rounded-none sm:rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[85vh] space-y-6"
                   onClick={(e) => e.stopPropagation()}
                   initial={{ y: 50, opacity: 0 }}
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 50, opacity: 0 }}
                   transition={{ duration: 0.3 }}
+                  role="dialog" // تحديد العنصر كـ dialog
+                  aria-labelledby="modal-title" // إضافة aria-labelledby
+                  aria-hidden={selectedProject ? "false" : "true"} // تحديث aria-hidden عند فتح المودال
                 >
                   <button
                     className="absolute top-3 left-3 text-gray-500 hover:text-red-600 text-2xl font-bold"
                     onClick={() => setSelectedProject(null)}
+                    aria-label="إغلاق المودال" // إضافة aria-label
                   >
                     ✕
                   </button>
@@ -228,7 +237,7 @@ const Project = ({ limit }) => {
                   </div>
 
                   <div className="px-2 sm:px-4 text-center">
-                    <h2 className="text-2xl sm:text-3xl font-bold text-green-800 mb-3">
+                    <h2 id="modal-title" className="text-2xl sm:text-3xl font-bold text-green-800 mb-3">
                       {selectedProject.title}
                     </h2>
                     <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
@@ -246,6 +255,7 @@ const Project = ({ limit }) => {
             <Link
               to="/project"
               className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-colors duration-300"
+              aria-label="عرض المزيد من المشاريع" // إضافة aria-label
             >
               عرض المزيد
             </Link>
@@ -253,7 +263,6 @@ const Project = ({ limit }) => {
         )}
       </section>
     </>
-
   );
 };
 

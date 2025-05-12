@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
-import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Pagination, Autoplay } from "swiper/modules";
+
 import "swiper/css";
 import "swiper/css/pagination";
-import { Pagination, Autoplay } from "swiper/modules";
+
 import Hanter from "../../assets/image/Hanter.jpg";
 import Shira from "../../assets/image/Shira.jpg";
 import ELShamy from "../../assets/image/el Shamy.png";
@@ -17,7 +19,7 @@ const partners = [
   { id: 3, name: "EL Shamy", image: ELShamy },
   { id: 4, name: "El Wady", image: elwady },
   { id: 5, name: "Neisco", image: neisco },
-  { id: 6, name: "Egyption", image: egyption }, // تم تعديل الـ ID هنا ليكون فريدًا
+  { id: 6, name: "Egyption", image: egyption },
 ];
 
 const PartnersSection = () => {
@@ -31,7 +33,7 @@ const PartnersSection = () => {
   return (
     <>
       <Helmet>
-
+        
         <meta
           name="description"
           content="تعرف على شركاء النجاح الذين ساهموا في مشاريعنا الناجحة في مجال تنسيق وتصميم الحدائق والمسطحات الخضراء."
@@ -40,6 +42,7 @@ const PartnersSection = () => {
           name="keywords"
           content="شركاء النجاح, تنسيق حدائق, لاند سكيب, تصميم حدائق, مشاريع ناجحة, شركاء الأمين"
         />
+        <meta name="author" content="الأمين لاند سكيب" />
         <meta
           property="og:title"
           content="شركاء النجاح - الأمين لاند سكيب"
@@ -52,17 +55,27 @@ const PartnersSection = () => {
           property="og:image"
           content="https://ik.imagekit.io/hussein74/Al%20Amen/background.jpg"
         />
+        <meta
+          property="og:url"
+          content="https://example.com/partners"
+        />
       </Helmet>
 
-      <section className="py-16 text-center">
-        <h3 className="text-green-600 text-base md:text-lg font-semibold mb-2">
-          سابقة أعمالنا
-        </h3>
-        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-10">
-          شركاء النجاح
-        </h2>
-
+      <section
+        className="py-16 text-center"
+        aria-labelledby="partners-title"
+      >
         <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-40">
+          <h3 className="text-green-600 text-base md:text-lg font-semibold mb-2">
+            سابقة أعمالنا
+          </h3>
+          <h2
+            id="partners-title"
+            className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-10"
+          >
+            شركاء النجاح
+          </h2>
+
           <Swiper
             modules={[Pagination, Autoplay]}
             slidesPerView={3}
@@ -79,11 +92,15 @@ const PartnersSection = () => {
           >
             {partners.map((partner) => (
               <SwiperSlide key={partner.id}>
-                <div className="relative bg-white p-4 sm:p-5 md:p-6 border border-gray-300 rounded-xl flex justify-center items-center shadow-md h-32 sm:h-36 md:h-40 overflow-hidden group">
+                <div
+                  className="relative bg-white p-4 sm:p-5 md:p-6 border border-gray-300 rounded-xl flex justify-center items-center shadow-md h-32 sm:h-36 md:h-40 overflow-hidden group"
+                  aria-label={`شريك النجاح ${partner.name}`}
+                >
                   <img
                     src={partner.image}
-                    alt={`${partner.name} Logo`}
+                    alt={`شعار ${partner.name}`}
                     className="w-auto h-full object-contain transition-transform duration-300 group-hover:scale-105"
+                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-transparent backdrop-blur-md flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                     <span className="text-green-950 text-sm sm:text-base font-semibold">
@@ -98,7 +115,6 @@ const PartnersSection = () => {
           <div className="custom-pagination mt-6 gap-3 flex justify-center [&>.swiper-pagination-bullet]:w-3 [&>.swiper-pagination-bullet]:h-3 [&>.swiper-pagination-bullet]:bg-green-300 [&>.swiper-pagination-bullet-active]:bg-green-600 transition-all" />
         </div>
       </section>
-
     </>
   );
 };

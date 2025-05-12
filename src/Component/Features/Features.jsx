@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { FaDollarSign, FaUsers, FaCog, FaClipboardCheck } from "react-icons/fa";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
-import { Helmet } from "react-helmet"; // استيراد react-helmet-async
+import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 
 function Features() {
@@ -41,7 +41,8 @@ function Features() {
     <>
       {isFeaturesPage && (
         <Helmet>
-          <title>مميزاتنا -  الأمين لاند سكيب</title>
+          <html lang="ar" />
+          <title>مميزاتنا - الأمين لاند سكيب</title>
           <meta
             name="description"
             content="اكتشف مميزات شركة الأمين لاند سكيب في تصميم وتنفيذ وصيانة الحدائق. نقدم أفضل الأسعار، فريق متخصص، تصميمات مرئية، وأكثر من 1000 مشروع ناجح."
@@ -63,13 +64,14 @@ function Features() {
             property="og:image"
             content="https://ik.imagekit.io/hussein74/Al%20Amen/features-image.jpg?updatedAt=1745447747249"
           />
-        </Helmet>)
-      }
+        </Helmet>
+      )}
 
       <BackGround>
         <section
           id="features"
-          className="py-20 px-4 sm:px-8 lg:px-12 "
+          aria-label="مميزات شركة الأمين لاند سكيب"
+          className="py-20 px-4 sm:px-8 lg:px-12"
           dir="rtl"
         >
           <div className="max-w-6xl mx-auto">
@@ -87,17 +89,23 @@ function Features() {
                   viewport={{ once: true }}
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                 >
+                  {/* تأثير خلفي عند التحويم */}
                   <div className="absolute -inset-1 bg-gradient-to-br from-green-200/10 to-transparent rounded-2xl blur-md opacity-0 group-hover:opacity-100 transition duration-500 pointer-events-none"></div>
 
-                  {/* أيقونة داخل دائرة متحركة */}
-                  <div className="relative z-10 w-16 h-16 mx-auto mb-6 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white">
+                  {/* الأيقونة */}
+                  <div
+                    className="relative z-10 w-16 h-16 mx-auto mb-6 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition-all duration-300 group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white"
+                    aria-hidden="true"
+                  >
                     <feature.icon className="text-2xl" />
                   </div>
 
+                  {/* العنوان */}
                   <h3 className="relative z-10 text-xl font-bold text-green-800 mb-3 group-hover:text-green-700 transition-colors">
                     {feature.title}
                   </h3>
 
+                  {/* الوصف */}
                   <p className="relative z-10 text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors">
                     {feature.description}
                   </p>

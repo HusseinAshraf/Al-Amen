@@ -8,7 +8,7 @@ import "swiper/css/pagination";
 import { motion, AnimatePresence } from "framer-motion";
 
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
-import BackGround from "../../UI/BackGround/BackGround";
+
 import { Helmet } from "react-helmet";
 
 function Services() {
@@ -178,6 +178,7 @@ function Services() {
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
+                aria-label={`${category}`}
                 className={`px-4 py-2 rounded-full text-sm transition cursor-pointer ${selectedCategory === category
                   ? "bg-green-600 text-white shadow-md"
                   : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
@@ -194,6 +195,7 @@ function Services() {
                 key={index}
                 className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-transform hover:-translate-y-2 cursor-pointer"
                 onClick={() => setSelectedService(service)}
+                aria-label={`${service.title}`}
               >
                 <img
                   src={service.images[0]}
@@ -202,7 +204,9 @@ function Services() {
                 />
                 <div className="p-4 sm:p-6 text-center space-y-3">
                   <div className="flex justify-center">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white text-2xl sm:text-3xl">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white text-2xl sm:text-3xl"
+
+                    >
                       {service.icon}
                     </div>
                   </div>
@@ -238,6 +242,7 @@ function Services() {
                 <button
                   className="absolute top-3 left-3 text-gray-500 hover:text-red-500 text-2xl font-bold"
                   onClick={() => setSelectedService(null)}
+                  aria-label="&times;"
                 >
                   &times;
                 </button>

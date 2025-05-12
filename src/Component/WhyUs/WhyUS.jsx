@@ -2,7 +2,6 @@ import React from "react";
 import { Leaf, Wrench, Target, Sprout } from "lucide-react";
 import { Helmet } from "react-helmet";
 
-
 function WhyUS() {
   const features = [
     {
@@ -30,7 +29,6 @@ function WhyUS() {
   return (
     <>
       <Helmet>
-        
         <meta
           name="description"
           content="اكتشف لماذا نحن الخيار الأمثل في تصميم وتنفيذ الحدائق. ابتكار مستمر، خدمات متكاملة، التزام واحترافية، ورؤية مستقبلية في مجال اللاندسكيب."
@@ -55,21 +53,28 @@ function WhyUS() {
         <div className="max-w-5xl mx-auto bg-white p-6 md:p-8 rounded-xl shadow-lg grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
           {/* Text Content */}
           <div className="text-right space-y-4">
-            <h3 className="text-green-600 text-lg font-semibold">لماذا نحن؟</h3>
-            <h2 className="text-3xl font-bold text-gray-800">
+            <h3 id="why-us-title" className="text-green-600 text-lg font-semibold">
+              لماذا نحن؟
+            </h3>
+            <h2
+              aria-labelledby="why-us-title"
+              className="text-3xl font-bold text-gray-800"
+            >
               خبرة وجمال مستدام
             </h2>
             <p className="text-gray-600 leading-relaxed text-sm md:text-base">
-              نحن في <strong>الامين لاند سكيب</strong> نتميز بخبرة واسعة في مجال
-              اللاندسكيب، حيث نقدم تصاميم مبتكرة وحلول مستدامة تلبي احتياجات
-              عملائنا. فريقنا المتخصص يضمن لك إنشاء مساحات خضراء مثالية تلائم
-              رغباتك.
+              نحن في <strong>الامين لاند سكيب</strong> نتميز بخبرة واسعة في
+              مجال اللاندسكيب، حيث نقدم تصاميم مبتكرة وحلول مستدامة تلبي
+              احتياجات عملائنا. فريقنا المتخصص يضمن لك إنشاء مساحات خضراء
+              مثالية تلائم رغباتك.
             </p>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700 text-sm">
               {features.map((item, index) => (
                 <div key={index} className="flex items-start gap-3">
-                  {item.icon}
+                  <div aria-label={item.title}>
+                    {item.icon}
+                  </div>
                   <div>
                     <h4 className="font-semibold text-lg text-gray-800">
                       {item.title}
@@ -85,7 +90,7 @@ function WhyUS() {
           <div>
             <img
               src="https://ik.imagekit.io/hussein74/Al%20Amen/whu.webp?updatedAt=1745446710919"
-              alt="تصميم شجرة يعكس الجمال المستدام"
+              alt="شجرة تعكس جمال التصميم المستدام في مشروع لاند سكيب"
               className="w-full rounded-xl shadow-md transition-transform duration-300 hover:scale-105"
             />
           </div>
