@@ -71,8 +71,13 @@ function WhyUS() {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 text-gray-700 text-sm">
               {features.map((item, index) => (
-                <div key={index} className="flex items-start gap-3">
-                  <div aria-label={item.title}>
+                <div 
+                  key={index} 
+                  className="flex items-start gap-3"
+                  role="group" 
+                  aria-roledescription={item.title}
+                >
+                  <div>
                     {item.icon}
                   </div>
                   <div>
