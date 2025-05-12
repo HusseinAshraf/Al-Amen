@@ -31,16 +31,17 @@ function NavBar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // إغلاق الدروب داون عند تغيير حجم الشاشة
+ 
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 768) {
+    const handleClickOutside = (e) => {
+      if (aboutRef.current && !aboutRef.current.contains(e.target)) {
         setAboutOpen(false);
       }
     };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
+
 
   return (
     <nav className="fixed top-0 w-full bg-green-600 bg-opacity-95 backdrop-blur-md shadow-xl z-50" dir="rtl">
@@ -68,32 +69,27 @@ function NavBar() {
           absolute md:static top-full right-0 left-0 bg-green-700 md:bg-transparent transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
         >
           <ul className="flex flex-col md:flex-row gap-3 md:gap-6 p-4 md:p-0 font-semibold text-white">
-            {/* Dropdown About */}
+
             <li
               ref={aboutRef}
-              className="relative group"
-              onClick={() => {
-                if (window.innerWidth < 768) setAboutOpen(!aboutOpen);
-              }}
+              className="relative w-full md:w-auto"
+              onClick={() => setAboutOpen(!aboutOpen)}
             >
               <div className="flex items-center gap-1 py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:text-yellow-300 cursor-pointer">
                 من نحن
-                <span
-                  className={`transition-transform duration-300 
-                    ${aboutOpen ? "rotate-180" : ""}
-                    md:group-hover:rotate-180`}
-                >
+                <span className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`}>
                   <ChevronDown size={18} />
                 </span>
               </div>
 
               <ul
                 className={`
-                  absolute right-0 mt-2 w-40 bg-green-800 bg-opacity-95 rounded-lg shadow-md z-50 
-                  transition-all duration-300
-                  ${aboutOpen ? "block" : "hidden"}
-                  md:group-hover:block md:opacity-100 md:visible
-                `}
+      ${aboutOpen ? "block" : "hidden"}
+      w-full md:w-40 
+      bg-green-800 bg-opacity-95 rounded-lg shadow-md z-50 
+      transition-all duration-300
+      md:absolute md:right-0 md:mt-2
+    `}
               >
                 <li>
                   <Link
@@ -124,6 +120,7 @@ function NavBar() {
               </ul>
             </li>
 
+
             {/* Other Links */}
             {navLinks.map(({ to, label }) => {
               const isActive = location.pathname === to;
@@ -132,8 +129,8 @@ function NavBar() {
                   <Link
                     to={to}
                     className={`block py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105  ${isActive
-                        ? "text-yellow-300 underline underline-offset-6 decoration-2 "
-                        : "hover:text-yellow-300"
+                      ? "text-yellow-300 underline underline-offset-6 decoration-2 "
+                      : "hover:text-yellow-300"
                       }`}
                     onClick={() => setMenuOpen(false)}
                   >
