@@ -231,6 +231,7 @@ function Contact() {
                   className="w-full h-full border-0 rounded-lg"
                   src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3455.7542061559698!2d30.97733048488625!3d29.986493081903365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU5JzExLjQiTiAzMMKwNTgnMzAuNSJF!5e0!3m2!1sar!2seg!4v1742208081314!5m2!1sar!2seg"
                   allowFullScreen=""
+                  title="الجيزة- اكتوبر- الحي المتميز- سنتر الهدايا الدور الاول"
                   loading="lazy"
                 ></iframe>
               </div>
