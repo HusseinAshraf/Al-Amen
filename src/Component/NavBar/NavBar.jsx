@@ -16,22 +16,7 @@ function NavBar() {
     { to: "/contact", label: "اتصل بنا" },
   ];
 
-  // إغلاق الدروب داون عند النقر خارج القائمة (موبايل فقط)
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (
-        aboutRef.current &&
-        !aboutRef.current.contains(e.target) &&
-        window.innerWidth < 768
-      ) {
-        setAboutOpen(false);
-      }
-    };
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
- 
+  // إغلاق الدروب داون عند النقر خارجه
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (aboutRef.current && !aboutRef.current.contains(e.target)) {
@@ -42,9 +27,11 @@ function NavBar() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-
   return (
-    <nav className="fixed top-0 w-full bg-green-600 bg-opacity-95 backdrop-blur-md shadow-xl z-50" dir="rtl">
+    <nav
+      className="fixed top-0 w-full bg-green-600 bg-opacity-95 backdrop-blur-md shadow-xl z-50"
+      dir="rtl"
+    >
       <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 cursor-pointer">
@@ -56,40 +43,39 @@ function NavBar() {
         <button
           onClick={() => setMenuOpen(!menuOpen)}
           className="md:hidden text-white transition-transform duration-200 hover:scale-110 focus:outline-none"
+          aria-label="قائمة التنقل"
+          aria-expanded={menuOpen}
         >
           {menuOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
 
-        {/* Menu Links */}
+        {/* Menu */}
         <div
-          className={`${menuOpen
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-4 pointer-events-none"
+          className={`${menuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"
             } md:opacity-100 md:translate-y-0 md:pointer-events-auto
           absolute md:static top-full right-0 left-0 bg-green-700 md:bg-transparent transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
         >
           <ul className="flex flex-col md:flex-row gap-3 md:gap-6 p-4 md:p-0 font-semibold text-white">
 
-            <li
-              ref={aboutRef}
-              className="relative w-full md:w-auto"
-              onClick={() => setAboutOpen(!aboutOpen)}
-            >
-              <div className="flex items-center gap-1 py-2 px-4 rounded-lg transition-all duration-300 hover:scale-105 hover:text-yellow-300 cursor-pointer">
+            {/* من نحن */}
+            <li ref={aboutRef} className="relative w-full md:w-auto">
+              <button
+                onClick={() => setAboutOpen(!aboutOpen)}
+                className="flex items-center gap-1 py-2 px-4 w-full text-right rounded-lg transition-all duration-300 hover:scale-105 hover:text-yellow-300 cursor-pointer"
+                aria-expanded={aboutOpen}
+                aria-controls="about-menu"
+              >
                 من نحن
-                <span className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`}>
-                  <ChevronDown size={18} />
-                </span>
-              </div>
+                <ChevronDown
+                  size={18}
+                  className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`}
+                />
+              </button>
 
               <ul
-                className={`
-      ${aboutOpen ? "block" : "hidden"}
-      w-full md:w-40 
-      bg-green-800 bg-opacity-95 rounded-lg shadow-md z-50 
-      transition-all duration-300
-      md:absolute md:right-0 md:mt-2
-    `}
+                id="about-menu"
+                className={`transition-all duration-300 ${aboutOpen ? "block" : "hidden"} w-full md:w-40 
+                bg-green-800 bg-opacity-95 rounded-lg shadow-md z-50 md:absolute md:right-0 md:mt-2`}
               >
                 <li>
                   <Link
@@ -120,8 +106,7 @@ function NavBar() {
               </ul>
             </li>
 
-
-            {/* Other Links */}
+            {/* روابط أخرى */}
             {navLinks.map(({ to, label }) => {
               const isActive = location.pathname === to;
               return (
@@ -142,7 +127,6 @@ function NavBar() {
           </ul>
         </div>
       </div>
-
     </nav>
   );
 }

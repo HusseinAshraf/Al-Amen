@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useMemo } from "react";
 import { FaTools, FaWater, FaWrench, FaTruck, FaLeaf } from "react-icons/fa";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination } from "swiper/modules";
@@ -6,17 +6,17 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import { motion, AnimatePresence } from "framer-motion";
+import { Helmet } from "react-helmet";
 
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
-
-import { Helmet } from "react-helmet";
 
 function Services() {
   const [selectedService, setSelectedService] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("الكل");
 
-  const servicesData = [
-    {
+  // Memoize services data to prevent unnecessary re-renders
+  const servicesData = useMemo(() => [
+     {
       icon: <FaLeaf />,
       title: "تصميم وتنسيق الحدائق",
       description: "تنسيق حدائق المنازل باستخدام أفضل المواد والتصاميم.",
@@ -137,75 +137,113 @@ function Services() {
       ],
       category: "لاندسكيب",
     },
-  ];
+  ], []);
 
-  const categories = ["الكل", ...new Set(servicesData.map((s) => s.category))];
+  // Memoize categories to prevent unnecessary re-computation
+  const categories = useMemo(() => 
+    ["الكل", ...new Set(servicesData.map((s) => s.category))], 
+    [servicesData]
+  );
 
-  const filteredServices =
+  // Memoize filtered services to improve performance
+  const filteredServices = useMemo(() => 
     selectedCategory === "الكل"
       ? servicesData
-      : servicesData.filter((s) => s.category === selectedCategory);
+      : servicesData.filter((s) => s.category === selectedCategory),
+    [selectedCategory, servicesData]
+  );
+
+  // Optimize modal closing to prevent unnecessary re-renders
+  const handleCloseModal = React.useCallback(() => {
+    setSelectedService(null);
+  }, []);
 
   return (
     <>
-
       <Helmet>
-        {/* عنوان الصفحة */}
         <title>خدماتنا - الأمين لاند سكيب</title>
-
-        {/* وصف الصفحة */}
-        <meta name="description" content="تعرف على خدماتنا المتنوعة في تنسيق الحدائق والشلالات الصناعية والري والملاعب. خدمات احترافية لضمان أفضل تجربة لعملائنا." />
-
-        {/* كلمات رئيسية */}
-        <meta name="keywords" content="تنسيق حدائق, شلالات صناعية, ري, ديكورات زراعية, ملاعب, لاند سكيب" />
-
-        {/* Open Graph metadata */}
+        <meta 
+          name="description" 
+          content="تعرف على خدماتنا المتنوعة في تنسيق الحدائق والشلالات الصناعية والري والملاعب. خدمات احترافية لضمان أفضل تجربة لعملائنا." 
+        />
+        <meta 
+          name="keywords" 
+          content="تنسيق حدائق, شلالات صناعية, ري, ديكورات زراعية, ملاعب, لاند سكيب" 
+        />
         <meta property="og:title" content="خدماتنا | شركتنا لتنسيق الحدائق" />
-        <meta property="og:description" content="نحن نقدم خدمات شاملة في مجال تنسيق الحدائق وتصميم الشلالات والري. اكتشف كل ما نقدمه لعملائنا." />
-        <meta property="og:image" content="رابط_الصورة_المعروضة_لخدماتنا" />
-        <meta property="og:url" content="رابط_موقعك_الالكتروني" />
+        <meta 
+          property="og:description" 
+          content="نحن نقدم خدمات شاملة في مجال تنسيق الحدائق وتصميم الشلالات والري. اكتشف كل ما نقدمه لعملائنا." 
+        />
+        <meta property="og:type" content="service" />
+        <link rel="canonical" href="/services" />
       </Helmet>
 
-
-      <section id="services" className="py-20 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-green-50 to-white" dir="rtl">
+      <section 
+        id="services" 
+        className="py-20 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-green-50 to-white" 
+        dir="rtl" 
+        aria-labelledby="services-title"
+      >
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 pt-7">
-            <TitleWithLeaves title="خدماتنا" />
+            <TitleWithLeaves 
+              id="services-title" 
+              title="خدماتنا" 
+              aria-level="2" 
+            />
           </div>
 
-          <div className="flex flex-wrap gap-3 justify-center mb-10">
+          {/* Categories Filter */}
+          <div 
+            className="flex flex-wrap gap-3 justify-center mb-10" 
+            role="tablist" 
+            aria-label="فئات الخدمات"
+          >
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
-                aria-label={`${category}`}
-                className={`px-4 py-2 rounded-full text-sm transition cursor-pointer ${selectedCategory === category
-                  ? "bg-green-600 text-white shadow-md"
-                  : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
-                  }`}
+                role="tab"
+                aria-selected={selectedCategory === category}
+                aria-label={`عرض خدمات ${category}`}
+                className={`px-4 py-2 rounded-full text-sm transition cursor-pointer ${
+                  selectedCategory === category
+                    ? "bg-green-600 text-white shadow-md"
+                    : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
+                }`}
               >
                 {category}
               </button>
             ))}
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8">
+          {/* Services Grid */}
+          <div 
+            className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6 sm:gap-8" 
+            aria-live="polite"
+          >
             {filteredServices.map((service, index) => (
-              <div
-                key={index}
+              <article
+                key={service.title}
                 className="group bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-xl transition-transform hover:-translate-y-2 cursor-pointer"
                 onClick={() => setSelectedService(service)}
-                aria-label={`${service.title}`}
+                aria-label={`تفاصيل خدمة ${service.title}`}
+                role="button"
+                tabIndex={0}
               >
+                {/* Service Card Content */}
                 <img
                   src={service.images[0]}
-                  alt={service.title}
-                  className="w-full h-56 object-fill bg-white"
+                  alt={`صورة خدمة ${service.title}`}
+                  loading="lazy"
+                  className="w-full h-56 object-cover bg-white"
                 />
                 <div className="p-4 sm:p-6 text-center space-y-3">
                   <div className="flex justify-center">
-                    <div className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white text-2xl sm:text-3xl"
-
+                    <div 
+                      className="w-14 h-14 sm:w-16 sm:h-16 bg-green-100 text-green-700 flex items-center justify-center rounded-full shadow-inner transition group-hover:scale-110 group-hover:rotate-6 group-hover:bg-green-600 group-hover:text-white text-2xl sm:text-3xl"
+                      aria-hidden="true"
                     >
                       {service.icon}
                     </div>
@@ -217,19 +255,23 @@ function Services() {
                     {service.description}
                   </p>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>
 
+        {/* Service Details Modal */}
         {selectedService && (
           <AnimatePresence>
             <motion.div
               className="fixed inset-0 z-50 bg-black/50 backdrop-blur-md flex items-center justify-center p-4 pt-20"
-              onClick={() => setSelectedService(null)}
+              onClick={handleCloseModal}
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
+              role="dialog"
+              aria-modal="true"
+              aria-labelledby="service-modal-title"
             >
               <motion.div
                 className="bg-white w-full max-w-md sm:max-w-xl lg:max-w-3xl rounded-2xl shadow-xl p-4 sm:p-6 relative overflow-y-auto max-h-[85vh] space-y-6 z-[99999]"
@@ -239,45 +281,49 @@ function Services() {
                 exit={{ y: 50, opacity: 0 }}
                 transition={{ duration: 0.3 }}
               >
+                {/* Close Button */}
                 <button
                   className="absolute top-3 left-3 text-gray-500 hover:text-red-500 text-2xl font-bold"
-                  onClick={() => setSelectedService(null)}
-                  aria-label="&times;"
+                  onClick={handleCloseModal}
+                  aria-label="إغلاق"
                 >
                   &times;
                 </button>
 
-                {selectedService.images ? (
+                {/* Service Images Carousel */}
+                {selectedService.images && (
                   <Swiper
                     modules={[Navigation, Pagination]}
                     navigation
                     pagination={{ clickable: true }}
                     className="w-full rounded-xl"
+                    a11y={{
+                      enabled: true,
+                      prevSlideMessage: 'الشريحة السابقة',
+                      nextSlideMessage: 'الشريحة التالية',
+                    }}
                   >
                     {selectedService.images.map((img, idx) => (
                       <SwiperSlide key={idx}>
                         <div className="w-full aspect-video max-h-[60vh] overflow-hidden rounded-xl">
                           <img
                             src={img}
-                            alt={`slide-${idx}`}
+                            alt={`صورة ${selectedService.title} ${idx + 1}`}
+                            loading="lazy"
                             className="w-full h-full object-cover"
                           />
                         </div>
                       </SwiperSlide>
                     ))}
                   </Swiper>
-                ) : selectedService.image ? (
-                  <div className="w-full aspect-video max-h-[60vh] overflow-hidden rounded-xl">
-                    <img
-                      src={selectedService.image}
-                      alt={selectedService.title}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                ) : null}
+                )}
 
+                {/* Service Details */}
                 <div className="text-center px-2 sm:px-4">
-                  <h2 className="text-2xl sm:text-3xl font-bold text-green-800 mb-3">
+                  <h2 
+                    id="service-modal-title" 
+                    className="text-2xl sm:text-3xl font-bold text-green-800 mb-3"
+                  >
                     {selectedService.title}
                   </h2>
                   <p className="text-gray-700 text-sm sm:text-base leading-relaxed">
@@ -289,15 +335,8 @@ function Services() {
           </AnimatePresence>
         )}
       </section>
-
-
-
-
-
-
-
     </>
-  )
+  );
 }
 
-export default Services;
+export default React.memo(Services);
