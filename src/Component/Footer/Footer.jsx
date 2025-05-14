@@ -103,7 +103,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="text-center text-gray-300 text-xs mt-8 border-t border-gray-800 pt-4">
+      <div className="text-center text-gray-300 text-xs mt-8 border-t border-gray-800 pt-4 min-h-[80px]">
         El Amen Landscape © 2025 جميع الحقوق محفوظة | Hussein Ashraf
       </div>
     </footer>
