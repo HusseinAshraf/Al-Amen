@@ -80,13 +80,15 @@ const projects = [
     },
 ];
 
+
+
 const ProjectsMapSection = () => {
     const navigate = useNavigate();
 
     return (
         <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8" dir="rtl">
             <Helmet>
-                <title>مشاريعنا على الخريطة | شركة الأمين</title>
+                
                 <meta
                     name="description"
                     content="اكتشف مواقع مشاريع شركة الأمين في أنحاء الجمهورية على خريطة تفاعلية تشمل الإنشاءات والصيانة في مختلف المناطق."
