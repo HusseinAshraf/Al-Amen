@@ -16,6 +16,7 @@ import PlantsTestimonials from "../PlantsTestimonials/PlantsTestimonials.jsx";
 import { Helmet } from "react-helmet";
 import HeroSlider from "../HeroSlider/HeroSlider.jsx";
 import ContactSection from "../Contact/ContactSection.jsx";
+import FeaturedProjectsSection from "../Project/FeaturedProjectsSection.jsx";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -95,7 +96,7 @@ function Home() {
             <PartnersSection />
           </div>
           <ElAmen />
-          <Project limit={6} />
+          <FeaturedProjectsSection />
           <ContactSection />
         </>
       )}

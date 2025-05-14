@@ -6,7 +6,7 @@ function ContactSection() {
     const isContactPage = location.pathname === "/contact";
     return (
         <>
-            {/* إضافة هيلمت لتحسين SEO */}
+           
             {isContactPage && (
                 <Helmet>
                     <title>تحويل المساحات الخضراء إلى تحف فنية | خدمات تنسيق الحدائق</title>
