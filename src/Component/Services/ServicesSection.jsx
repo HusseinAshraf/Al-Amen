@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
+
   return (
     <section
       className="py-16 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-green-50 to-white"
@@ -38,15 +39,13 @@ const ServicesSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-green-200">
               <iframe
                 className="w-full h-64 rounded-2xl"
-                src="https://www.youtube.com/embed/Gl4unWQKTr4?autoplay=1&mute=1&origin=https://yourwebsite.com"
+                src="https://www.youtube-nocookie.com/embed/Gl4unWQKTr4?autoplay=1&mute=1&origin=https://yourwebsite.com"
                 title="عرض تقديمي لخدمات شركة الأمين لاند سكيب"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
-                data-cookieconsent="tracking"
               ></iframe>
-
             </div>
           </div>
         </figure>
