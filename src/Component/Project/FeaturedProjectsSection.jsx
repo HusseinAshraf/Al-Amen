@@ -5,22 +5,16 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { Link, useNavigate } from "react-router-dom";
 
-// حذف إعدادات الأيقونة الافتراضية
 delete L.Icon.Default.prototype._getIconUrl;
-
-// إنشاء أيقونة مخصصة أكبر حجمًا للعلامات
-const CustomMarkerIcon = L.icon({
-    iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-    iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-    shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
-    iconSize: [35, 56], // زيادة حجم الأيقونة (كانت 25×41)
-    iconAnchor: [17, 56], // تعديل نقطة الارتكاز حسب الحجم الجديد
-    popupAnchor: [1, -56], // تعديل موضع الـ popup
-    // إضافة نطاق أكبر قابل للنقر حول الأيقونة
-    className: "custom-marker-icon"
+L.Icon.Default.mergeOptions({
+    iconRetinaUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+    iconUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+    shadowUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
 });
 
-// بيانات المشاريع
 const projects = [
     {
         title: "كمبوند مينا جادرن سيتي",
@@ -86,36 +80,20 @@ const projects = [
     },
 ];
 
-// مكون خريطة المشاريع
+
+
 const ProjectsMapSection = () => {
     const navigate = useNavigate();
 
     return (
         <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8" dir="rtl">
             <Helmet>
+                
                 <meta
                     name="description"
                     content="اكتشف مواقع مشاريع شركة الأمين في أنحاء الجمهورية على خريطة تفاعلية تشمل الإنشاءات والصيانة في مختلف المناطق."
                 />
                 <link rel="canonical" href="https://your-domain.com/projects-map" />
-                {/* إضافة CSS لتعزيز إمكانية الوصول */}
-                <style type="text/css">
-                    {`
-                    .custom-marker-icon {
-                        cursor: pointer;
-                    }
-                    /* زيادة المساحة التفاعلية حول الأيقونة */
-                    .leaflet-marker-icon {
-                        padding: 10px !important;
-                        margin-top: -51px !important;
-                        margin-left: -22px !important;
-                    }
-                    /* تأكد من أن المؤشر يظهر كيد عند التحويم */
-                    .leaflet-interactive {
-                        cursor: pointer !important;
-                    }
-                    `}
-                </style>
             </Helmet>
 
             <div className="max-w-6xl mx-auto">
@@ -138,19 +116,7 @@ const ProjectsMapSection = () => {
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
                         />
                         {projects.map((project, index) => (
-                            <Marker
-                                key={index}
-                                position={project.position}
-                                icon={CustomMarkerIcon}
-                                eventHandlers={{
-                                    keypress: (e) => {
-                                        // إذا تم الضغط على مفتاح Enter أو Space، افتح الـ popup
-                                        if (e.originalEvent.key === 'Enter' || e.originalEvent.key === ' ') {
-                                            e.target.openPopup();
-                                        }
-                                    }
-                                }}
-                            >
+                            <Marker key={index} position={project.position}>
                                 <Popup>
                                     <div className="text-right">
                                         <h3 className="font-bold text-green-700 text-sm mb-1">
