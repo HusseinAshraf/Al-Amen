@@ -29,9 +29,9 @@ const AboutSection = () => {
         <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           {/* النص */}
           <div className="text-center md:text-right space-y-4">
-            <h4 className="text-green-700 font-semibold text-base sm:text-lg">
+            <h1 className="text-green-700 font-semibold text-base sm:text-lg">
               نبذة عنا
-            </h4>
+            </h1>
             <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 leading-snug">
               خبرة تصنع الفرق
             </h2>
