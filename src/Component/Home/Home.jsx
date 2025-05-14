@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
-import Hero from "../Founder/Founder.jsx";
+
 import Project from "../Project/Project";
 import Features from "../Features/Features.jsx";
-import Contact from "../Contact/Contact";
+
 import AboutSection from "../About/AboutSection.jsx";
 import WhyUS from "../WhyUs/WhyUS.jsx";
 import StatsSection from "../StatsSection/StatsSection.jsx";
@@ -15,6 +15,7 @@ import ElAmen from "../ElAmen/ElAmen.jsx";
 import PlantsTestimonials from "../PlantsTestimonials/PlantsTestimonials.jsx";
 import { Helmet } from "react-helmet";
 import HeroSlider from "../HeroSlider/HeroSlider.jsx";
+import ContactSection from "../Contact/ContactSection.jsx";
 
 function Home() {
   const [isLoading, setIsLoading] = useState(true);
@@ -95,7 +96,7 @@ function Home() {
           </div>
           <ElAmen />
           <Project limit={6} />
-          <Contact />
+          <ContactSection />
         </>
       )}
     </>
