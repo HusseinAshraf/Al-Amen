@@ -5,14 +5,19 @@ import "leaflet/dist/leaflet.css";
 import L from "leaflet";
 import { Link, useNavigate } from "react-router-dom";
 
-delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl:
-        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+// أيقونة مخصصة بحجم أكبر لتحسين التفاعل باللمس
+const CustomIcon = new L.Icon({
     iconUrl:
         "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+    iconRetinaUrl:
+        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+    iconSize: [44, 66],
+    iconAnchor: [22, 66],
+    popupAnchor: [0, -66],
     shadowUrl:
         "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+    shadowSize: [50, 64],
+    shadowAnchor: [22, 64],
 });
 
 const projects = [
@@ -80,15 +85,12 @@ const projects = [
     },
 ];
 
-
-
 const ProjectsMapSection = () => {
     const navigate = useNavigate();
 
     return (
         <section className="bg-gray-100 py-12 px-4 sm:px-6 lg:px-8" dir="rtl">
             <Helmet>
-                
                 <meta
                     name="description"
                     content="اكتشف مواقع مشاريع شركة الأمين في أنحاء الجمهورية على خريطة تفاعلية تشمل الإنشاءات والصيانة في مختلف المناطق."
@@ -116,13 +118,20 @@ const ProjectsMapSection = () => {
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
                         />
                         {projects.map((project, index) => (
-                            <Marker key={index} position={project.position}>
+                            <Marker
+                                key={index}
+                                position={project.position}
+                                icon={CustomIcon}
+                                keyboard={true}
+                            >
                                 <Popup>
                                     <div className="text-right">
                                         <h3 className="font-bold text-green-700 text-sm mb-1">
                                             {project.title}
                                         </h3>
-                                        <p className="text-xs text-gray-600">{project.description}</p>
+                                        <p className="text-xs text-gray-600">
+                                            {project.description}
+                                        </p>
                                         <img
                                             src={project.image}
                                             loading="lazy"
