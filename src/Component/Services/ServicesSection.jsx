@@ -38,13 +38,15 @@ const ServicesSection = () => {
             <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-green-200">
               <iframe
                 className="w-full h-64 rounded-2xl"
-                src="https://www.youtube.com/embed/Gl4unWQKTr4?autoplay=1&mute=1"
+                src="https://www.youtube.com/embed/Gl4unWQKTr4?autoplay=1&mute=1&origin=https://yourwebsite.com"
                 title="عرض تقديمي لخدمات شركة الأمين لاند سكيب"
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 loading="lazy"
+                data-cookieconsent="tracking"
               ></iframe>
+
             </div>
           </div>
         </figure>

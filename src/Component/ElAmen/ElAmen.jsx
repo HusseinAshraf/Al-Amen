@@ -41,12 +41,14 @@ function ElAmen() {
           <div className="overflow-hidden rounded-3xl shadow-lg hover:scale-[1.02] transition-transform duration-300">
             <iframe
               className="w-full h-64 md:h-96 rounded-xl"
-              src="https://www.youtube.com/embed/n84AqxOodKg?autoplay=1&mute=1"
+              src="https://www.youtube.com/embed/n84AqxOodKg?autoplay=1&mute=1&origin=https://yourwebsite.com"
               title="فيديو تعريفي عن شركة الأمين لاند سكيب"
               allowFullScreen
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               loading="lazy"
-            ></iframe>
+              data-cookieconsent="tracking"
+            />
+
           </div>
         </div>
 
