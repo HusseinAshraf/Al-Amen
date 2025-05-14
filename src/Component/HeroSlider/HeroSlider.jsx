@@ -33,10 +33,23 @@ const slides = [
 
 export default function HeroSlider() {
     const [current, setCurrent] = useState(0);
+    const [hasSwitched, setHasSwitched] = useState(false);
 
-    const nextSlide = () => setCurrent((prev) => (prev + 1) % slides.length);
-    const prevSlide = () =>
-        setCurrent((prev) => (prev - 1 + slides.length) % slides.length);
+    const nextSlide = () => {
+        setCurrent((prev) => {
+            const next = (prev + 1) % slides.length;
+            if (next !== 0) setHasSwitched(true);
+            return next;
+        });
+    };
+
+    const prevSlide = () => {
+        setCurrent((prev) => {
+            const next = (prev - 1 + slides.length) % slides.length;
+            if (next !== 0) setHasSwitched(true);
+            return next;
+        });
+    };
 
     useEffect(() => {
         const interval = setInterval(nextSlide, 5000);
@@ -61,17 +74,26 @@ export default function HeroSlider() {
 
             {/* Overlay Text */}
             <div className="absolute inset-0 bg-black/40 flex flex-col justify-center items-center px-4 text-center">
-                <motion.h1
-                    key={slides[current].text}
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -20 }}
-                    transition={{ duration: 0.8 }}
-                    className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold max-w-4xl"
-                    aria-live="polite"
-                >
-                    {slides[current].text}
-                </motion.h1>
+                {current === 0 && !hasSwitched ? (
+                    <h1
+                        className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold max-w-4xl"
+                        aria-live="polite"
+                    >
+                        {slides[current].text}
+                    </h1>
+                ) : (
+                    <motion.h1
+                        key={slides[current].text}
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        exit={{ opacity: 0, y: -20 }}
+                        transition={{ duration: 0.8 }}
+                        className="text-white text-xl sm:text-2xl md:text-4xl lg:text-5xl font-bold max-w-4xl"
+                        aria-live="polite"
+                    >
+                        {slides[current].text}
+                    </motion.h1>
+                )}
             </div>
 
             {/* Controls */}
