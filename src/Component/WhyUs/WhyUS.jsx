@@ -81,9 +81,9 @@ function WhyUS() {
                     {item.icon}
                   </div>
                   <div>
-                    <h4 className="font-semibold text-lg text-gray-800">
+                    <h3 className="font-semibold text-lg text-gray-800">
                       {item.title}
-                    </h4>
+                    </h3>
                     <p className="text-gray-600">{item.desc}</p>
                   </div>
                 </div>

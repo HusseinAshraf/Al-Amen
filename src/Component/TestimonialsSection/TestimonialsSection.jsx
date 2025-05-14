@@ -151,9 +151,9 @@ const TestimonialsSection = () => {
                           alt={`صورة ${testimonial.name}`}
                           className="w-16 md:w-20 h-16 md:h-20 rounded-full border-4 border-green-500 mb-3 shadow-md"
                         />
-                        <h4 className="text-lg md:text-xl font-semibold text-gray-900">
+                        <h3 className="text-lg md:text-xl font-semibold text-gray-900">
                           {testimonial.name}
-                        </h4>
+                        </h3>
                         <p className="text-xs md:text-sm text-gray-500">
                           {testimonial.role}
                         </p>
