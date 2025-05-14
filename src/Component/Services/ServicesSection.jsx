@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 
 const ServicesSection = () => {
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const iframeRef = useRef(null);
+
+  // تشغيل الفيديو بعد تحميل الصفحة
+  useEffect(() => {
+    if (iframeRef.current) {
+      // إضافة autoplay للفيديو بعد التحميل للتوافق مع سياسات الخصوصية
+      const timer = setTimeout(() => {
+        if (iframeRef.current) {
+          const currentSrc = iframeRef.current.src;
+          iframeRef.current.src = `${currentSrc}&autoplay=1`;
+        }
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [videoLoaded]);
+
+  const handleIframeLoad = () => {
+    setVideoLoaded(true);
+  };
 
   return (
     <section
@@ -38,13 +59,15 @@ const ServicesSection = () => {
           <div className="w-full max-w-md">
             <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-green-200">
               <iframe
+                ref={iframeRef}
                 className="w-full h-64 rounded-2xl"
-                src="https://www.youtube-nocookie.com/embed/Gl4unWQKTr4?autoplay=1&mute=1&origin=https://yourwebsite.com"
+                src="https://www.youtube-nocookie.com/embed/Gl4unWQKTr4?rel=0&mute=1&enablejsapi=1"
                 title="عرض تقديمي لخدمات شركة الأمين لاند سكيب"
                 frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
                 allowFullScreen
                 loading="lazy"
+                onLoad={handleIframeLoad}
               ></iframe>
             </div>
           </div>
