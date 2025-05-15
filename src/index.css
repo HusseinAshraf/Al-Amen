@@ -8,6 +8,7 @@ body {
 
 * {
   font-family: "Cairo", sans-serif !important;
+  font-display: swap !important;
 }
 
 :root {
@@ -108,4 +109,7 @@ body {
 .leaflet-bottom,
 .leaflet-popup {
   z-index: 10 !important;
+}
+footer{
+  font-display: swap;
 }
