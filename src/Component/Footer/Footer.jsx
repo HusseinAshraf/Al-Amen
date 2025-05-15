@@ -13,7 +13,7 @@ function Footer() {
     <footer className="bg-green-900 text-white py-12" dir="rtl">
       <div className="container mx-auto grid md:grid-cols-4 gap-8 px-8 text-center md:text-right">
         {/* من نحن */}
-        <div className="min-h-[200px]"> {/* إضافة ارتفاع ثابت أدنى */}
+        <div>
           <h3 className="text-xl font-bold mb-4 text-white">من نحن</h3>
           <p className="text-gray-200 text-sm leading-relaxed">
             في الأمين لاند سكيب نصنع مساحات خضراء تنبض بالجمال والحياة. نقدم خدمات تصميم وتنفيذ حدائق الفلل، الأماكن العامة والملاعب، مع توفير نباتات زينة وزهور وشبكات ري متطورة.
@@ -50,7 +50,7 @@ function Footer() {
         </div>
 
         {/* روابط الموقع */}
-        <div className="min-h-[150px]"> {/* إضافة ارتفاع ثابت أدنى */}
+        <div>
           <h3 className="text-xl font-bold mb-4 text-white">لينكات</h3>
           <ul className="space-y-2 text-sm">
             <li>
@@ -77,7 +77,7 @@ function Footer() {
         </div>
 
         {/* الخدمات */}
-        <div className="min-h-[150px]"> {/* إضافة ارتفاع ثابت أدنى */}
+        <div>
           <h3 className="text-xl font-bold mb-4 text-white">الخدمات</h3>
           <ul className="space-y-2 text-sm text-gray-200">
             <li>تصميم حدائق الفلل</li>
@@ -88,7 +88,7 @@ function Footer() {
         </div>
 
         {/* تواصل معنا */}
-        <div className="min-h-[150px]"> {/* إضافة ارتفاع ثابت أدنى */}
+        <div>
           <h3 className="text-xl font-bold mb-4 text-white">تواصل معنا</h3>
           <ul className="space-y-2 text-sm">
             <li className="flex items-center justify-center md:justify-start text-gray-200">
@@ -103,7 +103,7 @@ function Footer() {
         </div>
       </div>
 
-      <div className="text-center text-gray-300 text-xs mt-8 border-t border-gray-800 pt-4 h-20">
+      <div className="text-center text-gray-300 text-xs mt-8 border-t border-gray-800 pt-4 min-h-[80px]">
         El Amen Landscape © 2025 جميع الحقوق محفوظة | Hussein Ashraf
       </div>
     </footer>
