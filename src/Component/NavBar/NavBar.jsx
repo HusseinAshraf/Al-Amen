@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-import logo from "../../assets/image/logo1.png";
+// import logo from "../../assets/image/logo1.png";
 import { Menu, X, ChevronDown } from "lucide-react";
 
 function NavBar() {
@@ -35,7 +35,7 @@ function NavBar() {
       <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 cursor-pointer">
-          <img src={logo} className="h-12 w-12 md:h-14 md:w-14" alt="Logo" />
+          <img src="https://ik.imagekit.io/hussein74/Al%20Amen/logo.png?updatedAt=1745446702466" className="h-12 w-12 md:h-14 md:w-14" alt="Logo" />
           <span className="text-xl font-bold text-white">الأمين لاند سكيب</span>
         </Link>
 
