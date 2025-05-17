@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Helmet } from "react-helmet";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay } from "swiper/modules";
+import { useTranslation } from "react-i18next";
 
 import "swiper/css";
 import "swiper/css/pagination";
@@ -12,6 +13,7 @@ import ELShamy from "../../assets/image/el Shamy.png";
 import elwady from "../../assets/image/elwady.png";
 import neisco from "../../assets/image/neisco.png";
 import egyption from "../../assets/image/egyption.png";
+import i18n from "../../i18n";
 
 const partners = [
   { id: 1, name: "Hanter", image: Hanter },
@@ -23,6 +25,10 @@ const partners = [
 ];
 
 const PartnersSection = () => {
+  const { t } = useTranslation();
+  const isRTL = i18n.dir() === "rtl";
+
+
   useEffect(() => {
     setTimeout(() => {
       const pagination = document.querySelector(".custom-pagination");
@@ -33,55 +39,37 @@ const PartnersSection = () => {
   return (
     <>
       <Helmet>
-        
-        <meta
-          name="description"
-          content="تعرف على شركاء النجاح الذين ساهموا في مشاريعنا الناجحة في مجال تنسيق وتصميم الحدائق والمسطحات الخضراء."
-        />
-        <meta
-          name="keywords"
-          content="شركاء النجاح, تنسيق حدائق, لاند سكيب, تصميم حدائق, مشاريع ناجحة, شركاء الأمين"
-        />
-        <meta name="author" content="الأمين لاند سكيب" />
-        <meta
-          property="og:title"
-          content="شركاء النجاح - الأمين لاند سكيب"
-        />
-        <meta
-          property="og:description"
-          content="تعرف على شركاء النجاح الذين ساهموا في مشاريعنا الناجحة في مجال تنسيق وتصميم الحدائق والمسطحات الخضراء."
-        />
-        <meta
-          property="og:image"
-          content="https://ik.imagekit.io/hussein74/Al%20Amen/background.jpg"
-        />
-        <meta
-          property="og:url"
-          content="https://example.com/partners"
-        />
+        <meta name="description" content={t("partners.meta.description")} />
+        <meta name="keywords" content={t("partners.meta.keywords")} />
+        <meta name="author" content={t("partners.meta.author")} />
+        <meta property="og:title" content={t("partners.meta.ogTitle")} />
+        <meta property="og:description" content={t("partners.meta.ogDescription")} />
+        <meta property="og:image" content="https://ik.imagekit.io/hussein74/Al%20Amen/background.jpg" />
+        <meta property="og:url" content="https://example.com/partners" />
       </Helmet>
 
-      <section
-        className="py-16 text-center"
-        aria-labelledby="partners-title"
-      >
+      <section className="py-16 text-center" aria-labelledby="partners-title">
         <div className="container mx-auto px-4 sm:px-6 md:px-12 lg:px-40">
           <h3 className="text-green-600 text-base md:text-lg font-semibold mb-2">
-            سابقة أعمالنا
+            {t("partners.subtitle")}
           </h3>
           <h2
             id="partners-title"
             className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-6 md:mb-10"
           >
-            شركاء النجاح
+            {t("partners.title")}
           </h2>
 
           <Swiper
+            key={i18n.dir()}
+
             modules={[Pagination, Autoplay]}
             slidesPerView={3}
             spaceBetween={30}
             autoplay={{ delay: 3000, disableOnInteraction: false }}
             pagination={{ clickable: true, el: ".custom-pagination" }}
+            dir={i18n.dir()}
+            rtl={isRTL}
             breakpoints={{
               0: { slidesPerView: 1, spaceBetween: 10 },
               640: { slidesPerView: 1, spaceBetween: 10 },
@@ -94,11 +82,11 @@ const PartnersSection = () => {
               <SwiperSlide key={partner.id}>
                 <div
                   className="relative bg-white p-4 sm:p-5 md:p-6 border border-gray-300 rounded-xl flex justify-center items-center shadow-md h-32 sm:h-36 md:h-40 overflow-hidden group"
-                  aria-label={`شريك النجاح ${partner.name}`}
+                  aria-label={t("partners.aria", { name: partner.name })}
                 >
                   <img
                     src={partner.image}
-                    alt={`شعار ${partner.name}`}
+                    alt={t("partners.alt", { name: partner.name })}
                     className="w-auto h-full object-contain transition-transform duration-300 group-hover:scale-105"
                     loading="lazy"
                   />

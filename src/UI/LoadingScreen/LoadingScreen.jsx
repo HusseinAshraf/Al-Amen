@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useTranslation } from "react-i18next";
 
 export default function LoadingScreen() {
   const [isLoading, setIsLoading] = useState(true);
+  const { t, i18n } = useTranslation();
 
   useEffect(() => {
     const timer = setTimeout(() => setIsLoading(false), 5000);
@@ -17,6 +19,7 @@ export default function LoadingScreen() {
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
           className="fixed inset-0 flex items-center justify-center bg-green-900 text-white z-[100]"
+          dir={i18n.language === 'ar' ? 'rtl' : 'ltr'}
         >
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
@@ -28,10 +31,12 @@ export default function LoadingScreen() {
           >
             <img
               src="https://ik.imagekit.io/hussein74/Al%20Amen/logo.png?updatedAt=1745446702466"
-              alt="شعار الأمين لاندسكيب"
+              alt={t("loading.alt")}
               className="w-32 h-32 mb-4 animate-pulse"
             />
-            <strong className="text-lg font-semibold">....... جارِ التحميل</strong>
+            <strong className="text-lg font-semibold">
+              {t("loading.text")}
+            </strong>
           </motion.div>
 
           <div className="absolute inset-0 opacity-20 z-0">

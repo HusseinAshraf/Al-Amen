@@ -3,120 +3,44 @@ import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet";
-
-const projects = [
-  {
-    title: "كمبوند مينا جادرن سيتي",
-    description: "إنشاءات كمبوند مينا جادرن سيتي في 6 أكتوبر.",
-    fullDescription:
-      "إنشاءات كمبوند مينا جادرن سيتي في 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/mennaGarden.jpg?updatedAt=1745446690125",
-    category: "إنشاءات",
-  },
-  {
-    title: "نادي 6 أكتوبر",
-    description: "إنشاءات نادي 6 أكتوبر.",
-    fullDescription:
-      "إنشاءات نادي 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%86%D8%A7%D8%AF%D9%8A%206%20%D8%A7%D9%83%D8%AA%D9%88%D8%A8%D8%B1.jpeg?updatedAt=1745449239902",
-    category: "إنشاءات",
-  },
-  {
-    title: "المنتج الصحي للطب النفسي",
-    description: "المنتج الصحي للطب النفسي في التجمع الأول – القاهرة الجديدة.",
-    fullDescription:
-      "المنتج الصحي للطب النفسي في التجمع الأول – القاهرة الجديدة. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%B9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A.jpg?updatedAt=1745446713077",
-    category: "إنشاءات",
-  },
-  {
-    title: "كمبوند مينا ريزيدانس",
-    description:
-      "إنشاءات كمبوند مينا ريزيدانس في التجمع الخامس – القاهرة الجديدة.",
-    fullDescription:
-      "إنشاءات كمبوند مينا ريزيدانس في التجمع الخامس – القاهرة الجديدة. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/MenaRezdans.jpg?updatedAt=1745446694930",
-    category: "إنشاءات",
-  },
-  {
-    title: "جراند سيتي",
-    description: "إنشاءات جراند سيتي على طريق الواحات – 6 أكتوبر.",
-    fullDescription:
-      "إنشاءات جراند سيتي على طريق الواحات – 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/grandcity.jpg?updatedAt=1745446686024",
-    category: "إنشاءات",
-  },
-  {
-    title: "مدخل مدينة الشروق",
-    description: "إنشاءات مدخل مدينة الشروق على طريق الإسماعيلية.",
-    fullDescription:
-      "إنشاءات مدخل مدينة الشروق على طريق الإسماعيلية. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%AF%D8%AE%D9%84%20%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D9%82.jpg?updatedAt=1745449539025",
-    category: "إنشاءات",
-  },
-  {
-    title: "صيانه قرية مرمر",
-    description: "صيانة قرية مرمر بمساحة 135 ألف م² في الساحل الشمالي.",
-    fullDescription:
-      "صيانة قرية مرمر بمساحة 135 ألف م² في الساحل الشمالي. يشمل المشروع صيانة جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/Mrmr.jpg?updatedAt=1745446696101",
-    category: "صيانة",
-  },
-  {
-    title: "صيانه قرية برنسيس",
-    description: "صيانة قرية برنسيس بمساحة 80 ألف م² في 6 أكتوبر - زايد.",
-    fullDescription:
-      "صيانة قرية برنسيس بمساحة 80 ألف م² في 6 أكتوبر - زايد. يشمل المشروع صيانة جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/Berenses.jpg?updatedAt=1745446686033",
-    category: "صيانة",
-  },
-  {
-    title: "صيانه وإنشاءات قرية سيلسيا",
-    description: "صيانة وإنشاءات قرية سيلسيا بمساحة 100 ألف م² في مرسى مطروح.",
-    fullDescription:
-      "صيانة وإنشاءات قرية سيلسيا بمساحة 100 ألف م² في مرسى مطروح. يشمل المشروع صيانة جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/SeseliaMatrouh.jpg?updatedAt=1745446699371",
-    category: "صيانة",
-  },
-  {
-    title: "مدرسة الحي العاشر (أسامة بن زايد)",
-    description: "إنشاءات مدرسة الحي العاشر (أسامة بن زايد) في 6 أكتوبر.",
-    fullDescription:
-      "إنشاءات مدرسة الحي العاشر (أسامة بن زايد) في 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/OsamaBenZayed.jpg?updatedAt=1745446692188",
-    category: "إنشاءات",
-  },
-  {
-    title: "تطوير طريق شركة رايه القابضة",
-    description: "تطوير طريق شركة رايه القابضة في 6 أكتوبر.",
-    fullDescription:
-      "تطوير طريق شركة رايه القابضة في 6 أكتوبر. يشمل المشروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/Raya6-optimized.webp",
-    category: "تطوير",
-  },
-  {
-    title: "مصنع لذة السادات",
-    description: "إنشاءات مصنع لذة السادات في المنوفية.",
-    fullDescription:
-      "إنشاءات مصنع لذة السادات في المنوفية. يشمل المشذروع تصميم وتنفيذ جميع المرافق العامة، المساحات الخضراء، والطرق الداخلية.",
-    image: "https://ik.imagekit.io/hussein74/Al%20Amen/project5.jpg?updatedAt=1745446697696",
-    category: "إنشاءات",
-  },
-];
+import { useTranslation } from 'react-i18next';
 
 const Project = ({ limit }) => {
+  const { t, i18n } = useTranslation();
   const [selectedProject, setSelectedProject] = useState(null);
-  const [selectedCategory, setSelectedCategory] = useState("الكل");
+  // Use category key instead of translated text
+  const [selectedCategoryKey, setSelectedCategoryKey] = useState("all");
 
-  const categories = [
-    "الكل",
-    ...new Set(projects.map((project) => project.category)),
+  // Define category keys that stay consistent regardless of language
+  const categoryKeys = {
+    all: "all",
+    construction: "Construction",
+    maintenance: "Maintenance",
+    development: "Development"
+  };
+
+  // Get translated category names
+  const getCategoryName = (key) => {
+    if (key === "all") return t('projects.allCategories');
+    return key; // For other categories, we're using the English name as the key
+  };
+
+  // Get all unique categories from projects
+  const projectCategories = [
+    ...new Set(t('projects.projectItems', { returnObjects: true }).map((project) => project.category)),
   ];
 
+  // Create categories array with all categories first
+  const categories = [
+    { key: categoryKeys.all, name: t('projects.allCategories') },
+    ...projectCategories.map(category => ({ key: category, name: category }))
+  ];
+
+  const projects = t('projects.projectItems', { returnObjects: true });
   const filteredProjects =
-    selectedCategory === "الكل"
+    selectedCategoryKey === categoryKeys.all
       ? projects
-      : projects.filter((project) => project.category === selectedCategory);
+      : projects.filter((project) => project.category === selectedCategoryKey);
 
   const projectsToShow = limit
     ? filteredProjects.slice(0, limit)
@@ -125,7 +49,12 @@ const Project = ({ limit }) => {
   const location = useLocation();
   const isProjectPage = location.pathname === "/project";
 
-  // منع التمرير عند فتح المودال
+  // Reset category when language changes
+  useEffect(() => {
+    setSelectedCategoryKey(categoryKeys.all);
+  }, [i18n.language]);
+
+  // Prevent scrolling when modal is open
   useEffect(() => {
     if (selectedProject) {
       document.body.style.overflow = 'hidden';
@@ -138,15 +67,9 @@ const Project = ({ limit }) => {
     <>
       {isProjectPage && (
         <Helmet>
-          <title>أعمالنا - الأمين لاند سكيب</title>
-          <meta
-            name="description"
-            content="اكتشف أعمالنا في مشاريع الإنشاءات والصيانة. تصفح أحدث مشاريعنا واكتشف تفاصيلها."
-          />
-          <meta
-            name="keywords"
-            content="مشاريع, إنشاءات, صيانة, أعمالنا, مشاريع بناء"
-          />
+          <title>{t('projects.pageTitle')}</title>
+          <meta name="description" content={t('projects.metaDescription')} />
+          <meta name="keywords" content={t('projects.metaKeywords')} />
           <link rel="canonical" href="https://www.yoursite.com/projects" />
         </Helmet>
       )}
@@ -154,24 +77,24 @@ const Project = ({ limit }) => {
       <section
         id="projects"
         className="py-16 text-center bg-gradient-to-b from-green-50 to-white"
-        dir="rtl"
+        dir={t('direction') === 'rtl' ? 'rtl' : 'ltr'}
       >
         <div className="max-w-5xl mx-auto text-center pt-10">
-          <TitleWithLeaves title="أعمالنا" />
+          <TitleWithLeaves title={t('projects.sectionTitle')} />
         </div>
 
         <div className="flex flex-wrap gap-3 justify-center mb-10 pt-5">
           {categories.map((category) => (
             <button
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              className={`px-4 py-2 rounded-full text-sm transition cursor-pointer ${selectedCategory === category
-                ? "bg-green-600 text-white shadow-md"
-                : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
+              key={category.key}
+              onClick={() => setSelectedCategoryKey(category.key)}
+              className={`px-4 py-2 rounded-full text-sm transition cursor-pointer ${selectedCategoryKey === category.key
+                  ? "bg-green-600 text-white shadow-md"
+                  : "bg-white border border-green-400 text-green-600 hover:bg-green-100"
                 }`}
-              aria-label={`عرض مشاريع ${category}`} // إضافة aria-label
+              aria-label={t('projects.ariaLabels.categoryButton', { category: category.name })}
             >
-              {category}
+              {category.name}
             </button>
           ))}
         </div>
@@ -182,9 +105,9 @@ const Project = ({ limit }) => {
               key={index}
               className="bg-white p-6 rounded-2xl shadow-lg hover:shadow-xl transition-transform duration-300 border-t-4 border-green-600"
               onClick={() => setSelectedProject(project)}
-              aria-label={`عرض تفاصيل مشروع ${project.title}`} // إضافة aria-label
-              role="button" // تحديد العنصر كزر
-              tabIndex={0} // تمكين التنقل عبر لوحة المفاتيح
+              aria-label={t('projects.ariaLabels.projectCard', { title: project.title })}
+              role="button"
+              tabIndex={0}
             >
               <img
                 src={project.image}
@@ -216,14 +139,14 @@ const Project = ({ limit }) => {
                   animate={{ y: 0, opacity: 1 }}
                   exit={{ y: 50, opacity: 0 }}
                   transition={{ duration: 0.3 }}
-                  role="dialog" // تحديد العنصر كـ dialog
-                  aria-labelledby="modal-title" // إضافة aria-labelledby
-                  aria-hidden={selectedProject ? "false" : "true"} // تحديث aria-hidden عند فتح المودال
+                  role="dialog"
+                  aria-labelledby="modal-title"
+                  aria-hidden={selectedProject ? "false" : "true"}
                 >
                   <button
                     className="absolute top-3 left-3 text-gray-500 hover:text-red-600 text-2xl font-bold"
                     onClick={() => setSelectedProject(null)}
-                    aria-label="إغلاق المودال" // إضافة aria-label
+                    aria-label={t('projects.ariaLabels.closeModalButton')}
                   >
                     ✕
                   </button>
@@ -255,9 +178,9 @@ const Project = ({ limit }) => {
             <Link
               to="/project"
               className="bg-green-700 text-white px-6 py-3 rounded-lg hover:bg-green-800 transition-colors duration-300"
-              aria-label="عرض المزيد من المشاريع" // إضافة aria-label
+              aria-label={t('projects.ariaLabels.viewMoreButton')}
             >
-              عرض المزيد
+              {t('projects.viewMore')}
             </Link>
           </div>
         )}

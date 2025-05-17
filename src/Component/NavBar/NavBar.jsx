@@ -1,22 +1,32 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
-// import logo from "../../assets/image/logo1.png";
 import { Menu, X, ChevronDown } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [aboutOpen, setAboutOpen] = useState(false);
   const location = useLocation();
   const aboutRef = useRef();
+  const { t, i18n } = useTranslation();
+
+  const currentLang = i18n.language || "ar";
 
   const navLinks = [
-    { to: "/features", label: "مميزاتنا" },
-    { to: "/services", label: "خدماتنا" },
-    { to: "/project", label: "أعمالنا" },
-    { to: "/contact", label: "اتصل بنا" },
+    { to: "/features", label: t("Features") },
+    { to: "/services", label: t("ourServices") },
+    { to: "/project", label: t("Projects") },
+    { to: "/contact", label: t("Contact") },
   ];
 
-  // إغلاق الدروب داون عند النقر خارجه
+  const toggleLanguage = () => {
+    const newLang = currentLang === "ar" ? "en" : "ar";
+    i18n.changeLanguage(newLang);
+    localStorage.setItem("language", newLang);
+    document.documentElement.lang = newLang;
+    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
+  };
+
   useEffect(() => {
     const handleClickOutside = (e) => {
       if (aboutRef.current && !aboutRef.current.contains(e.target)) {
@@ -28,15 +38,16 @@ function NavBar() {
   }, []);
 
   return (
-    <nav
-      className="fixed top-0 w-full bg-green-800 bg-opacity-95 backdrop-blur-md shadow-xl z-50"
-      dir="rtl"
-    >
+    <nav className="fixed top-0 w-full bg-green-800 bg-opacity-95 backdrop-blur-md shadow-xl z-50">
       <div className="max-w-screen-xl mx-auto p-4 flex items-center justify-between">
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 cursor-pointer">
-          <img src="https://ik.imagekit.io/hussein74/Al%20Amen/logo.png?updatedAt=1745446702466" className="h-12 w-12 md:h-14 md:w-14" alt="Logo" />
-          <span className="text-xl font-bold text-white">الأمين لاند سكيب</span>
+          <img
+            src="https://ik.imagekit.io/hussein74/Al%20Amen/logo.png?updatedAt=1745446702466"
+            className="h-12 w-12 md:h-14 md:w-14"
+            alt="Logo"
+          />
+          <span className="text-xl font-bold text-white">{t("brandName")}</span>
         </Link>
 
         {/* Toggle Button */}
@@ -51,12 +62,13 @@ function NavBar() {
 
         {/* Menu */}
         <div
-          className={`${menuOpen ? "opacity-100 translate-y-0 pointer-events-auto" : "opacity-0 -translate-y-4 pointer-events-none"
+          className={`${menuOpen
+              ? "opacity-100 translate-y-0 pointer-events-auto"
+              : "opacity-0 -translate-y-4 pointer-events-none"
             } md:opacity-100 md:translate-y-0 md:pointer-events-auto
           absolute md:static top-full right-0 left-0 bg-green-900 md:bg-transparent transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
         >
-          <ul className="flex flex-col md:flex-row gap-3 md:gap-6 p-4 md:p-0 font-semibold text-white">
-
+          <ul className="flex flex-col md:flex-row gap-3 md:gap-6 p-4 md:p-0 font-semibold text-white items-start md:items-center">
             {/* من نحن */}
             <li ref={aboutRef} className="relative w-full md:w-auto">
               <button
@@ -65,42 +77,47 @@ function NavBar() {
                 aria-expanded={aboutOpen}
                 aria-controls="about-menu"
               >
-                من نحن
+                {t("About")}
                 <ChevronDown
                   size={18}
-                  className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""}`}
+                  className={`transition-transform duration-300 ${aboutOpen ? "rotate-180" : ""
+                    }`}
                 />
               </button>
 
               <ul
                 id="about-menu"
-                className={`transition-all duration-300 ${aboutOpen ? "block" : "hidden"} w-full md:w-40 
-                bg-green-900 bg-opacity-95 rounded-lg shadow-md z-50 md:absolute md:right-0 md:mt-2`}
+                className={`transition-all duration-300 ${aboutOpen ? "block" : "hidden"
+                  } w-full md:w-40 bg-green-900 bg-opacity-95 rounded-lg shadow-md z-50 md:absolute md:right-0 md:mt-2`}
               >
                 <li>
                   <Link
                     to="/about/company"
-                    className={`block px-4 py-2 hover:bg-green-800 transition ${location.pathname === "/about/company" ? "text-yellow-300" : "text-white"
+                    className={`block px-4 py-2 hover:bg-green-800 transition ${location.pathname === "/about/company"
+                        ? "text-yellow-300"
+                        : "text-white"
                       }`}
                     onClick={() => {
                       setMenuOpen(false);
                       setAboutOpen(false);
                     }}
                   >
-                    عن الشركة
+                    {t("Company")}
                   </Link>
                 </li>
                 <li>
                   <Link
                     to="/about/founder"
-                    className={`block px-4 py-2 hover:bg-green-800 transition ${location.pathname === "/about/founder" ? "text-yellow-300" : "text-white"
+                    className={`block px-4 py-2 hover:bg-green-800 transition ${location.pathname === "/about/founder"
+                        ? "text-yellow-300"
+                        : "text-white"
                       }`}
                     onClick={() => {
                       setMenuOpen(false);
                       setAboutOpen(false);
                     }}
                   >
-                    عن المؤسس
+                    {t("Founder")}
                   </Link>
                 </li>
               </ul>
@@ -114,8 +131,8 @@ function NavBar() {
                   <Link
                     to={to}
                     className={`block py-2 px-4 rounded-lg transition-all duration-300 hover:bg-green-700 ${isActive
-                      ? "text-yellow-300 underline underline-offset-6 decoration-2 "
-                      : "hover:text-yellow-300"
+                        ? "text-yellow-300 underline underline-offset-6 decoration-2 "
+                        : "hover:text-yellow-300"
                       }`}
                     onClick={() => setMenuOpen(false)}
                   >
@@ -124,6 +141,22 @@ function NavBar() {
                 </li>
               );
             })}
+
+            {/* زر تغيير اللغة */}
+            <li className="mt-2 md:mt-0">
+              <button
+                onClick={toggleLanguage}
+                className="flex items-center gap-2 rounded-full border-2 border-yellow-400 bg-yellow-400/20 text-yellow-400 font-semibold px-5 py-1.5 text-sm shadow-md transition-all duration-300 hover:bg-yellow-400 hover:text-green-900 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
+                aria-label={
+                  currentLang === "ar" ? "Switch to English" : "التبديل إلى العربية"
+                }
+              >
+                <span className="text-lg">{currentLang === "ar" ? "🇺🇸" : "AR"}</span>
+                <span className="whitespace-nowrap">
+                  {currentLang === "ar" ? "English" : "عربي"}
+                </span>
+              </button>
+            </li>
           </ul>
         </div>
       </div>

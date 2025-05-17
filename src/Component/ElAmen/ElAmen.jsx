@@ -1,29 +1,42 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
+import i18n from "../../i18n";
 
 function ElAmen() {
+  const { t } = useTranslation();
+  const currentLang = i18n.language;
+  const isRTL = currentLang === "ar";
+
+  const [videoLoaded, setVideoLoaded] = useState(false);
+  const iframeRef = useRef(null);
+
+  useEffect(() => {
+    if (iframeRef.current) {
+      const timer = setTimeout(() => {
+        if (iframeRef.current) {
+          const currentSrc = iframeRef.current.src;
+          iframeRef.current.src = `${currentSrc}&autoplay=1`;
+        }
+      }, 1000);
+
+      return () => clearTimeout(timer);
+    }
+  }, [videoLoaded]);
+
+  const handleIframeLoad = () => {
+    setVideoLoaded(true);
+  };
+
   return (
     <>
-      <Helmet>
-
-        <meta
-          name="description"
-          content="شركة الأمين لاند سكيب تقدم خدمات تصميم وتنفيذ الحدائق والمساحات الخضراء، بما في ذلك الري، الحوائط الزراعية، والصيانة الدورية. تواصل معنا لتحويل مساحاتك."
-        />
-        <meta
-          name="keywords"
-          content="شركة الأمين لاند سكيب, تصميم حدائق, تنفيذ ري, صيانة حدائق, حوائط زراعية, سوفت سكيب, هارد سكيب, مساحات خضراء"
-        />
-        <meta name="author" content="الأمين لاند سكيب" />
-        <meta
-          property="og:title"
-          content="شركة الأمين لاند سكيب - خبراء الهاردسكيب والسوفت سكيب"
-        />
-        <meta
-          property="og:description"
-          content="استمتع بجمال الطبيعة مع شركة الأمين لاند سكيب. نحن متخصصون في تصميم الحدائق والمساحات الخضراء وتنفيذ شبكات الري وصيانة الأماكن العامة."
-        />
+      <Helmet htmlAttributes={{ lang: currentLang, dir: isRTL ? "rtl" : "ltr" }}>
+        <meta name="description" content={t("elamen.meta.description")} />
+        <meta name="keywords" content={t("elamen.meta.keywords")} />
+        <meta name="author" content={t("elamen.meta.author")} />
+        <meta property="og:title" content={t("elamen.meta.ogTitle")} />
+        <meta property="og:description" content={t("elamen.meta.ogDescription")} />
         <meta
           property="og:image"
           content="https://ik.imagekit.io/hussein74/Al%20Amen/amen-landscape.jpg?updatedAt=1745447747249"
@@ -33,55 +46,62 @@ function ElAmen() {
       </Helmet>
 
       <section
-        className="grid grid-cols-1 md:grid-cols-2 gap-12 px-6 py-12 bg-gradient-to-br from-green-100 via-white to-green-50"
+        className="py-16 px-4 sm:px-6 md:px-16 bg-gradient-to-b from-green-50 to-white"
+        dir={i18n.dir()}
         aria-labelledby="elamen-title"
       >
-        {/* الفيديو */}
-        <div className="w-full">
-          <div className="overflow-hidden rounded-3xl shadow-lg hover:scale-[1.02] transition-transform duration-300">
-            <iframe
-              className="w-full h-64 md:h-96 rounded-xl"
-              src="https://www.youtube.com/embed/n84AqxOodKg?autoplay=1&mute=1&origin=https://yourwebsite.com"
-              title="فيديو تعريفي عن شركة الأمين لاند سكيب"
-              allowFullScreen
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              loading="lazy"
-              data-cookieconsent="tracking"
-            />
-
-          </div>
-        </div>
-
-        {/* المحتوى النصي */}
-        <div className="text-green-900" dir="rtl">
-          <h2
-            id="elamen-title"
-            className="text-4xl font-extrabold mb-6 leading-snug text-green-800"
+        <div
+          className={`max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center ${isRTL ? "md:flex-row-reverse" : ""
+            }`}
+        >
+          {/* النص */}
+          <header
+            className={`${isRTL ? "md:text-right" : "md:text-left"
+              } text-center space-y-4 w-full`}
           >
-            شركة الأمين لاند سكيب
-            <br />
-            <span className="text-green-600 text-2xl font-semibold block mt-2">
-              خبراء الهاردسكيب والسوفت سكيب
-            </span>
-          </h2>
+            <h2
+              id="elamen-title"
+              className="text-3xl sm:text-4xl font-bold text-green-900 leading-snug"
+            >
+              {t("elamen.title")}
+              <br />
+              <span className="text-green-600 text-2xl font-semibold block mt-2">
+                {t("elamen.subtitle")}
+              </span>
+            </h2>
+            <p className="text-gray-700 leading-relaxed text-base sm:text-lg">
+              {t("elamen.description.part1")}{" "}
+              <strong className="text-green-800 font-semibold">
+                {t("elamen.companyName")}
+              </strong>{" "}
+              {t("elamen.description.part2")}
+            </p>
+            <Link
+              to="/contact"
+              className="inline-block bg-green-700 hover:bg-green-800 text-white px-6 py-2 rounded-full shadow transition duration-300"
+            >
+              {t("elamen.contactBtn")}
+            </Link>
+          </header>
 
-          <p className="text-lg leading-loose text-green-700 mb-6">
-            مع{" "}
-            <strong className="text-green-800 font-semibold">
-              الأمين لاند سكيب
-            </strong>{" "}
-            ، استمتع بجمال الطبيعة! نحن متخصصون في إنشاء وتجديد الحدائق
-            والمساحات الخضراء للفيلات، النوادي، الفنادق، والكمبوندات. نقدم خدمات
-            تصميم ثلاثي الأبعاد، تنفيذ شبكات الري، تركيب الحوائط الزراعية،
-            وصيانة دورية للمساحات الخضراء.
-          </p>
-
-          <Link
-            to="/contact"
-            className="mt-8 inline-block px-8 py-3 bg-green-700 text-white font-semibold rounded-full shadow-lg hover:bg-green-800 hover:scale-105 transition duration-300 transform active:scale-95"
-          >
-            تواصل معنا
-          </Link>
+          {/* الفيديو */}
+          <figure className="relative flex justify-center w-full">
+            <div className="w-full max-w-xl">
+              <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-green-200">
+                <iframe
+                  ref={iframeRef}
+                  className="w-full h-64 md:h-96 rounded-2xl"
+                  src="https://www.youtube.com/embed/n84AqxOodKg?rel=0&mute=1&enablejsapi=1"
+                  title={t("elamen.videoTitle")}
+                  frameBorder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
+                  allowFullScreen
+                  loading="lazy"
+                  onLoad={handleIframeLoad}
+                ></iframe>
+              </div>
+            </div>
+          </figure>
         </div>
       </section>
     </>

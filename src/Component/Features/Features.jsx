@@ -5,61 +5,48 @@ import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
 import BackGround from "../../UI/BackGround/BackGround";
 import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 function Features() {
+  const { t, i18n } = useTranslation();
+  const currentLang = i18n.language;
+  const location = useLocation();
+  const isFeaturesPage = location.pathname === "/features";
+
   const featuresData = [
     {
       icon: FaDollarSign,
-      title: "أفضل أسعار تنسيق حدائق في مصر",
-      description:
-        "نقدّم أفضل العروض والخدمات بأسعار تنافسية على مستوى الجمهورية لتنسيق وتصميم وصيانة الحدائق.",
+      title: t("features.items.0.title"),
+      description: t("features.items.0.description"),
     },
     {
       icon: FaUsers,
-      title: "فريق محترف بخبرة 10 سنوات",
-      description:
-        "مهندسون وفنيون متخصصون في تنسيق الحدائق، نضمن لك نتائج احترافية ترضي ذوقك.",
+      title: t("features.items.1.title"),
+      description: t("features.items.1.description"),
     },
     {
       icon: FaCog,
-      title: "محاكاة للتصميم قبل التنفيذ",
-      description:
-        "نعرض لك تصورًا مرئيًا لتصميم الحديقة قبل البدء لضمان تطابق التنفيذ مع الرؤية.",
+      title: t("features.items.2.title"),
+      description: t("features.items.2.description"),
     },
     {
       icon: FaClipboardCheck,
-      title: "أكثر من 1000 مشروع ناجح",
-      description:
-        "نفذنا مئات المشاريع داخل مصر وخارجها في تصميم وصيانة وتوريد مستلزمات الحدائق.",
+      title: t("features.items.3.title"),
+      description: t("features.items.3.description"),
     },
   ];
-
-  const location = useLocation();
-  const isFeaturesPage = location.pathname === "/features";
 
   return (
     <>
       {isFeaturesPage && (
         <Helmet>
-          <html lang="ar" />
-          <title>مميزاتنا - الأمين لاند سكيب</title>
-          <meta
-            name="description"
-            content="اكتشف مميزات شركة الأمين لاند سكيب في تصميم وتنفيذ وصيانة الحدائق. نقدم أفضل الأسعار، فريق متخصص، تصميمات مرئية، وأكثر من 1000 مشروع ناجح."
-          />
-          <meta
-            name="keywords"
-            content="مميزاتنا, تنسيق حدائق, تصميم حدائق, صيانة حدائق, أسعار تنسيق حدائق, مشروع ناجح, محاكاة تصميم, فريق محترف"
-          />
-          <meta name="author" content="الأمين لاند سكيب" />
-          <meta
-            property="og:title"
-            content="مميزاتنا - شركة الأمين لاند سكيب"
-          />
-          <meta
-            property="og:description"
-            content="تعرف على مميزاتنا في تقديم خدمات تصميم وصيانة الحدائق والمشاريع الناجحة لدينا."
-          />
+          <html lang={currentLang} />
+          <title>{t("features.meta.title")}</title>
+          <meta name="description" content={t("features.meta.description")} />
+          <meta name="keywords" content={t("features.meta.keywords")} />
+          <meta name="author" content={t("features.meta.author")} />
+          <meta property="og:title" content={t("features.meta.ogTitle")} />
+          <meta property="og:description" content={t("features.meta.ogDescription")} />
           <meta
             property="og:image"
             content="https://ik.imagekit.io/hussein74/Al%20Amen/features-image.jpg?updatedAt=1745447747249"
@@ -70,13 +57,13 @@ function Features() {
       <BackGround>
         <section
           id="features"
-          aria-label="مميزات شركة الأمين لاند سكيب"
+          aria-label={t("features.sectionAriaLabel")}
           className="py-20 px-4 sm:px-8 lg:px-12"
-          dir="rtl"
+          dir={currentLang === "ar" ? "rtl" : "ltr"}
         >
           <div className="max-w-6xl mx-auto">
             <div className="text-center mb-14 pt-7">
-              <TitleWithLeaves title="مميزاتنا" />
+              <TitleWithLeaves title={t("features.title")} />
             </div>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-10">

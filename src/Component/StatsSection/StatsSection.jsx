@@ -2,27 +2,31 @@ import React from "react";
 import CountUp from "react-countup";
 import { useInView } from "react-intersection-observer";
 import { FaAward, FaUsers, FaLeaf, FaUserTie } from "react-icons/fa";
-import { Helmet } from "react-helmet"; 
+import { Helmet } from "react-helmet";
+import { useTranslation } from "react-i18next";
+
 const StatsSection = () => {
+  const { t } = useTranslation();
+
   const stats = [
     {
       number: 10,
-      label: "مكافآت وجوائز",
+      label: t("stats.awards"),
       icon: <FaAward className="text-yellow-300 text-6xl" aria-hidden="true" />,
     },
     {
       number: 35,
-      label: "فريق متخصص",
+      label: t("stats.specialists"),
       icon: <FaUserTie className="text-blue-300 text-6xl" aria-hidden="true" />,
     },
     {
       number: 216,
-      label: "عملاء راضون",
+      label: t("stats.clients"),
       icon: <FaUsers className="text-green-300 text-6xl" aria-hidden="true" />,
     },
     {
       number: 90,
-      label: "حدائق مكتملة",
+      label: t("stats.gardens"),
       icon: <FaLeaf className="text-lime-300 text-6xl" aria-hidden="true" />,
     },
   ];
@@ -32,20 +36,19 @@ const StatsSection = () => {
   return (
     <>
       <Helmet>
-        
         <meta
           name="description"
-          content="تعرف على إنجازات الأمين لاند سكيب، من الجوائز إلى عدد الحدائق المكتملة والعملاء الراضين. نعمل باحترافية لنحقق الأفضل دائمًا."
+          content={t("stats.meta.description")}
         />
         <meta
           name="keywords"
-          content="مكافآت, جوائز, فريق متخصص, عملاء راضون, حدائق مكتملة, تنسيق حدائق, الأمين لاند سكيب"
+          content={t("stats.meta.keywords")}
         />
-        <meta name="author" content="الأمين لاند سكيب" />
-        <meta property="og:title" content="أرقامنا وإنجازاتنا | الأمين لاند سكيب" />
+        <meta name="author" content={t("company.name")} />
+        <meta property="og:title" content={t("stats.meta.ogTitle")} />
         <meta
           property="og:description"
-          content="نحن فخورون بتحقيق العديد من الإنجازات في مجال تنسيق الحدائق."
+          content={t("stats.meta.ogDescription")}
         />
         <meta
           property="og:image"
@@ -63,7 +66,7 @@ const StatsSection = () => {
         aria-labelledby="stats-title"
       >
         <h2 id="stats-title" className="text-3xl md:text-4xl font-bold mb-8">
-          أرقامنا وإنجازاتنا
+          {t("stats.heading")}
         </h2>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 max-w-6xl mx-auto px-4">
           {stats.map((stat, index) => (

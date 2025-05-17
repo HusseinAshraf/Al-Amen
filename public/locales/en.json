@@ -1,0 +1,706 @@
+{
+  "brandName": "Al-Amen Landscape",
+  "Company": "Company",
+  "Founder": "Founder",
+  "About": "About Us",
+  "ourServices": "Services",
+  "Features": "Features",
+  "Projects": "Projects",
+  "Contact": "Contact",
+  "language": "Language",
+  "slides": [
+    {
+      "text": "Al Amen Landscape – Crafting beauty in every outdoor corner",
+      "alt": "Carefully designed outdoor view reflecting natural beauty"
+    },
+    {
+      "text": "Masterful hardscape reflecting your taste and fitting any environment",
+      "alt": "Elegant hardscape design for an outdoor area"
+    },
+    {
+      "text": "Professional planting that gives your space renewed life",
+      "alt": "Professionally planted green spaces"
+    },
+    {
+      "text": "Integrated solutions for garden, entrance, and facade landscaping",
+      "alt": "Well-coordinated home garden"
+    },
+    {
+      "text": "Innovation in design... commitment in execution",
+      "alt": "Wooden bench in an innovatively designed garden"
+    }
+  ],
+  "aria": {
+    "sliderLabel": "Image slider",
+    "prevSlide": "Previous slide",
+    "nextSlide": "Next slide",
+    "goToSlide": "Go to slide {{number}}"
+  },
+  "aboutSection": {
+    "meta": {
+      "description": "Al-Amin Landscape Company offers innovative landscape services including villa garden and playground design and execution, providing ornamental plants and maintenance equipment.",
+      "keywords": "Al-Amin Landscape, landscape design, garden maintenance, ornamental plants, garden coordination, hardscape, irrigation networks, landscape projects",
+      "author": "Al-Amin Landscape",
+      "ogTitle": "About Us - Al-Amin Landscape",
+      "ogDescription": "Discover Al-Amin Landscape Company’s services in delivering integrated landscape solutions that transform spaces into beautiful green environments."
+    },
+    "title": "About Us",
+    "subtitle": "Experience that Makes a Difference",
+    "description": "At Al-Amin Landscape, we specialize in innovative landscaping services that add beauty and elegance to any space. We provide integrated solutions for designing and implementing villa gardens, public spaces, and playgrounds, along with supplying ornamental plants, turf (artificial, natural), flowers, fruit trees, and all hardscape equipment such as sprinklers, sand, and interlock. We also focus on garden maintenance and irrigation network development to ensure a perfect, lasting look. Our vision is to transform your spaces into vibrant oases because we believe nature is the secret of inspiration and beauty.",
+    "learnMore": "Learn More",
+    "learnMoreAria": "Learn more about Al-Amin Landscape services",
+    "imageAlt": "Image of a garden or landscape design",
+    "expertLabel": "Leading Expertise",
+    "expertText": "Leading Expertise",
+    "innovativeLabel": "Innovative Designs",
+    "innovativeText": "Innovative Designs",
+    "inspiringLabel": "Inspiring Environment",
+    "inspiringText": "Inspiring Environment"
+  },
+  "whyus": {
+    "heading": "Why Us?",
+    "title": "Expertise & Sustainable Beauty",
+    "description": "At Al-Ameen Landscape, we stand out with extensive experience in landscaping, offering innovative designs and sustainable solutions that meet our clients’ needs. Our specialized team ensures the creation of ideal green spaces tailored to your desires.",
+    "features": {
+      "innovation": {
+        "title": "Continuous Innovation",
+        "desc": "We constantly strive to deliver new solutions suitable for all spaces."
+      },
+      "services": {
+        "title": "Comprehensive Services",
+        "desc": "From design to execution, we provide everything your garden needs."
+      },
+      "commitment": {
+        "title": "Commitment & Professionalism",
+        "desc": "We meet deadlines and work with the highest quality standards."
+      },
+      "vision": {
+        "title": "Future Vision",
+        "desc": "We follow the latest trends in landscaping."
+      }
+    },
+    "meta": {
+      "title": "Why Us? | Al-Ameen Landscape",
+      "description": "Discover why we are the ideal choice for garden design and execution. Continuous innovation, comprehensive services, commitment and professionalism, and a future vision in landscaping.",
+      "keywords": "garden design, landscaping, garden services, innovation, comprehensive services, sustainable design",
+      "ogTitle": "Why Us? | Al-Ameen Landscape",
+      "ogDescription": "Discover why we are the ideal choice for garden design and execution. Continuous innovation, comprehensive services, commitment and professionalism, and a future vision in landscaping."
+    },
+    "imageAlt": "A tree reflecting sustainable design beauty in a landscaping project"
+  },
+  "features": {
+    "title": "Our Features",
+    "sectionAriaLabel": "Al-Ameen Landscape Company Features",
+    "items": [
+      {
+        "title": "Best Garden Design Prices in Egypt",
+        "description": "We offer the best deals and services at competitive prices across the country for landscaping, garden design, and maintenance."
+      },
+      {
+        "title": "A Professional Team with 10 Years of Experience",
+        "description": "Engineers and technicians specialized in landscaping, delivering professional results that match your taste."
+      },
+      {
+        "title": "Design Simulation Before Execution",
+        "description": "We provide a visual concept of your garden design before starting to ensure implementation matches the vision."
+      },
+      {
+        "title": "Over 1000 Successful Projects",
+        "description": "We have completed hundreds of landscaping, maintenance, and garden supply projects inside and outside Egypt."
+      }
+    ],
+    "meta": {
+      "title": "Our Features - Al-Ameen Landscape",
+      "description": "Discover the features of Al-Ameen Landscape in designing, executing, and maintaining gardens. We offer the best prices, a specialized team, visual designs, and over 1000 successful projects.",
+      "keywords": "our features, landscaping, garden design, garden maintenance, best garden prices, successful project, design simulation, professional team",
+      "author": "Al-Ameen Landscape",
+      "ogTitle": "Our Features - Al-Ameen Landscape Company",
+      "ogDescription": "Learn about our strengths in providing garden design and maintenance services and our successful project history."
+    }
+  },
+  "servicesSection": {
+    "ariaLabel": "About Al-Ameen Landscape Services",
+    "introLabel": "About Our Services",
+    "title": "Our Services Pulse with Beauty",
+    "description": "At Al-Ameen, we specialize in providing integrated solutions for gardens and outdoor spaces. Our services include garden design and landscaping, installation of waterfalls and pergolas, irrigation network implementation, playgrounds, agricultural decorations, and supply of high-quality landscaping materials. We work with skilled hands and the latest technologies to transform your space into a vibrant oasis.",
+    "button": "Learn More",
+    "videoTitle": "Introductory Presentation for Al-Ameen Landscape Services"
+  },
+  "plantsMeta": {
+    "description": "Explore a collection of plants showcased in our previous landscaping projects with details on each type.",
+    "keywords": "plant landscaping, garden design, ornamental plants, pineapple cactus, ficus benjamina, jasmine",
+    "title": "Plant Landscaping - Al-Amin Landscape"
+  },
+  "plantsSection": {
+    "ariaLabel": "Plants Gallery",
+    "subtitle": "A Green Touch Everywhere",
+    "title": "Our Past Works in Plant Landscaping",
+    "viewDetails": "View Details",
+    "imageOf": "Image of",
+    "closeModal": "Close modal",
+    "enlargedViewOf": "Enlarged view of"
+  },
+  "plants": {
+    "pineappleCactus": "Pineapple Cactus",
+    "ficusB": "Ficus Benjamina",
+    "dorentaLemoni": "Dorenta Lemoni",
+    "spiralCypress": "Spiral Cypress with Core",
+    "hibiscus": "Hibiscus",
+    "jasmineShamsi": "Jasmine Shamsi"
+  },
+  "headings": {
+    "subtitle": "Our Testimonials",
+    "title": "Our Continued Pride"
+  },
+  "buttons": {
+    "previous": "Show previous review",
+    "next": "Show next review"
+  },
+  "meta": {
+    "description": "Discover our customers' opinions about our landscaping services. We work hard to provide the best possible experience.",
+    "keywords": "customer reviews, landscaping, garden design, landscape services, Al Amin Landscape",
+    "author": "Al Amin Landscape",
+    "ogTitle": "Our Testimonials - Al Amin Landscape",
+    "ogDescription": "Discover our customers' opinions about our landscaping services."
+  },
+  "testimonial": {
+    "ariaLabel": "Review from {{name}}",
+    "imageAlt": "Photo of {{name}}"
+  },
+  "testimonials": [
+    {
+      "name": "Maha Mohie",
+      "role": "Accountant",
+      "image": "https://i.pravatar.cc/80?img=1",
+      "review": "Professional work and beautiful results. They planted fruit trees in our garden and it looks amazing.",
+      "rating": 5
+    },
+    {
+      "name": "Mohammed Tarek",
+      "role": "Teacher",
+      "image": "https://i.pravatar.cc/80?img=2",
+      "review": "Attention to detail made the experience special. Excellent service and complete care.",
+      "rating": 5
+    },
+    {
+      "name": "Nada Khaled",
+      "role": "Engineer",
+      "image": "https://i.pravatar.cc/80?img=1",
+      "review": "Professional team and sophisticated service. I recommend them to anyone who wants to improve their green space.",
+      "rating": 4
+    },
+    {
+      "name": "Ahmed Fawzi",
+      "role": "Designer",
+      "image": "https://i.pravatar.cc/80?img=4",
+      "review": "Great and quick service, the experience was enjoyable and easy.",
+      "rating": 4
+    }
+  ],
+  "company": {
+    "name": "Al Amen Landscape"
+  },
+  "stats": {
+    "heading": "Our Numbers and Achievements",
+    "awards": "Awards & Prizes",
+    "specialists": "Specialized Team",
+    "clients": "Satisfied Clients",
+    "gardens": "Completed Gardens",
+    "meta": {
+      "description": "Discover Al Amen Landscape achievements, from awards to the number of completed gardens and satisfied clients. We work professionally to always achieve the best.",
+      "keywords": "awards, prizes, specialized team, satisfied clients, completed gardens, landscape design, Al Amen Landscape",
+      "ogTitle": "Our Numbers and Achievements | Al Amen Landscape",
+      "ogDescription": "We are proud to have achieved many accomplishments in the field of landscape design."
+    }
+  },
+  "partners": {
+    "title": "Our Success Partners",
+    "subtitle": "Our Portfolio",
+    "meta": {
+      "description": "Meet our success partners who contributed to our outstanding landscaping and garden design projects.",
+      "keywords": "success partners, landscaping, landscape design, successful projects, Al Amen partners",
+      "author": "Al Amen Landscape",
+      "ogTitle": "Success Partners - Al Amen Landscape",
+      "ogDescription": "Meet our success partners who contributed to our outstanding landscaping and garden design projects."
+    },
+    "alt": "{{name}} logo",
+    "aria": "Success partner {{name}}"
+  },
+  "elamen": {
+    "title": "Al Amen Landscape Company",
+    "subtitle": "Hardscape and Softscape Experts",
+    "companyName": "Al Amen Landscape",
+    "description": {
+      "part1": "With",
+      "part2": ", enjoy the beauty of nature! We specialize in creating and renovating gardens and green areas for villas, clubs, hotels, and compounds. We offer 3D design, irrigation systems installation, green wall setup, and periodic maintenance."
+    },
+    "contactBtn": "Contact Us",
+    "videoTitle": "Introduction video about Al Amen Landscape",
+    "meta": {
+      "description": "Al Amen Landscape offers garden and green area design and implementation services, including irrigation, green walls, and regular maintenance. Contact us to transform your spaces.",
+      "keywords": "Al Amen Landscape Company, garden design, irrigation implementation, garden maintenance, green walls, softscape, hardscape, green areas",
+      "author": "Al Amen Landscape",
+      "ogTitle": "Al Amen Landscape - Hardscape & Softscape Experts",
+      "ogDescription": "Enjoy nature’s beauty with Al Amen Landscape. We specialize in garden design, green areas, irrigation systems, and public space maintenance."
+    }
+  },
+  "projectsMap": {
+    "title": "Our Projects on the Map",
+    "subtitle": "Explore the locations of our key projects on an interactive map across the country",
+    "viewAllBtn": "View All Projects",
+    "meta": {
+      "description": "Discover the locations of Al-Ameen's projects across Egypt using an interactive map that highlights construction and maintenance efforts in various regions."
+    },
+    "imageAlt": "Image from project {{project}}"
+  },
+  "projectsFeatured": [
+    {
+      "title": "Mina Garden City Compound",
+      "description": "Construction of Mina Garden City Compound in 6th of October City."
+    },
+    {
+      "title": "6th of October Club",
+      "description": "Construction of the 6th of October Club."
+    },
+    {
+      "title": "Psychiatric Wellness Resort",
+      "description": "The wellness resort in First Settlement."
+    },
+    {
+      "title": "Shorouk City Entrance",
+      "description": "Entrance of Shorouk City on Ismailia Road."
+    },
+    {
+      "title": "Lazah Sadat Factory",
+      "description": "Construction of Lazah Sadat Factory in Menoufia."
+    },
+    {
+      "title": "Maintenance of Marmar Village",
+      "description": "Maintenance of Marmar Village in North Coast."
+    },
+    {
+      "title": "Maintenance of Princess Village",
+      "description": "Maintenance of Princess Village in 6th of October - Zayed."
+    },
+    {
+      "title": "Maintenance & Construction of Seselia Village",
+      "description": "Maintenance and construction of Seselia Village in Marsa Matrouh."
+    },
+    {
+      "title": "Raya Holding Road Development",
+      "description": "Development of Raya Holding road in 6th of October City."
+    }
+  ],
+  "contactSection": {
+    "meta": {
+      "title": "Turn Green Spaces into Artistic Masterpieces | Garden Landscaping Services",
+      "description": "We offer comprehensive garden landscaping, planting, and hardscape services — from design to execution with the highest quality."
+    },
+    "title": "Would you like to turn your green space into an artistic masterpiece?",
+    "description": "We offer comprehensive garden landscaping, planting, and hardscape services — from design to execution with the highest quality.",
+    "services": {
+      "planting": "Planting and Landscape Design",
+      "modernGardens": "Modern Garden Design",
+      "outdoorSpaces": "Outdoor Space Creation"
+    },
+    "buttonText": "Start Contacting Now",
+    "buttonAria": "Start Contacting Now"
+  },
+  "footer": {
+    "aboutUs": {
+      "title": "About Us",
+      "description": "At El Amen Landscape, we create green spaces full of beauty and life. We offer design and implementation services for villa gardens, public places, and playgrounds, providing ornamental plants, flowers, and advanced irrigation systems."
+    },
+    "social": {
+      "facebook": "Follow us on Facebook",
+      "instagram": "Follow us on Instagram",
+      "linkedin": "Follow us on LinkedIn"
+    },
+    "links": {
+      "title": "Links",
+      "aboutUs": "About Us",
+      "faq": "FAQ",
+      "history": "Our History",
+      "contact": "Contact Us"
+    },
+    "services": {
+      "title": "Services",
+      "villaGardens": "Villa Garden Design",
+      "plantsSupply": "Plants Supply",
+      "gardenMaintenance": "Garden Maintenance",
+      "irrigationNetworks": "Irrigation Networks"
+    },
+    "contact": {
+      "title": "Contact Us",
+      "phone": "01001243084 - 01114423163"
+    },
+    "copyright": "El Amen Landscape © 2025 All rights reserved | Hussein Ashraf"
+  },
+  "about": {
+    "title": "About Us - El Amen Landscape",
+    "metaDescription": "Learn about El Amen Landscape, the leading company in landscape design, implementation, hardscape, and sustainable maintenance in Egypt.",
+    "metaKeywords": "El Amen Landscape, Landscape, Garden Design, Planting, Landscaping, Hardscape, Agricultural Materials, Irrigation Networks, Garden Maintenance, Landscape Egypt",
+    "metaAuthor": "El Amen Landscape",
+    "metaOgTitle": "About Us - El Amen Landscape",
+    "metaOgDescription": "We are a company specialized in integrated landscape solutions from design to implementation and maintenance.",
+    "sectionTitle": "About Us",
+    "intro": "{{company}} is one of the leading companies in landscape development in Egypt. The company was founded to transform white lands into modern integrated communities that meet society's needs.",
+    "company": "El Amen Landscape",
+    "infoCards": {
+      "vision": {
+        "title": "Our Vision",
+        "description": "We strive to achieve excellence in landscape development through innovative and sustainable projects that meet client expectations."
+      },
+      "achievements": {
+        "title": "Our Achievements",
+        "description": "Executing luxury residential projects with modern designs.\nCreating integrated commercial and recreational complexes.\nIntegrating sustainability concept in all projects."
+      },
+      "commitment": {
+        "title": "Our Commitment",
+        "description": "We ensure the use of green technology and environmentally friendly practices to achieve sustainability and guarantee an integrated environment."
+      }
+    },
+    "workSteps": {
+      "title": "Work Steps at El Amen Landscape",
+      "steps": [
+        {
+          "id": "01",
+          "title": "Consultation and Planning",
+          "description": "We start our journey with you by understanding your vision and your special needs for the green space. We visit the site, discuss ideas and proposals to develop a comprehensive design plan that fits your aspirations and needs."
+        },
+        {
+          "id": "02",
+          "title": "Creative Design",
+          "description": "We design the space innovatively combining beauty and functional practicality. We use the latest technologies and best tools to create distinctive designs that suit the nature of the place and reflect your unique personality."
+        },
+        {
+          "id": "03",
+          "title": "Professional Implementation",
+          "description": "The project is executed by a highly experienced specialized team. We care about every detail, from soil preparation and planting to installing modern irrigation networks, adhering to quality and deadlines."
+        },
+        {
+          "id": "04",
+          "title": "Maintenance and Follow-up",
+          "description": "We ensure the continuity of the space's beauty through periodic maintenance services including plant pruning, weed removal, and irrigation system inspection. We stay with you to keep your green space always in the best condition."
+        }
+      ],
+      "learnMore": "Meet the Founder"
+    }
+  },
+  "founder": {
+    "helmet": {
+      "title": "Founder Page | Al-Amin Landscape",
+      "description": "Learn about Engineer Amin Hussein, the founder and vision behind Al-Amin Landscape company.",
+      "keywords": "founder, Amin Hussein, Al-Amin Landscape, company vision, who is the founder",
+      "author": "Eng. Amin Hussein",
+      "ogTitle": "Founder - Eng. Amin Hussein",
+      "ogDescription": "The founder's journey and the beginning of Al-Amin Landscape from vision to reality."
+    },
+    "header": {
+      "name": "Engineer Amin Hussein",
+      "tagline": "A journey of passion and creativity in transforming ordinary spaces into green artistic masterpieces",
+      "button": "Learn About the Founder"
+    },
+    "profile": {
+      "name": "Engineer Amin Hussein",
+      "title": "Founder of Al-Amin Landscape",
+      "experience": "Over 15 years of experience",
+      "quote": "\"My vision is to transform every green space into an artistic piece that reflects the spirit of the place and achieves harmony between humans and nature.\"",
+      "bio": "Engineer Amin has over 15 years of experience in garden design and landscaping, and has contributed to the implementation of many projects that blend natural beauty with technical precision throughout the Kingdom.",
+      "imageAlt": "Engineer Amin Hussein, founder of Al-Amin Landscape",
+      "button": "Learn more about the founder",
+      "icons": {
+        "softscape": "Softscape",
+        "hardscape": "Hardscape",
+        "irrigation": "Irrigation Systems"
+      }
+    },
+    "qualifications": {
+      "title": "Qualifications and Expertise",
+      "highlight": "Exceptional",
+      "item1": "Extensive experience in designing and implementing gardens and green spaces",
+      "item2": "Direct supervision of hardscape works and advanced irrigation systems",
+      "item3": "Integrated vision for developing the external environment of homes and institutions",
+      "item4": "Managing major projects with efficiency and high quality",
+      "item5": "Experience in sustainable agriculture and environmental solutions"
+    },
+    "contact": {
+      "title": "Would you like to consult with Engineer Amin?",
+      "subtitle": "We are happy to answer your inquiries and provide specialized advice for your project",
+      "whatsapp": "Contact the founder via WhatsApp"
+    },
+    "modal": {
+      "close": "Close",
+      "name": "Engineer Amin Hussein",
+      "founder": "Company Founder",
+      "expert": "Landscape Expert",
+      "imageAlt": "The Founder",
+      "description": "With more than 15 years of experience in landscaping, Engineer Amin has led many major projects that combined creativity and precision in implementation. His journey with the world of landscaping began from his great passion for nature and green spaces.",
+      "qualificationsTitle": "Distinguished Qualifications",
+      "conclusion": "Engineer Amin always seeks development and innovation in the field of landscaping, focusing on using the latest technologies and global methods to provide the best results for clients.",
+      "whatsapp": "Contact the founder via WhatsApp"
+    }
+  },
+  
+  "direction": "ltr",
+  "categories": {
+    "all": "All",
+    "garden": "Garden Design",
+    "waterfalls": "Waterfalls",
+    "pergolas": "Pergolas & Shades",
+    "irrigation": "Irrigation",
+    "sports_fields": "Sports Fields",
+    "decorations": "Decorations",
+    "landscape": "Landscape Materials"
+  },
+  "services": {
+    "title": "Our Services",
+    "categories_label": "Service Categories",
+    "view_category": "View {category} services",
+    "service_details": "Details for {service} service",
+    "service_image": "Image for {service} service",
+    
+    "garden_design": {
+      "title": "Garden Design & Landscaping",
+      "short_desc": "Home garden landscaping using the best materials and designs.",
+      "full_desc": "We provide artificial grass installation services at the highest level for all our customers. We offer various types, whether ground grass or wall grass, in all its colors and diverse densities, which are chosen according to the customer's opinion with the instructions of the specialized engineer to determine the location where the grass is to be installed. The installation of artificial grass differs inside homes from gardens of homes, palaces, and villas, public gardens, and clubs. Wall grass and low-density grass are preferred inside homes, while medium-density grass is installed in gardens of homes, palaces, and villas. High-density grass is used in clubs and public gardens to withstand pressure. The company does not rely on one fixed method of installation but innovates everything new and modern to appear appropriate and attractive, captivating eyes and enchanting hearts. It is cut into beautiful shapes that suit the customer's taste, such as square and circular shapes, making the garden an artistic painting of great beauty. Al-Ameen Landscaping relies in its work on the best tools and wonderful technological devices to measure spaces, compact the ground, and install grass with great precision and speed."
+    },
+    "waterfalls": {
+      "title": "Artificial Waterfalls",
+      "short_desc": "Design and installation of all types of waterfalls.",
+      "full_desc": "We provide artificial waterfall installation services in gardens of palaces, villas, public gardens, and inside and outside homes to decorate them, increase their value, and add an aesthetic touch. We offer a diverse selection of types, including (classical waterfalls, wall waterfalls, musical waterfalls, decorative waterfalls, and others). We use many different materials in making waterfalls, such as (stones, porcelain, ceramic, marble, and others). The type, shape, and material used in making the waterfall are chosen based on the customer's desire and choice. Al-Ameen Landscaping offers its strongest offers and best prices for waterfalls. Some may think that designing and installing artificial waterfalls requires large spaces and a lot of money, but this belief is wrong. Waterfalls can be installed anywhere inside and outside homes, in any available space. The company provides several different sizes (small - medium - large) to suit various spaces. If the space is not suitable for installing a waterfall, a suspended or wall waterfall is designed, which is installed on walls and only needs a small basin to pour its water."
+    },
+    "pergolas": {
+      "title": "Pergolas & Shades",
+      "short_desc": "Installation of high-quality pergolas and shades.",
+      "full_desc": "The installation service of shades, fences, and pergolas is one of our company's essential works. We provide them in different shapes and sizes suitable for many purposes. We offer shades of various types and shapes, such as (car shades, palace shades, school shades, pool shades, mosque shades, garden shades, parking shades, movable shades, and tensile shades). They are manufactured from different materials according to the customer's opinion, such as (metal, iron, wood, plastic, fabric). We provide many types of fences, including (iron fences, plastic fences, iron slat fences, iron braided fences, plastic slat fences, plastic braided fences, shanko fences, fabric fences, aluminum fences, and wooden fences). In addition to many types of pergolas, such as (wooden pergolas, iron pergolas, plastic pergolas, fabric pergolas, and lexan pergolas), and others. We install them all according to modern methods and innovative ways with maximum speed, efficiency, and accuracy in the shortest possible time."
+    },
+    "irrigation": {
+      "title": "Irrigation Networks",
+      "short_desc": "Modern irrigation networks with drip and spray systems.",
+      "full_desc": "We provide irrigation network services for gardens of homes, palaces, villas, and public gardens. We offer all the basics of agricultural plumbing, all different irrigation equipment, drip irrigation networks, and spray irrigation networks, which are chosen based on the nature of the land and the type of plants planted. We rely in our work on innovative and modern methods to design an ideal irrigation network capable of irrigating plants efficiently and correctly. Our role is not limited to installing irrigation networks only, but we also provide a specialized team to maintain these networks when they are damaged. We also provide monthly, quarterly, and semi-annual subscriptions to check on the irrigation system. We install irrigation networks by senior engineers and technicians according to industry standards and new installation methods."
+    },
+    "sports_fields": {
+      "title": "Sports Fields",
+      "short_desc": "Design and maintenance of sports fields.",
+      "full_desc": "We provide installation, design, construction, and maintenance services for sports fields at the highest level, as we care about customer satisfaction. We provide excellent materials manufactured according to global quality specifications and authorized for safe use, fearing for individuals' health from exposure to any radioactive materials resulting from these substances. We rely on wonderful methods and new ideas in designing and implementing fields, adding everything new to them. We care about our customers' opinions first and strive to achieve their desires as desired. Al-Ameen Landscaping relies on technical materials and wonderful technological innovations, whether in ground excavation, leveling, or grass installation. We provide the strongest specialized technical staff with long experience and great skill in this field. We care about providing much effort, time, and money spent in designing fields. We are not only concerned with material gain but strive hard to build trust and a strong relationship between us and our customers through preparing and installing wonderful fields."
+    },
+    "agricultural_decor": {
+      "title": "Agricultural Decorations",
+      "short_desc": "Garden decorative designs using plants and natural stones.",
+      "full_desc": "We design and install the most beautiful agricultural decorations for gardens and homes with the highest quality and the cheapest prices for agricultural decorations in Saudi Arabia. We have a large collection of agricultural decoration designs, whether for inside the home or for the home garden, using plants and natural and colored stones. Al-Ameen Landscaping also provides all services related to organizing, coordinating, and decorating gardens in general and home gardens in particular. The company also designs and implements all types of garden paths, whether stone, glass, colored gravel, stones, marble, and other types. All this and more is done through a prepared and trained work team of the best technicians and agricultural engineers with experience and training to deal with the best techniques and latest equipment in the field of agricultural decorations."
+    },
+    "landscape_materials": {
+      "title": "Landscape Materials Supply",
+      "short_desc": "Supply of materials approved by major companies.",
+      "full_desc": "Al-Ameen Company is distinguished by providing all landscape materials, including pipes, sprinklers, hoses, elbows, cutting machines, and other landscape materials that are characterized by high quality because we are the official distributor of the largest modern irrigation system companies in Egypt, such as Hunter, Shaira, Al-Wadi, Al-Shami, Al-Masrya, and Nasico."
+    }
+  },
+  "metaServices": {
+    "services": {
+      "title": "Our Services - Al-Ameen Landscape",
+      "description": "Discover our diverse services in garden landscaping, artificial waterfalls, irrigation, and sports fields. Professional services to ensure the best experience for our customers.",
+      "keywords": "garden landscaping, artificial waterfalls, irrigation, agricultural decorations, sports fields, landscape",
+      "og_title": "Our Services | Our Company for Garden Landscaping",
+      "og_description": "We provide comprehensive services in the field of garden landscaping, waterfall design, and irrigation. Discover everything we offer to our customers."
+    }
+  },
+  "carousel": {
+    "prev_slide": "Previous slide",
+    "next_slide": "Next slide",
+    "image": "{service} image {index}"
+  },
+  "common": {
+    "close": "Close"
+  },
+  "projects": {
+    "pageTitle": "Our Projects - Al Amen Landscapes",
+    "metaDescription": "Discover our work in construction and maintenance projects. Browse our latest projects and explore their details.",
+    "metaKeywords": "projects, constructions, maintenance, our work, building projects",
+    "sectionTitle": "Our Projects",
+    "allCategories": "All",
+    "projectItems": [
+      {
+        "title": "Mena Garden City Compound",
+        "description": "Construction of Mena Garden City Compound in 6th of October City.",
+        "fullDescription": "Construction of Mena Garden City Compound in 6th of October City. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+         "image": "https://ik.imagekit.io/hussein74/Al%20Amen/mennaGarden.jpg?updatedAt=1745446690125",
+
+        "category": "Construction"
+      },
+      {
+        "title": "6th of October Club",
+        "description": "Construction of 6th of October Club.",
+        "fullDescription": "Construction of 6th of October Club. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%86%D8%A7%D8%AF%D9%8A%206%20%D8%A7%D9%83%D8%AA%D9%88%D8%A8%D8%B1.jpeg?updatedAt=1745449239902",
+        "category": "Construction"
+      },
+      {
+        "title": "Psychiatric Health Facility",
+        "description": "Psychiatric health facility in First Settlement - New Cairo.",
+        "fullDescription": "Psychiatric health facility in First Settlement - New Cairo. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%B9%20%D8%A7%D9%84%D8%B7%D8%A8%D9%8A.jpg?updatedAt=1745446713077",
+        "category": "Construction"
+      },
+      {
+        "title": "Mena Residence Compound",
+        "description": "Construction of Mena Residence Compound in Fifth Settlement - New Cairo.",
+        "fullDescription": "Construction of Mena Residence Compound in Fifth Settlement - New Cairo. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/MenaRezdans.jpg?updatedAt=1745446694930",
+        "category": "Construction"
+      },
+      {
+        "title": "Grand City",
+        "description": "Construction of Grand City on Al-Wahat Road - 6th of October.",
+        "fullDescription": "Construction of Grand City on Al-Wahat Road - 6th of October. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/grandcity.jpg?updatedAt=1745446686024",
+        "category": "Construction"
+      },
+      {
+        "title": "Entrance of Al-Shorouk City",
+        "description": "Construction of Al-Shorouk City entrance on Ismailia Road.",
+        "fullDescription": "Construction of Al-Shorouk City entrance on Ismailia Road. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%85%D8%AF%D8%AE%D9%84%20%D9%85%D8%AF%D9%8A%D9%86%D8%A9%20%D8%A7%D9%84%D8%B4%D8%B1%D9%88%D9%82.jpg?updatedAt=1745449539025",
+        "category": "Construction"
+      },
+      {
+        "title": "Marmar Village Maintenance",
+        "description": "Maintenance of Marmar Village with an area of 135,000 m² in North Coast.",
+        "fullDescription": "Maintenance of Marmar Village with an area of 135,000 m² in North Coast. The project includes maintenance of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/Mrmr.jpg?updatedAt=1745446696101",
+        "category": "Maintenance"
+      },
+      {
+        "title": "Princess Village Maintenance",
+        "description": "Maintenance of Princess Village with an area of 80,000 m² in 6th of October - Zayed.",
+        "fullDescription": "Maintenance of Princess Village with an area of 80,000 m² in 6th of October - Zayed. The project includes maintenance of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/Berenses.jpg?updatedAt=1745446686033",
+        "category": "Maintenance"
+      },
+      {
+        "title": "Silesia Village Maintenance and Construction",
+        "description": "Maintenance and construction of Silesia Village with an area of 100,000 m² in Marsa Matrouh.",
+        "fullDescription": "Maintenance and construction of Silesia Village with an area of 100,000 m² in Marsa Matrouh. The project includes maintenance of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/SeseliaMatrouh.jpg?updatedAt=1745446699371",
+        "category": "Maintenance"
+      },
+      {
+        "title": "10th District School (Osama Bin Zayed)",
+        "description": "Construction of 10th District School (Osama Bin Zayed) in 6th of October.",
+        "fullDescription": "Construction of 10th District School (Osama Bin Zayed) in 6th of October. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/OsamaBenZayed.jpg?updatedAt=1745446692188",
+        "category": "Construction"
+      },
+      {
+        "title": "Raya Holding Company Road Development",
+        "description": "Development of Raya Holding Company road in 6th of October.",
+        "fullDescription": "Development of Raya Holding Company road in 6th of October. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+         "image": "https://ik.imagekit.io/hussein74/Al%20Amen/Raya6-optimized.webp",
+        "category": "Development"
+      },
+      {
+        "title": "Lazza El-Sadat Factory",
+        "description": "Construction of Lazza El-Sadat Factory in Menoufia.",
+        "fullDescription": "Construction of Lazza El-Sadat Factory in Menoufia. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/project5.jpg?updatedAt=1745446697696",
+        "category": "Construction"
+      }
+    ],
+    "viewMore": "View More",
+    "closeModal": "Close",
+    "ariaLabels": {
+      "categoryButton": "View {category} projects",
+      "projectCard": "View details of {title} project",
+      "viewMoreButton": "View more projects",
+      "closeModalButton": "Close modal"
+    }
+  },
+   "commonContact": {
+    "companyName": "Al Amen Landscape",
+    "ok": "OK",
+    "close": "Close"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "meta": {
+      "title": "Contact Us - Al Amen Landscape",
+      "description": "Contact Al Amen Landscape for free consultations in landscaping and agriculture. We are here to serve you and provide the best solutions to beautify your spaces.",
+      "keywords": "contact us, Al Amen Landscape, landscaping services, landscaping consultations, garden design, agriculture, garden maintenance",
+      "ogDescription": "Contact our team for customized consultations in landscaping and garden design."
+    },
+    "info": {
+      "title": "Contact Information",
+      "description": "We are a company specialized in agriculture and landscaping, offering sustainable and innovative solutions",
+      "address": {
+        "title": "Our Address",
+        "value": "Giza - October - Distinguished District - Al Hadaya Center, First Floor"
+      },
+      "phone": {
+        "title": "Phone Number",
+        "value": "01001243084 - 01114423163"
+      },
+      "email": {
+        "title": "Email",
+        "value": "amein2011@yahoo.com"
+      },
+      "hours": {
+        "title": "Working Hours", 
+        "weekdays": "Sunday - Thursday: 9 AM - 5 PM",
+        "weekend": "Friday - Saturday: 10 AM - 2 PM"
+      }
+    },
+    "map": {
+      "title": "Giza - October - Distinguished District - Al Hadaya Center, First Floor",
+      "ariaLabel": "Company location map on Google Maps"
+    },
+    "form": {
+      "title": "Send Your Message",
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Message",
+      "send": "Send",
+      "sending": "Sending",
+      "successTitle": "Message Sent",
+      "successMessage": "Your message has been sent successfully! We will contact you soon.",
+      "errorTitle": "Error",
+      "errorMessage": "Sorry, an error occurred while sending your message. Please try again."
+    },
+    "validation": {
+      "nameRequired": "Name is required",
+      "emailRequired": "Email is required",
+      "emailInvalid": "Email is invalid",
+      "phoneRequired": "Phone number is required",
+      "phoneInvalid": "Phone number is invalid",
+      "subjectRequired": "Subject is required",
+      "messageRequired": "Message is required"
+    },
+    "faq": {
+      "title": "Frequently Asked Questions",
+      "q1": {
+        "question": "What landscape services do you offer?",
+        "answer": "We offer a wide range of landscape services including garden design and implementation, automatic irrigation systems, residential and commercial garden landscaping, and green space care."
+      },
+      "q2": {
+        "question": "How can I get a quote for my project?",
+        "answer": "You can contact us through the contact form or call us directly. We will arrange a site visit to assess the location and provide a detailed quote according to your needs."
+      },
+      "q3": {
+        "question": "Do you provide periodic garden maintenance services?",
+        "answer": "Yes, we provide periodic maintenance services for gardens and green spaces with monthly or annual contracts that include irrigation, fertilization, pruning, and continuous care."
+      },
+      "q4": {
+        "question": "What areas do your services cover?",
+        "answer": "We provide our services in all major governorates of Egypt with a focus on Greater Cairo, Alexandria, and the North Coast. We can also work on projects outside these areas as per agreement."
+      }
+    }
+  },
+    "loading": {
+    "text": "Loading .......",
+    "alt": "Al Amen Landscape Logo"
+  }
+
+
+
+}

@@ -3,72 +3,76 @@ import { Helmet } from "react-helmet";
 import { useLocation } from "react-router-dom";
 import emailjs from "emailjs-com";
 import Swal from "sweetalert2";
-import { MapPin, Phone, Mail, Clock, Send, Loader2 } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, Send, Loader2 } from "lucide-react";
 import TitleWithLeaves from "../TitleWithLeaves/TitleWithLeaves";
+import { Formik, Form, Field, ErrorMessage } from "formik";
+import * as Yup from "yup";
+import { useTranslation } from "react-i18next";
 
 function Contact() {
   const location = useLocation();
   const isContactPage = location.pathname === "/contact";
+  const { t, i18n } = useTranslation(); // Get translation and i18n instance
+  const isRTL = i18n.dir() === "rtl"; // Determine if current language is RTL
 
-  const [formData, setFormData] = useState({
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const initialValues = {
     name: "",
     email: "",
     phone: "",
     subject: "",
-    message: ""
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value
-    });
+    message: "",
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
+  // Dynamic validation schema based on current language
+  const validationSchema = Yup.object({
+    name: Yup.string().required(t("contact.validation.nameRequired")),
+    email: Yup.string()
+      .email(t("contact.validation.emailInvalid"))
+      .required(t("contact.validation.emailRequired")),
+    phone: Yup.string()
+      .matches(/^\+?[0-9\s\-]{7,15}$/, t("contact.validation.phoneInvalid"))
+      .required(t("contact.validation.phoneRequired")),
+    subject: Yup.string().required(t("contact.validation.subjectRequired")),
+    message: Yup.string().required(t("contact.validation.messageRequired")),
+  });
+
+  const handleSubmit = (values, { resetForm }) => {
     setIsSubmitting(true);
 
     const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      phone_number: formData.phone,
-      subject: formData.subject,
-      message: formData.message,
-      to_email: "amein2011@yahoo.com"
+      from_name: values.name,
+      from_email: values.email,
+      phone_number: values.phone,
+      subject: values.subject,
+      message: values.message,
+      to_email: "amein2011@yahoo.com",
     };
 
-    emailjs.send(
-      "service_a8zjfwm",
-      "template_uey9ud9",
-      templateParams,
-      "XTyipkAa6MqkpnVAe"
-    )
+    emailjs
+      .send(
+        "service_a8zjfwm",
+        "template_uey9ud9",
+        templateParams,
+        "XTyipkAa6MqkpnVAe"
+      )
       .then(() => {
         Swal.fire({
           icon: "success",
-          title: "تم الإرسال",
-          text: "تم إرسال رسالتك بنجاح! سنتواصل معك قريبًا.",
-          confirmButtonText: "حسناً",
+          title: t("contact.form.successTitle"),
+          text: t("contact.form.successMessage"),
+          confirmButtonText: t("common.ok"),
           confirmButtonColor: "#16a34a", // Tailwind green-600
         });
-        setFormData({
-          name: "",
-          email: "",
-          phone: "",
-          subject: "",
-          message: ""
-        });
+        resetForm();
       })
       .catch(() => {
         Swal.fire({
           icon: "error",
-          title: "خطأ",
-          text: "عذرًا، حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى.",
-          confirmButtonText: "إغلاق",
+          title: t("contact.form.errorTitle"),
+          text: t("contact.form.errorMessage"),
+          confirmButtonText: t("common.close"),
         });
       })
       .finally(() => {
@@ -80,20 +84,20 @@ function Contact() {
     <>
       {isContactPage && (
         <Helmet>
-          <title>اتصل بنا - الأمين لاند سكيب</title>
+          <title>{t("contact.meta.title")}</title>
           <meta
             name="description"
-            content="تواصل مع شركة الأمين لاند سكيب للحصول على استشارات مجانية في مجال اللاندسكيب والزراعة. نحن هنا لخدمتك وتقديم أفضل الحلول لتجميل مساحاتك."
+            content={t("contact.meta.description")}
           />
           <meta
             name="keywords"
-            content="اتصل بنا, شركة الأمين لاند سكيب, خدمات لاندسكيب, استشارات لاندسكيب, تنسيق حدائق, زراعة, صيانة حدائق"
+            content={t("contact.meta.keywords")}
           />
-          <meta name="author" content="الأمين لاند سكيب" />
-          <meta property="og:title" content="اتصل بنا - الأمين لاند سكيب" />
+          <meta name="author" content={t("common.companyName")} />
+          <meta property="og:title" content={t("contact.meta.title")} />
           <meta
             property="og:description"
-            content="تواصل مع فريقنا للحصول على استشارات مخصصة في مجال اللاندسكيب وتصميم الحدائق."
+            content={t("contact.meta.ogDescription")}
           />
           <meta
             property="og:image"
@@ -102,56 +106,62 @@ function Contact() {
         </Helmet>
       )}
 
-
       <section className="bg-gray-50">
         <div className="max-w-5xl mx-auto text-center pt-24">
-          <TitleWithLeaves title="تواصل معنا" />
+          <TitleWithLeaves title={t("contact.title")} />
         </div>
 
         <div className="max-w-screen-xl mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
-            {/* معلومات الاتصال */}
-            <div className="bg-white rounded-lg border-t-4 border-green-800 shadow-lg p-6 order-2 md:order-1">
-              <h2 className="text-2xl font-bold text-green-800 mb-6 text-right">معلومات الاتصال</h2>
-              <p className="text-green-950 mb-4 text-right leading-relaxed w-full">
-                نحن شركة متخصصة في الزراعة واللاندسكيب، نقدم حلولًا مستدامة ومبتكرة
+            {/* Contact Information */}
+            <div className={`bg-white rounded-lg border-t-4 border-green-800 shadow-lg p-6 order-2 ${isRTL ? 'md:order-1' : 'md:order-2'}`}>
+              <h2 className={`text-2xl font-bold text-green-800 mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>
+                {t("contact.info.title")}
+              </h2>
+              <p className={`text-green-950 mb-4 leading-relaxed w-full ${isRTL ? 'text-right' : 'text-left'}`}>
+                {t("contact.info.description")}
               </p>
               <div className="space-y-6">
                 {[
                   {
                     icon: <MapPin className="h-6 w-6 text-green-600" />,
-                    title: "عنواننا",
-                    value: "الجيزة- اكتوبر- الحي المتميز- سنتر الهدايا الدور الاول"
+                    title: t("contact.info.address.title"),
+                    value: t("contact.info.address.value"),
                   },
                   {
                     icon: <Phone className="h-6 w-6 text-green-600" />,
-                    title: "رقم الهاتف",
-                    value: "01001243084 - 01114423163"
+                    title: t("contact.info.phone.title"),
+                    value: t("contact.info.phone.value"),
                   },
                   {
                     icon: <Mail className="h-6 w-6 text-green-600" />,
-                    title: "البريد الإلكتروني",
-                    value: "amein2011@yahoo.com"
+                    title: t("contact.info.email.title"),
+                    value: t("contact.info.email.value"),
                   },
                   {
                     icon: <Clock className="h-6 w-6 text-green-600" />,
-                    title: "ساعات العمل",
+                    title: t("contact.info.hours.title"),
                     value: (
                       <>
-                        <p>الأحد - الخميس: 9 ص - 5 م</p>
-                        <p>الجمعة - السبت: 10 ص - 2 م</p>
+                        <p>{t("contact.info.hours.weekdays")}</p>
+                        <p>{t("contact.info.hours.weekend")}</p>
                       </>
-                    )
-                  }
+                    ),
+                  },
                 ].map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-end space-x-4 space-x-reverse">
-                    <div className="text-right">
-                      <h3 className="font-semibold text-gray-800">{item.title}</h3>
-                      <p className="text-gray-600">{item.value}</p>
-                    </div>
-                    <div className="bg-green-100 p-3 rounded-full">
-                      {item.icon}
-                    </div>
+                  <div
+                    key={idx}
+                    className={`flex items-center ${isRTL ? 'justify-start space-x-4 ' : 'justify-start space-x-4'}`}
+                  >
+                    
+                     
+                        <div className="bg-green-100 p-3 rounded-full">{item.icon}</div>
+                        <div className={`${isRTL ? 'text-right' : 'text-left'}`}>
+                          <h3 className="font-semibold text-gray-800">{item.title}</h3>
+                          <p className="text-gray-600">{item.value}</p>
+                        </div>
+                      
+                   
                   </div>
                 ))}
               </div>
@@ -161,125 +171,207 @@ function Contact() {
                   className="w-full h-full border-0 rounded-lg"
                   src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3455.7542061559698!2d30.97733048488625!3d29.986493081903365!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMjnCsDU5JzExLjQiTiAzMMKwNTgnMzAuNSJF!5e0!3m2!1sar!2seg!4v1742208081314!5m2!1sar!2seg"
                   allowFullScreen=""
-                  title="الجيزة- اكتوبر- الحي المتميز- سنتر الهدايا الدور الاول"
+                  title={t("contact.map.title")}
                   loading="lazy"
-                  aria-label="خريطة موقع الشركة على جوجل مابس"
+                  aria-label={t("contact.map.ariaLabel")}
                 ></iframe>
               </div>
             </div>
 
+            {/* Contact Form with Formik */}
+            <div className={`bg-white rounded-lg border-t-4 border-green-800 shadow-lg p-6 order-1 ${isRTL ? 'md:order-2' : 'md:order-1'}`}>
+              <h2 className={`text-2xl font-bold text-green-800 mb-6 ${isRTL ? 'text-right' : 'text-left'}`}>
+                {t("contact.form.title")}
+              </h2>
 
-            <div className="bg-white rounded-lg border-t-4 border-green-800 shadow-lg p-6 order-1 md:order-2">
-              <h2 className="text-2xl font-bold text-green-800 mb-6 text-right">أرسل رسالتك</h2>
+              <Formik
+                initialValues={initialValues}
+                validationSchema={validationSchema}
+                onSubmit={handleSubmit}
+              >
+                {({ errors, touched }) => (
+                  <Form className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label
+                          htmlFor="name"
+                          className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                        >
+                          {t("contact.form.name")}
+                        </label>
+                        <Field
+                          id="name"
+                          name="name"
+                          type="text"
+                          dir={isRTL ? "rtl" : "ltr"}
+                          className={`w-full border rounded-md py-2 px-3 ${isRTL ? 'text-right' : 'text-left'} focus:outline-none focus:ring-2 ${errors.name && touched.name
+                              ? "border-red-500 focus:ring-red-500"
+                              : "border-gray-300 focus:ring-green-500"
+                            }`}
+                        />
+                        <ErrorMessage
+                          name="name"
+                          component="div"
+                          className={`text-red-600 text-sm mt-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                        />
+                      </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {[
-                    { id: "name", type: "text", label: "الاسم", required: true },
-                    { id: "email", type: "email", label: "البريد الإلكتروني", required: true }
-                  ].map(({ id, type, label, required }) => (
-                    <div key={id}>
-                      <label htmlFor={id} className="block text-sm font-medium text-gray-700 text-right mb-1">{label}</label>
-                      <input
-                        id={id}
-                        name={id}
-                        type={type}
-                        value={formData[id]}
-                        onChange={handleChange}
-                        required={required}
-                        className="w-full border border-gray-300 rounded-md py-2 px-3 text-right focus:outline-none focus:ring-2 focus:ring-green-500"
+                      <div>
+                        <label
+                          htmlFor="email"
+                          className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                        >
+                          {t("contact.form.email")}
+                        </label>
+                        <Field
+                          id="email"
+                          name="email"
+                          type="email"
+                          dir={isRTL ? "rtl" : "ltr"}
+                          className={`w-full border rounded-md py-2 px-3 ${isRTL ? 'text-right' : 'text-left'} focus:outline-none focus:ring-2 ${errors.email && touched.email
+                              ? "border-red-500 focus:ring-red-500"
+                              : "border-gray-300 focus:ring-green-500"
+                            }`}
+                        />
+                        <ErrorMessage
+                          name="email"
+                          component="div"
+                          className={`text-red-600 text-sm mt-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label
+                          htmlFor="phone"
+                          className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                        >
+                          {t("contact.form.phone")}
+                        </label>
+                        <Field
+                          id="phone"
+                          name="phone"
+                          type="tel"
+                          dir={isRTL ? "rtl" : "ltr"}
+                          className={`w-full border rounded-md py-2 px-3 ${isRTL ? 'text-right' : 'text-left'} focus:outline-none focus:ring-2 ${errors.phone && touched.phone
+                              ? "border-red-500 focus:ring-red-500"
+                              : "border-gray-300 focus:ring-green-500"
+                            }`}
+                        />
+                        <ErrorMessage
+                          name="phone"
+                          component="div"
+                          className={`text-red-600 text-sm mt-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                        />
+                      </div>
+
+                      <div>
+                        <label
+                          htmlFor="subject"
+                          className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                        >
+                          {t("contact.form.subject")}
+                        </label>
+                        <Field
+                          id="subject"
+                          name="subject"
+                          type="text"
+                          dir={isRTL ? "rtl" : "ltr"}
+                          className={`w-full border rounded-md py-2 px-3 ${isRTL ? 'text-right' : 'text-left'} focus:outline-none focus:ring-2 ${errors.subject && touched.subject
+                              ? "border-red-500 focus:ring-red-500"
+                              : "border-gray-300 focus:ring-green-500"
+                            }`}
+                        />
+                        <ErrorMessage
+                          name="subject"
+                          component="div"
+                          className={`text-red-600 text-sm mt-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                        />
+                      </div>
+                    </div>
+
+                    <div>
+                      <label
+                        htmlFor="message"
+                        className={`block text-sm font-medium text-gray-700 mb-1 ${isRTL ? 'text-right' : 'text-left'}`}
+                      >
+                        {t("contact.form.message")}
+                      </label>
+                      <Field
+                        as="textarea"
+                        id="message"
+                        name="message"
+                        rows="5"
+                        dir={isRTL ? "rtl" : "ltr"}
+                        className={`w-full border rounded-md py-2 px-3 ${isRTL ? 'text-right' : 'text-left'} focus:outline-none focus:ring-2 ${errors.message && touched.message
+                            ? "border-red-500 focus:ring-red-500"
+                            : "border-gray-300 focus:ring-green-500"
+                          }`}
+                      />
+                      <ErrorMessage
+                        name="message"
+                        component="div"
+                        className={`text-red-600 text-sm mt-1 ${isRTL ? 'text-right' : 'text-left'}`}
                       />
                     </div>
-                  ))}
-                </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 text-right mb-1">رقم الهاتف</label>
-                    <input
-                      id="phone"
-                      name="phone"
-                      type="tel"
-                      value={formData.phone}
-                      onChange={handleChange}
-                      className="w-full border border-gray-300 rounded-md py-2 px-3 text-right focus:outline-none focus:ring-2 focus:ring-green-500"
-                    />
-                  </div>
-
-                  <div>
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 text-right mb-1">الموضوع</label>
-                    <input
-                      id="subject"
-                      name="subject"
-                      type="text"
-                      required
-                      value={formData.subject}
-                      onChange={handleChange}
-                      className="w-full border border-gray-300 rounded-md py-2 px-3 text-right focus:outline-none focus:ring-2 focus:ring-green-500"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 text-right mb-1">الرسالة</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="5"
-                    required
-                    value={formData.message}
-                    onChange={handleChange}
-                    className="w-full border border-gray-300 rounded-md py-2 px-3 text-right focus:outline-none focus:ring-2 focus:ring-green-500"
-                  ></textarea>
-                </div>
-
-                <div className="flex justify-end">
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-md flex items-center space-x-2 space-x-reverse transition duration-300 disabled:opacity-70 disabled:cursor-not-allowed"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <span>جاري الإرسال</span>
-                        <Loader2 className="w-5 h-5 animate-spin" />
-                      </>
-                    ) : (
-                      <>
-                        <span>إرسال الرسالة</span>
-                        <Send className="h-5 w-5" />
-                      </>
-                    )}
-                  </button>
-                </div>
-              </form>
+                    <div className={`flex ${isRTL ? 'justify-end' : 'justify-start'}`}>
+                      <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="bg-green-700 hover:bg-green-800 text-white py-2 px-6 rounded-md flex items-center justify-center gap-2 disabled:opacity-60"
+                      >
+                        {isSubmitting ? (
+                          <>
+                            <Loader2 className="animate-spin h-5 w-5" />
+                            {t("contact.form.sending")}
+                          </>
+                        ) : (
+                          <>
+                            {isRTL ? (
+                              <>
+                                {t("contact.form.send")} <Send className="h-5 w-5" />
+                              </>
+                            ) : (
+                              <>
+                                <Send className="h-5 w-5" /> {t("contact.form.send")}
+                              </>
+                            )}
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </Form>
+                )}
+              </Formik>
             </div>
           </div>
         </div>
 
         <div className="bg-gray-100 py-12">
           <div className="container mx-auto px-4">
-            <h2 className="text-2xl font-bold text-green-800 mb-8 text-center">الأسئلة الشائعة</h2>
+            <h2 className="text-2xl font-bold text-green-800 mb-8 text-center">{t("contact.faq.title")}</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-bold text-lg text-right mb-2">ما هي خدمات اللاند سكيب التي تقدمونها؟</h3>
-                <p className="text-gray-600 text-right">نقدم مجموعة واسعة من خدمات اللاند سكيب بما في ذلك تصميم وتنفيذ الحدائق، وأنظمة الري الآلي، وتنسيق الحدائق المنزلية والتجارية، والعناية بالمساحات الخضراء.</p>
+                <h3 className={`font-bold text-lg mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>{t("contact.faq.q1.question")}</h3>
+                <p className={`text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>{t("contact.faq.q1.answer")}</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-bold text-lg text-right mb-2">كيف يمكنني الحصول على عرض سعر لمشروعي؟</h3>
-                <p className="text-gray-600 text-right">يمكنك التواصل معنا عبر نموذج الاتصال أو الاتصال بنا مباشرة. سنقوم بترتيب زيارة لمعاينة الموقع وتقديم عرض سعر مفصل حسب احتياجاتك.</p>
+                <h3 className={`font-bold text-lg mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>{t("contact.faq.q2.question")}</h3>
+                <p className={`text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>{t("contact.faq.q2.answer")}</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-bold text-lg text-right mb-2">هل تقدمون خدمات الصيانة الدورية للحدائق؟</h3>
-                <p className="text-gray-600 text-right">نعم، نقدم خدمات الصيانة الدورية للحدائق والمساحات الخضراء بعقود شهرية أو سنوية تشمل الري والتسميد والتقليم والعناية المستمرة.</p>
+                <h3 className={`font-bold text-lg mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>{t("contact.faq.q3.question")}</h3>
+                <p className={`text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>{t("contact.faq.q3.answer")}</p>
               </div>
 
               <div className="bg-white p-6 rounded-lg shadow">
-                <h3 className="font-bold text-lg text-right mb-2">ما هي مناطق تغطية خدماتكم؟</h3>
-                <p className="text-gray-600 text-right">نقدم خدماتنا في جميع محافظات مصر الكبرى مع التركيز على القاهرة الكبرى والإسكندرية والساحل الشمالي. كما يمكننا العمل في مشاريع خارج هذه المناطق حسب الاتفاق.</p>
+                <h3 className={`font-bold text-lg mb-2 ${isRTL ? 'text-right' : 'text-left'}`}>{t("contact.faq.q4.question")}</h3>
+                <p className={`text-gray-600 ${isRTL ? 'text-right' : 'text-left'}`}>{t("contact.faq.q4.answer")}</p>
               </div>
             </div>
           </div>
