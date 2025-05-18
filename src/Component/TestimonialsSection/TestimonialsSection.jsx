@@ -98,7 +98,7 @@ const TestimonialsSection = () => {
                   768: { slidesPerView: 2 },
                 }}
                 className="pb-10"
-                dir={isRTL ? "rtl" : "ltr"}
+                
               >
                 {testimonials.map((testimonial, index) => (
                   <SwiperSlide key={index}>
