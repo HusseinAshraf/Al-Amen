@@ -13,7 +13,7 @@ const TestimonialsSection = () => {
   const swiperRef = useRef(null);
   const { t, i18n } = useTranslation();
 
-  // Current language direction
+  
   const isRTL = i18n.language === "ar";
 
   // Get testimonials from translations

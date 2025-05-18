@@ -6,15 +6,42 @@ import L from "leaflet";
 import { Link, useNavigate } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
+// إزالة الإعدادات الافتراضية للأيقونة
 delete L.Icon.Default.prototype._getIconUrl;
-L.Icon.Default.mergeOptions({
-    iconRetinaUrl:
-        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
-    iconUrl:
-        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
-    shadowUrl:
-        "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+
+// إنشاء أيقونة مخصصة أكبر حجماً
+const largeIcon = new L.Icon({
+    iconUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon.png",
+    iconRetinaUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png",
+    shadowUrl: "https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-shadow.png",
+    iconSize: [38, 60],  // تكبير الحجم (كان 25x41)
+    shadowSize: [50, 64],
+    iconAnchor: [19, 60], // تعديل نقطة الربط حسب الحجم الجديد
+    shadowAnchor: [15, 64],
+    popupAnchor: [0, -60] // تعديل موقع الظهور حسب الحجم الجديد
 });
+
+// أنماط CSS لتحسين أهداف اللمس
+const markerStyle = `
+  .leaflet-marker-icon {
+    padding: 10px;
+    margin-left: -29px !important; /* إضافة padding للمساحة وتعديل الهوامش */
+    margin-top: -70px !important;
+  }
+  
+  /* زيادة مساحة النقر حول العلامات */
+  .leaflet-marker-pane img {
+    cursor: pointer;
+    padding: 10px;
+    box-sizing: content-box; /* ليشمل الـ padding في حجم العنصر */
+  }
+  
+  /* تحسين حجم النوافذ المنبثقة لسهولة التفاعل */
+  .leaflet-popup-content {
+    min-width: 200px;
+    padding: 5px;
+  }
+`;
 
 const projects = [
     {
@@ -81,9 +108,44 @@ const projects = [
     },
 ];
 
+// تباعد العلامات القريبة
+const adjustMarkerPositions = (projects) => {
+    const minDistance = 0.02; // المسافة الدنيا المطلوبة بين العلامات (بوحدات خط الطول/العرض)
+    
+    // نسخة من المشاريع لتجنب تعديل المصفوفة الأصلية مباشرة
+    const adjustedProjects = [...projects];
+    
+    // التحقق من كل زوج من العلامات وتعديل مواقعها إذا كانت متقاربة جدًا
+    for (let i = 0; i < adjustedProjects.length; i++) {
+        for (let j = i + 1; j < adjustedProjects.length; j++) {
+            const pos1 = adjustedProjects[i].position;
+            const pos2 = adjustedProjects[j].position;
+            
+            // حساب المسافة بين العلامتين
+            const latDiff = Math.abs(pos1[0] - pos2[0]);
+            const lngDiff = Math.abs(pos1[1] - pos2[1]);
+            const distance = Math.sqrt(latDiff * latDiff + lngDiff * lngDiff);
+            
+            // إذا كانت المسافة أقل من الحد الأدنى، قم بتعديل موقع العلامة الثانية
+            if (distance < minDistance) {
+                const angle = Math.random() * 2 * Math.PI; // زاوية عشوائية
+                adjustedProjects[j].position = [
+                    pos2[0] + minDistance * Math.cos(angle),
+                    pos2[1] + minDistance * Math.sin(angle)
+                ];
+            }
+        }
+    }
+    
+    return adjustedProjects;
+};
+
 const ProjectsMapSection = () => {
     const navigate = useNavigate();
     const { t, i18n } = useTranslation();
+    
+    // تطبيق تباعد العلامات
+    const adjustedProjects = adjustMarkerPositions(projects);
 
     return (
         <section
@@ -93,6 +155,8 @@ const ProjectsMapSection = () => {
             <Helmet>
                 <meta name="description" content={t("projectsMap.meta.description")} />
                 <link rel="canonical" href="https://your-domain.com/projects-map" />
+                {/* إضافة أنماط CSS لتحسين أهداف اللمس */}
+                <style>{markerStyle}</style>
             </Helmet>
 
             <div className="max-w-6xl mx-auto">
@@ -109,14 +173,41 @@ const ProjectsMapSection = () => {
                         zoom={6}
                         scrollWheelZoom={true}
                         style={{ height: "100%", width: "100%" }}
+                        // إضافة خيارات للتحكم بالعلامات
+                        whenCreated={(mapInstance) => {
+                            mapInstance.on('zoomend', () => {
+                                // تعديل حجم النقر على العلامات بناءً على مستوى التكبير
+                                const zoom = mapInstance.getZoom();
+                                const markerIcons = document.querySelectorAll('.leaflet-marker-icon');
+                                if (zoom < 8) {
+                                    markerIcons.forEach(icon => {
+                                        icon.style.padding = '15px';
+                                    });
+                                } else {
+                                    markerIcons.forEach(icon => {
+                                        icon.style.padding = '10px';
+                                    });
+                                }
+                            });
+                        }}
                     >
                         <TileLayer
                             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
                             attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a>'
                         />
-                        {projects.map((project, index) => (
-                            <Marker key={index} position={project.position}>
-                                <Popup>
+                        {adjustedProjects.map((project, index) => (
+                            <Marker 
+                                key={index} 
+                                position={project.position}
+                                icon={largeIcon} // استخدام الأيقونة المخصصة الأكبر حجماً
+                                // إضافة تباعد بين العلامات القريبة
+                                eventHandlers={{
+                                    click: () => {
+                                        // يمكن إضافة تفاعلات إضافية هنا إذا لزم الأمر
+                                    }
+                                }}
+                            >
+                                <Popup className="larger-popup">
                                     <div className="text-right">
                                         <h3 className="font-bold text-green-700 text-sm mb-1">
                                             {t(project.titleKey)}
