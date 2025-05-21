@@ -80,7 +80,7 @@ const Project = ({ limit }) => {
         dir={t('direction') === 'rtl' ? 'rtl' : 'ltr'}
       >
         <div className="max-w-5xl mx-auto text-center pt-10">
-          <TitleWithLeaves title={t('projects.sectionTitle')} />
+          <TitleWithLeaves title={t('projects.sectionTitle')}  />
         </div>
 
         <div className="flex flex-wrap gap-3 justify-center mb-10 pt-5">

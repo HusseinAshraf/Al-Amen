@@ -9,7 +9,7 @@ import WhyUS from "../WhyUs/WhyUS.jsx";
 import StatsSection from "../StatsSection/StatsSection.jsx";
 import TestimonialsSection from "../TestimonialsSection/TestimonialsSection.jsx";
 import PartnersSection from "../PartnersSection/PartnersSection .jsx";
-import LoadingScreen from "../../UI/LoadingScreen/LoadingScreen";
+
 import ServicesSection from "../Services/ServicesSection.jsx";
 import ElAmen from "../ElAmen/ElAmen.jsx";
 import PlantsTestimonials from "../PlantsTestimonials/PlantsTestimonials.jsx";
@@ -19,19 +19,19 @@ import ContactSection from "../Contact/ContactSection.jsx";
 import FeaturedProjectsSection from "../Project/FeaturedProjectsSection.jsx";
 
 function Home() {
-  const [isLoading, setIsLoading] = useState(true);
+
 
 
   useEffect(() => {
     window.document.title = "الأمين لاندسكيب - حلول زراعة، لاندسكيب، وهاردسكيب متكاملة";
   }, []);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 2000);
-    return () => clearTimeout(timer);
-  }, []);
+
+  //   const timer = setTimeout(() => {
+  //     setIsLoading(false);
+  //   }, 2000);
+  //   return () => clearTimeout(timer);
+  // }, []);
 
   const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
   const { ref: whyUsRef, inView: whyUsInView } = useInView({ triggerOnce: true });
@@ -65,9 +65,8 @@ function Home() {
         <link rel="canonical" href="https://www.example.com/home" />
       </Helmet>
 
-      {isLoading ? (
-        <LoadingScreen />
-      ) : (
+     
+    
         <>
           {/* <Hero /> */}
           <HeroSlider/>
@@ -99,7 +98,7 @@ function Home() {
           <FeaturedProjectsSection />
           <ContactSection />
         </>
-      )}
+     
     </>
   );
 }
