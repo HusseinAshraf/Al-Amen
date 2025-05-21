@@ -1,5 +1,5 @@
-import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { useState, useEffect, useMemo } from "react";
+import { motion } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
 
@@ -8,7 +8,6 @@ export default function HeroSlider() {
     const [current, setCurrent] = useState(0);
     const [hasSwitched, setHasSwitched] = useState(false);
 
-    
     const slidesData = [
         "https://ik.imagekit.io/hussein74/Al%20Amen/slider1.jpg?tr=w-1920,q-80",
         "https://ik.imagekit.io/hussein74/Al%20Amen/slider2.jpg?tr=w-1920,q-80",
@@ -17,7 +16,10 @@ export default function HeroSlider() {
         "https://ik.imagekit.io/hussein74/Al%20Amen/bench-6919896_1280.jpg?tr=w-1920,q-80",
     ];
 
-    const slidesText = t("slides", { returnObjects: true });
+    const slidesText = useMemo(
+        () => t("slides", { returnObjects: true }),
+        [t, i18n.language]
+    );
 
     const nextSlide = () => {
         setCurrent((prev) => {
@@ -36,8 +38,23 @@ export default function HeroSlider() {
     };
 
     useEffect(() => {
-        const interval = setInterval(nextSlide, 5000);
-        return () => clearInterval(interval);
+        let interval;
+
+        const handleVisibility = () => {
+            if (document.visibilityState === "visible") {
+                interval = setInterval(nextSlide, 5000);
+            } else {
+                clearInterval(interval);
+            }
+        };
+
+        document.addEventListener("visibilitychange", handleVisibility);
+        handleVisibility();
+
+        return () => {
+            clearInterval(interval);
+            document.removeEventListener("visibilitychange", handleVisibility);
+        };
     }, []);
 
     return (
@@ -46,47 +63,35 @@ export default function HeroSlider() {
             aria-label={t("aria.sliderLabel")}
             dir={i18n.language === "ar" ? "rtl" : "ltr"}
         >
-            <AnimatePresence mode="wait">
-                <motion.img
-                    key={slidesText[current].alt}
-                    src={slidesData[current]}
-                    alt={slidesText[current].alt}
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    exit={{ opacity: 0 }}
-                    transition={{ duration: 1 }}
-                    className="absolute inset-0 w-full h-full object-cover object-center"
-                    loading="lazy"
-                />
-            </AnimatePresence>
+            <motion.img
+                key={slidesText[current].alt}
+                src={slidesData[current]}
+                alt={slidesText[current].alt}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 1 }}
+                className="absolute inset-0 w-full h-full object-cover object-center"
+                loading={current === 0 ? "eager" : "lazy"}
+                fetchpriority={current === 0 ? "high" : "low"}
+            />
 
             <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center px-6 sm:px-12 text-center">
-                {current === 0 && !hasSwitched ? (
-                    <h1
-                        className="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-4xl leading-tight"
-                        aria-live="polite"
-                    >
-                        {slidesText[current].text}
-                    </h1>
-                ) : (
-                    <motion.h1
-                        key={slidesText[current].text}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-4xl leading-tight"
-                        aria-live="polite"
-                    >
-                        {slidesText[current].text}
-                    </motion.h1>
-                )}
+                <motion.h1
+                    key={slidesText[current].text}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-4xl leading-tight"
+                    aria-live="polite"
+                >
+                    {slidesText[current].text}
+                </motion.h1>
             </div>
 
             <div className="hidden absolute inset-0 md:flex items-center justify-between px-2 sm:px-4">
                 <button
                     onClick={prevSlide}
-                    aria-label="الشريحة السابقة"
+                    aria-label={t("aria.previousSlide")}
                     className="text-white p-2 bg-black/30 rounded-full hover:bg-black/50 transition focus:outline-none focus:ring-2 focus:ring-white"
                 >
                     {i18n.language === "ar" ? (
@@ -97,7 +102,7 @@ export default function HeroSlider() {
                 </button>
                 <button
                     onClick={nextSlide}
-                    aria-label="الشريحة التالية"
+                    aria-label={t("aria.nextSlide")}
                     className="text-white p-2 bg-black/30 rounded-full hover:bg-black/50 transition focus:outline-none focus:ring-2 focus:ring-white"
                 >
                     {i18n.language === "ar" ? (
@@ -117,7 +122,9 @@ export default function HeroSlider() {
                             if (index !== 0) setHasSwitched(true);
                         }}
                         aria-label={t("aria.goToSlide", { number: index + 1 })}
-                        className={`w-4 h-4 rounded-full transition-colors ${index === current ? "bg-yellow-400" : "bg-white/50 hover:bg-yellow-400"
+                        className={`w-4 h-4 rounded-full transition-colors ${index === current
+                            ? "bg-yellow-400"
+                            : "bg-white/50 hover:bg-yellow-400"
                             }`}
                     />
                 ))}
