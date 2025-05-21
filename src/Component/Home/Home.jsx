@@ -9,7 +9,6 @@ import WhyUS from "../WhyUs/WhyUS.jsx";
 import StatsSection from "../StatsSection/StatsSection.jsx";
 import TestimonialsSection from "../TestimonialsSection/TestimonialsSection.jsx";
 import PartnersSection from "../PartnersSection/PartnersSection .jsx";
-
 import ServicesSection from "../Services/ServicesSection.jsx";
 import ElAmen from "../ElAmen/ElAmen.jsx";
 import PlantsTestimonials from "../PlantsTestimonials/PlantsTestimonials.jsx";
@@ -25,13 +24,6 @@ function Home() {
   useEffect(() => {
     window.document.title = "الأمين لاندسكيب - حلول زراعة، لاندسكيب، وهاردسكيب متكاملة";
   }, []);
-
-
-  //   const timer = setTimeout(() => {
-  //     setIsLoading(false);
-  //   }, 2000);
-  //   return () => clearTimeout(timer);
-  // }, []);
 
   const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
   const { ref: whyUsRef, inView: whyUsInView } = useInView({ triggerOnce: true });
@@ -65,40 +57,40 @@ function Home() {
         <link rel="canonical" href="https://www.example.com/home" />
       </Helmet>
 
-     
-    
-        <>
-          {/* <Hero /> */}
-          <HeroSlider/>
-          <div ref={aboutRef} className={`section ${aboutInView ? 'fadeInUp' : ''}`}>
-            <AboutSection />
-          </div>
-          <div ref={whyUsRef} className={`section ${whyUsInView ? 'fadeInUp' : ''}`}>
-            <WhyUS />
-          </div>
-          <div ref={featuresRef} className={`section ${featuresInView ? 'fadeInUp' : ''}`}>
-            <Features />
-          </div>
-          <div ref={servicesRef} className={`section ${servicesInView ? 'fadeInUp' : ''}`}>
-            <ServicesSection />
-          </div>
-          <div ref={plantsTestimonialsRef} className={`section ${plantsTestimonialsInView ? 'fadeInUp' : ''}`}>
-            <PlantsTestimonials />
-          </div>
-          <div ref={testimonialsRef} className={`section ${testimonialsInView ? 'fadeInUp' : ''}`}>
-            <TestimonialsSection />
-          </div>
-          <div ref={statsRef} className={`section ${statsInView ? 'fadeInUp' : ''}`}>
-            <StatsSection />
-          </div>
-          <div ref={partnersRef} className={`section ${partnersInView ? 'fadeInUp' : ''}`}>
-            <PartnersSection />
-          </div>
-          <ElAmen />
-          <FeaturedProjectsSection />
-          <ContactSection />
-        </>
-     
+
+
+      <>
+        {/* <Hero /> */}
+        <HeroSlider />
+        <div ref={aboutRef} className={`section ${aboutInView ? 'fadeInUp' : ''}`}>
+          <AboutSection />
+        </div>
+        <div ref={whyUsRef} className={`section ${whyUsInView ? 'fadeInUp' : ''}`}>
+          <WhyUS />
+        </div>
+        <div ref={featuresRef} className={`section ${featuresInView ? 'fadeInUp' : ''}`}>
+          <Features />
+        </div>
+        <div ref={servicesRef} className={`section ${servicesInView ? 'fadeInUp' : ''}`}>
+          <ServicesSection />
+        </div>
+        <div ref={plantsTestimonialsRef} className={`section ${plantsTestimonialsInView ? 'fadeInUp' : ''}`}>
+          <PlantsTestimonials />
+        </div>
+        <div ref={testimonialsRef} className={`section ${testimonialsInView ? 'fadeInUp' : ''}`}>
+          <TestimonialsSection />
+        </div>
+        <div ref={statsRef} className={`section ${statsInView ? 'fadeInUp' : ''}`}>
+          <StatsSection />
+        </div>
+        <div ref={partnersRef} className={`section ${partnersInView ? 'fadeInUp' : ''}`}>
+          <PartnersSection />
+        </div>
+        <ElAmen />
+        <FeaturedProjectsSection />
+        <ContactSection />
+      </>
+
     </>
   );
 }

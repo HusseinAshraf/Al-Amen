@@ -7,7 +7,7 @@ import LoadingScreen from "./UI/LoadingScreen/LoadingScreen";
 
 // Loading component
 const LoadingSpinner = () => (
- <LoadingScreen />
+  <LoadingScreen />
 );
 
 // Lazy-loaded components with better error handling
