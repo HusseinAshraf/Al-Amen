@@ -88,17 +88,40 @@ function ElAmen() {
           <figure className="relative flex justify-center w-full">
             <div className="w-full max-w-xl">
               <div className="rounded-2xl overflow-hidden shadow-lg border-4 border-green-200">
-                <iframe
-                  ref={iframeRef}
-                  className="w-full h-64 md:h-96 rounded-2xl"
-                  src="https://www.youtube.com/embed/n84AqxOodKg?rel=0&mute=1&enablejsapi=1"
-                  title={t("elamen.videoTitle")}
-                  frameBorder="0"
-                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
-                  allowFullScreen
-                  loading="lazy"
-                  onLoad={handleIframeLoad}
-                ></iframe>
+                {!videoLoaded ? (
+                  <button
+                    className="relative w-full h-64 md:h-96 bg-black group"
+                    onClick={() => setVideoLoaded(true)}
+                    aria-label="Play Video"
+                  >
+                    <img
+                      src="https://img.youtube.com/vi/n84AqxOodKg/hqdefault.jpg"
+                      alt={t("elamen.videoTitle")}
+                      className="w-full h-full object-cover"
+                    />
+                    <div className="absolute inset-0 flex items-center justify-center bg-black/50 group-hover:bg-black/70 transition">
+                      <svg
+                        className="w-16 h-16 text-white"
+                        fill="currentColor"
+                        viewBox="0 0 84 84"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <circle cx="42" cy="42" r="42" fill="rgba(0,0,0,0.6)" />
+                        <polygon points="33,24 61,42 33,60" fill="white" />
+                      </svg>
+                    </div>
+                  </button>
+                ) : (
+                  <iframe
+                    className="w-full h-64 md:h-96 rounded-2xl"
+                    src="https://www.youtube.com/embed/n84AqxOodKg?rel=0&mute=1&autoplay=1"
+                    title={t("elamen.videoTitle")}
+                    frameBorder="0"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; autoplay"
+                    allowFullScreen
+                    loading="lazy"
+                  />
+                )}
               </div>
             </div>
           </figure>
