@@ -1,39 +1,31 @@
-import { motion } from "framer-motion";
-import { Leaf } from "lucide-react";
+import { useEffect, useRef, useState } from "react";
+import { Suspense, lazy } from "react";
 
-export default function TitleWithLeaves({ title }) {
+const LazyTitleWithLeaves = lazy(() => import("./TitleWithLeaves"));
+
+export default function LazyLoadedTitle({ title }) {
+  const ref = useRef();
+  const [isVisible, setIsVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVisible(true);
+      }
+    });
+
+    if (ref.current) observer.observe(ref.current);
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-   <>
-   
-
-    <div className="relative flex flex-col items-center">
-      <motion.h2
-        className="text-4xl font-bold text-green-600 mb-6"
-        initial={{ opacity: 0, y: -50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 1 }}
-      >
-        {title}
-      </motion.h2>
-
-      
-      <div className="absolute -bottom-1 flex gap-2">
-        {[0, 0.2, 0.4].map((delay, index) => (
-          <motion.div
-            key={index}
-            animate={{ y: [0, -5, 0] }}
-            transition={{
-              duration: 1.5,
-              repeat: Infinity,
-              ease: "easeInOut",
-              delay,
-            }}
-          >
-            <Leaf className="text-green-500 w-6 h-6" />
-          </motion.div>
-        ))}
-      </div>
+    <div ref={ref}>
+      {isVisible && (
+        <Suspense fallback={<div>Loading title...</div>}>
+          <LazyTitleWithLeaves title={title} />
+        </Suspense>
+      )}
     </div>
-   </>
   );
 }
