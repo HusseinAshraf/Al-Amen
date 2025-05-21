@@ -8,42 +8,12 @@ import { useTranslation } from "react-i18next";
 
 // بيانات النباتات (ترجم أسماء النباتات في ملف الترجمة)
 const plantsData = [
-  {
-    id: 1,
-    nameKey: "plants.pineappleCactus",
-    image:
-      "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B5%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3.jpg?updatedAt=1745446719675",
-  },
-  {
-    id: 2,
-    nameKey: "plants.ficusB",
-    image:
-      "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%81%D9%8A%D9%83%D8%B3%20%D8%A8%D9%86%D8%AC%D8%A7%D9%85%D9%8A%D9%86%D8%A7.jpg?updatedAt=1745446722376",
-  },
-  {
-    id: 3,
-    nameKey: "plants.dorentaLemoni",
-    image:
-      "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AF%D9%88%D8%B1%D9%86%D8%AA%D8%A7%20%D9%84%D9%8A%D9%85%D9%88%D9%86%D9%8A.jpg?updatedAt=1745446719434",
-  },
-  {
-    id: 4,
-    nameKey: "plants.spiralCypress",
-    image:
-      "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B3%D8%B1%D9%88%20%D8%AD%D9%84%D8%B2%D9%88%D9%86%D9%8A%20%D9%88%20%D9%83%D9%88%D8%B1.jpg?updatedAt=1745446717816",
-  },
-  {
-    id: 5,
-    nameKey: "plants.hibiscus",
-    image:
-      "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%87%D9%8A%D8%A8%D8%B3%D9%83%D8%B3.jpg?updatedAt=1745446723288",
-  },
-  {
-    id: 6,
-    nameKey: "plants.jasmineShamsi",
-    image:
-      "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AC%D9%87%D9%86%D9%85%D9%8A%D8%A9%20%D8%B4%D9%85%D8%A7%D8%B3%D9%8A.jpg?updatedAt=1745446719565",
-  },
+  { id: 1, nameKey: "plants.pineappleCactus", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B5%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3.jpg?updatedAt=1745446719675" },
+  { id: 2, nameKey: "plants.ficusB", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%81%D9%8A%D9%83%D8%B3%20%D8%A8%D9%86%D8%AC%D8%A7%D9%85%D9%8A%D9%86%D8%A7.jpg?updatedAt=1745446722376" },
+  { id: 3, nameKey: "plants.dorentaLemoni", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AF%D9%88%D8%B1%D9%86%D8%AA%D8%A7%20%D9%84%D9%8A%D9%85%D9%88%D9%86%D9%8A.jpg?updatedAt=1745446719434" },
+  { id: 4, nameKey: "plants.spiralCypress", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B3%D8%B1%D9%88%20%D8%AD%D9%84%D8%B2%D9%88%D9%86%D9%8A%20%D9%88%20%D9%83%D9%88%D8%B1.jpg?updatedAt=1745446717816" },
+  { id: 5, nameKey: "plants.hibiscus", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%87%D9%8A%D8%A8%D8%B3%D9%83%D8%B3.jpg?updatedAt=1745446723288" },
+  { id: 6, nameKey: "plants.jasmineShamsi", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AC%D9%87%D9%86%D9%85%D9%8A%D8%A9%20%D8%B4%D9%85%D8%A7%D8%B3%D9%8A.jpg?updatedAt=1745446719565" },
 ];
 
 function PlantsTestimonials() {
@@ -68,11 +38,26 @@ function PlantsTestimonials() {
   return (
     <>
       <Helmet>
-        <meta name="description" content={t("plantsMeta.description")} />
-        <meta name="keywords" content={t("plantsMeta.keywords")} />
-        <meta property="og:title" content={t("plantsMeta.title")} />
-        <meta property="og:description" content={t("plantsMeta.description")} />
-        <meta property="og:image" content={plantsData[0].image} />
+        <meta
+          name="description"
+          content={t("plantsMeta.description")}
+        />
+        <meta
+          name="keywords"
+          content={t("plantsMeta.keywords")}
+        />
+        <meta
+          property="og:title"
+          content={t("plantsMeta.title")}
+        />
+        <meta
+          property="og:description"
+          content={t("plantsMeta.description")}
+        />
+        <meta
+          property="og:image"
+          content={plantsData[0].image}
+        />
       </Helmet>
 
       <section
@@ -119,13 +104,7 @@ function PlantsTestimonials() {
                   }}
                 >
                   <img
-                    src={`${plant.image}?tr=w-600,q-80`}
-                    srcSet={`
-                      ${plant.image}?tr=w-300,q-80 300w,
-                      ${plant.image}?tr=w-600,q-80 600w,
-                      ${plant.image}?tr=w-900,q-80 900w
-                    `}
-                    sizes="(max-width: 640px) 300px, (max-width: 1024px) 600px, 900px"
+                    src={plant.image}
                     alt={`${t("plantsSection.imageOf")} ${t(plant.nameKey)}`}
                     loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
@@ -157,25 +136,20 @@ function PlantsTestimonials() {
               onClick={(e) => e.stopPropagation()}
             >
               <button
-                className={`absolute top-2 ${isRTL ? "left-2" : "right-2"} text-gray-600 hover:text-red-500 text-xl`}
+                className={`absolute top-2 ${isRTL ? 'left-2' : 'right-2'} text-gray-600 hover:text-red-500 text-xl`}
                 onClick={() => setSelectedPlant(null)}
                 aria-label={t("plantsSection.closeModal")}
               >
                 &times;
               </button>
               <img
-                src={`${selectedPlant.image}?tr=w-900,q-80`}
-                srcSet={`
-                  ${selectedPlant.image}?tr=w-300,q-80 300w,
-                  ${selectedPlant.image}?tr=w-600,q-80 600w,
-                  ${selectedPlant.image}?tr=w-900,q-80 900w
-                `}
-                sizes="(max-width: 640px) 300px, (max-width: 1024px) 600px, 900px"
+                src={selectedPlant.image}
                 alt={`${t("plantsSection.enlargedViewOf")} ${t(selectedPlant.nameKey)}`}
                 className="rounded-xl mb-4 max-h-[60vh] object-contain mx-auto"
-                loading="lazy"
               />
-              <h3 className="text-lg font-bold text-gray-800">{t(selectedPlant.nameKey)}</h3>
+              <h3 className="text-lg font-bold text-gray-800">
+                {t(selectedPlant.nameKey)}
+              </h3>
             </div>
           </div>
         )}
