@@ -142,11 +142,11 @@ function NavBar() {
               );
             })}
 
-            {/* زر تغيير اللغة */}
+            {/* زر تغيير اللغة - Fixed for better contrast */}
             <li className="mt-2 md:mt-0">
               <button
                 onClick={toggleLanguage}
-                className="flex items-center gap-2 rounded-full border-2 border-yellow-400 bg-yellow-400/20 text-yellow-400 font-semibold px-5 py-1.5 text-sm shadow-md transition-all duration-300 hover:bg-yellow-400 hover:text-green-900 focus:outline-none focus:ring-2 focus:ring-yellow-400 focus:ring-offset-2"
+                className="flex items-center gap-2 rounded-full border-2 border-yellow-400 bg-yellow-400 text-green-900 font-bold px-5 py-1.5 text-sm shadow-md transition-all duration-300 hover:bg-yellow-500 hover:border-yellow-500 focus:outline-none focus:ring-2 focus:ring-yellow-300 focus:ring-opacity-50"
                 aria-label={
                   currentLang === "ar" ? "Switch to English" : "التبديل إلى العربية"
                 }
