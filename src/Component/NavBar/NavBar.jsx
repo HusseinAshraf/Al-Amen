@@ -21,11 +21,39 @@ function NavBar() {
 
   const toggleLanguage = () => {
     const newLang = currentLang === "ar" ? "en" : "ar";
+    const newDir = newLang === "ar" ? "rtl" : "ltr";
+
+    // تحديث i18n
     i18n.changeLanguage(newLang);
+
+    // حفظ اللغة الجديدة
     localStorage.setItem("language", newLang);
+
+    // تطبيق الاتجاه فوراً
     document.documentElement.lang = newLang;
-    document.documentElement.dir = newLang === "ar" ? "rtl" : "ltr";
+    document.documentElement.dir = newDir;
+    document.body.dir = newDir;
+
+    // إضافة/إزالة classes
+    document.body.classList.remove('rtl', 'ltr');
+    document.body.classList.add(newDir);
+
+    // إجبار إعادة الرسم
+    document.body.style.display = 'none';
+    document.body.offsetHeight; // trigger reflow
+    document.body.style.display = '';
+
+    // لا نحتاج reload بعد الآن!
+    // window.location.reload(); ← تم إزالة هذا السطر
   };
+
+  // التأكد من اللغة الصحيحة عند التحميل
+  useEffect(() => {
+    const lang = localStorage.getItem("language") || "ar";
+    if (i18n.language !== lang) {
+      i18n.changeLanguage(lang);
+    }
+  }, []);
 
   useEffect(() => {
     const handleClickOutside = (e) => {
@@ -63,8 +91,8 @@ function NavBar() {
         {/* Menu */}
         <div
           className={`${menuOpen
-              ? "opacity-100 translate-y-0 pointer-events-auto"
-              : "opacity-0 -translate-y-4 pointer-events-none"
+            ? "opacity-100 translate-y-0 pointer-events-auto"
+            : "opacity-0 -translate-y-4 pointer-events-none"
             } md:opacity-100 md:translate-y-0 md:pointer-events-auto
           absolute md:static top-full right-0 left-0 bg-green-900 md:bg-transparent transition-all duration-300 ease-in-out z-40 md:flex md:items-center`}
         >
@@ -94,8 +122,8 @@ function NavBar() {
                   <Link
                     to="/about/company"
                     className={`block px-4 py-2 hover:bg-green-800 transition ${location.pathname === "/about/company"
-                        ? "text-yellow-300"
-                        : "text-white"
+                      ? "text-yellow-300"
+                      : "text-white"
                       }`}
                     onClick={() => {
                       setMenuOpen(false);
@@ -109,8 +137,8 @@ function NavBar() {
                   <Link
                     to="/about/founder"
                     className={`block px-4 py-2 hover:bg-green-800 transition ${location.pathname === "/about/founder"
-                        ? "text-yellow-300"
-                        : "text-white"
+                      ? "text-yellow-300"
+                      : "text-white"
                       }`}
                     onClick={() => {
                       setMenuOpen(false);
@@ -131,8 +159,8 @@ function NavBar() {
                   <Link
                     to={to}
                     className={`block py-2 px-4 rounded-lg transition-all duration-300 hover:bg-green-700 ${isActive
-                        ? "text-yellow-300 underline underline-offset-6 decoration-2 "
-                        : "hover:text-yellow-300"
+                      ? "text-yellow-300 underline underline-offset-6 decoration-2 "
+                      : "hover:text-yellow-300"
                       }`}
                     onClick={() => setMenuOpen(false)}
                   >
@@ -142,7 +170,7 @@ function NavBar() {
               );
             })}
 
-            {/* زر تغيير اللغة - Fixed for better contrast */}
+            {/* زر تغيير اللغة */}
             <li className="mt-2 md:mt-0">
               <button
                 onClick={toggleLanguage}
