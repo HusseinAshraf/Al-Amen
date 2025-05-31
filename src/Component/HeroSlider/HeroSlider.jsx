@@ -6,9 +6,7 @@ import { useTranslation } from "react-i18next";
 export default function HeroSlider() {
     const { t, i18n } = useTranslation();
     const [current, setCurrent] = useState(0);
-    const [hasSwitched, setHasSwitched] = useState(false);
 
-    
     const slidesData = [
         "https://ik.imagekit.io/hussein74/Al%20Amen/slider1.jpg?tr=w-1920,q-80",
         "https://ik.imagekit.io/hussein74/Al%20Amen/slider2.jpg?tr=w-1920,q-80",
@@ -20,19 +18,11 @@ export default function HeroSlider() {
     const slidesText = t("slides", { returnObjects: true });
 
     const nextSlide = () => {
-        setCurrent((prev) => {
-            const next = (prev + 1) % slidesText.length;
-            if (next !== 0) setHasSwitched(true);
-            return next;
-        });
+        setCurrent((prev) => (prev + 1) % slidesText.length);
     };
 
     const prevSlide = () => {
-        setCurrent((prev) => {
-            const next = (prev - 1 + slidesText.length) % slidesText.length;
-            if (next !== 0) setHasSwitched(true);
-            return next;
-        });
+        setCurrent((prev) => (prev - 1 + slidesText.length) % slidesText.length);
     };
 
     useEffect(() => {
@@ -56,31 +46,24 @@ export default function HeroSlider() {
                     exit={{ opacity: 0 }}
                     transition={{ duration: 1 }}
                     className="absolute inset-0 w-full h-full object-cover object-center"
-                    loading="lazy"
+                    loading={current === 0 ? "eager" : "lazy"}
+                    decoding="async"
+                    fetchpriority={current === 0 ? "high" : "auto"}
                 />
             </AnimatePresence>
 
             <div className="absolute inset-0 bg-black/50 flex flex-col justify-center items-center px-6 sm:px-12 text-center">
-                {current === 0 && !hasSwitched ? (
-                    <h1
-                        className="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-4xl leading-tight"
-                        aria-live="polite"
-                    >
-                        {slidesText[current].text}
-                    </h1>
-                ) : (
-                    <motion.h1
-                        key={slidesText[current].text}
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        exit={{ opacity: 0, y: -20 }}
-                        transition={{ duration: 0.8 }}
-                        className="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-4xl leading-tight"
-                        aria-live="polite"
-                    >
-                        {slidesText[current].text}
-                    </motion.h1>
-                )}
+                <motion.h1
+                    key={slidesText[current].text}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -20 }}
+                    transition={{ duration: 0.8 }}
+                    className="text-white text-2xl sm:text-3xl md:text-5xl font-extrabold max-w-4xl leading-tight"
+                    aria-live="polite"
+                >
+                    {slidesText[current].text}
+                </motion.h1>
             </div>
 
             <div className="hidden absolute inset-0 md:flex items-center justify-between px-2 sm:px-4">
@@ -112,12 +95,11 @@ export default function HeroSlider() {
                 {slidesText.map((_, index) => (
                     <button
                         key={index}
-                        onClick={() => {
-                            setCurrent(index);
-                            if (index !== 0) setHasSwitched(true);
-                        }}
+                        onClick={() => setCurrent(index)}
                         aria-label={t("aria.goToSlide", { number: index + 1 })}
-                        className={`w-4 h-4 rounded-full transition-colors ${index === current ? "bg-yellow-400" : "bg-white/50 hover:bg-yellow-400"
+                        className={`w-4 h-4 rounded-full transition-colors ${index === current
+                                ? "bg-yellow-400"
+                                : "bg-white/50 hover:bg-yellow-400"
                             }`}
                     />
                 ))}
