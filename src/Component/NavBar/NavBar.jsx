@@ -71,7 +71,7 @@ function NavBar() {
         {/* Logo */}
         <Link to="/" className="flex items-center gap-2 cursor-pointer">
           <img
-            src="https://ik.imagekit.io/hussein74/Al%20Amen/logo.png?updatedAt=1745446702466"
+            src="https://ik.imagekit.io/hussein74/Al%20Amen/logo.png?updatedAt=1745446702466?tr=w-56,h-56"
             className="h-12 w-12 md:h-14 md:w-14"
             alt="Logo"
           />

@@ -8,13 +8,38 @@ import { useTranslation } from "react-i18next";
 
 // بيانات النباتات (ترجم أسماء النباتات في ملف الترجمة)
 const plantsData = [
-  { id: 1, nameKey: "plants.pineappleCactus", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B5%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3.jpg?updatedAt=1745446719675" },
-  { id: 2, nameKey: "plants.ficusB", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%81%D9%8A%D9%83%D8%B3%20%D8%A8%D9%86%D8%AC%D8%A7%D9%85%D9%8A%D9%86%D8%A7.jpg?updatedAt=1745446722376" },
-  { id: 3, nameKey: "plants.dorentaLemoni", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AF%D9%88%D8%B1%D9%86%D8%AA%D8%A7%20%D9%84%D9%8A%D9%85%D9%88%D9%86%D9%8A.jpg?updatedAt=1745446719434" },
-  { id: 4, nameKey: "plants.spiralCypress", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B3%D8%B1%D9%88%20%D8%AD%D9%84%D8%B2%D9%88%D9%86%D9%8A%20%D9%88%20%D9%83%D9%88%D8%B1.jpg?updatedAt=1745446717816" },
-  { id: 5, nameKey: "plants.hibiscus", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%87%D9%8A%D8%A8%D8%B3%D9%83%D8%B3.jpg?updatedAt=1745446723288" },
-  { id: 6, nameKey: "plants.jasmineShamsi", image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AC%D9%87%D9%86%D9%85%D9%8A%D8%A9%20%D8%B4%D9%85%D8%A7%D8%B3%D9%8A.jpg?updatedAt=1745446719565" },
+  {
+    id: 1,
+    nameKey: "plants.pineappleCactus",
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B5%D8%A8%D8%A7%D8%B1%20%D8%A7%D9%86%D8%A7%D9%86%D8%A7%D8%B3.jpg?tr=w-400,h-300"
+  },
+  {
+    id: 2,
+    nameKey: "plants.ficusB",
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%81%D9%8A%D9%83%D8%B3%20%D8%A8%D9%86%D8%AC%D8%A7%D9%85%D9%8A%D9%86%D8%A7.jpg?tr=w-400,h-300"
+  },
+  {
+    id: 3,
+    nameKey: "plants.dorentaLemoni",
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AF%D9%88%D8%B1%D9%86%D8%AA%D8%A7%20%D9%84%D9%8A%D9%85%D9%88%D9%86%D9%8A.jpg?tr=w-400,h-300"
+  },
+  {
+    id: 4,
+    nameKey: "plants.spiralCypress",
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%B3%D8%B1%D9%88%20%D8%AD%D9%84%D8%B2%D9%88%D9%86%D9%8A%20%D9%88%20%D9%83%D9%88%D8%B1.jpg?tr=w-400,h-300"
+  },
+  {
+    id: 5,
+    nameKey: "plants.hibiscus",
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D9%87%D9%8A%D8%A8%D8%B3%D9%83%D8%B3.jpg?tr=w-400,h-300"
+  },
+  {
+    id: 6,
+    nameKey: "plants.jasmineShamsi",
+    image: "https://ik.imagekit.io/hussein74/Al%20Amen/%D8%AC%D9%87%D9%86%D9%85%D9%8A%D8%A9%20%D8%B4%D9%85%D8%A7%D8%B3%D9%8A.jpg?tr=w-400,h-300"
+  },
 ];
+
 
 function PlantsTestimonials() {
   const { t, i18n } = useTranslation();
