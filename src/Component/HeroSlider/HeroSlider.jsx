@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useTranslation } from "react-i18next";
@@ -7,8 +7,9 @@ export default function HeroSlider() {
     const { t, i18n } = useTranslation();
     const [current, setCurrent] = useState(0);
     const [hasSwitched, setHasSwitched] = useState(false);
+    const [imagesLoaded, setImagesLoaded] = useState({});
 
-    
+
     const slidesData = [
         "https://ik.imagekit.io/hussein74/Al%20Amen/slider1.jpg?tr=w-1920,q-80",
         "https://ik.imagekit.io/hussein74/Al%20Amen/slider2.jpg?tr=w-1920,q-80",
@@ -19,13 +20,13 @@ export default function HeroSlider() {
 
     const slidesText = t("slides", { returnObjects: true });
 
-    const nextSlide = () => {
+    const nextSlide = useCallback(() => {
         setCurrent((prev) => {
             const next = (prev + 1) % slidesText.length;
             if (next !== 0) setHasSwitched(true);
             return next;
         });
-    };
+    }, [slidesText.length]);
 
     const prevSlide = () => {
         setCurrent((prev) => {
@@ -36,9 +37,35 @@ export default function HeroSlider() {
     };
 
     useEffect(() => {
-        const interval = setInterval(nextSlide, 5000);
-        return () => clearInterval(interval);
+        const preloadImages = async () => {
+            const imagePromises = slidesData.map((src, index) => {
+                return new Promise((resolve) => {
+                    const img = new Image();
+                    img.onload = () => {
+                        setImagesLoaded(prev => ({ ...prev, [index]: true }));
+                        resolve(true);
+                    };
+                    img.onerror = () => resolve(false);
+                    // Use responsive image sizes
+                    img.src = index === 0 ?
+                        src.replace('tr=w-1920,q-80', 'tr=w-1920,q-85,f-webp') :
+                        src.replace('tr=w-1920,q-80', 'tr=w-800,q-70,f-webp');
+                });
+            });
+
+            await Promise.all(imagePromises);
+        };
+
+        preloadImages();
     }, []);
+
+    useEffect(() => {
+        // Only start auto-slide after first image is loaded
+        if (imagesLoaded[0]) {
+            const interval = setInterval(nextSlide, 5000);
+            return () => clearInterval(interval);
+        }
+    }, [imagesLoaded, nextSlide]);
 
     return (
         <section
@@ -46,6 +73,7 @@ export default function HeroSlider() {
             aria-label={t("aria.sliderLabel")}
             dir={i18n.language === "ar" ? "rtl" : "ltr"}
         >
+            
             <AnimatePresence mode="wait">
                 <motion.img
                     key={slidesText[current].alt}
