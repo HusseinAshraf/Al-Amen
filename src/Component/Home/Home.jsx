@@ -1,9 +1,6 @@
-import React, { useState, useEffect } from "react";
+import React, { useEffect } from "react";
 import { useInView } from 'react-intersection-observer';
-
-import Project from "../Project/Project";
 import Features from "../Features/Features.jsx";
-
 import AboutSection from "../About/AboutSection.jsx";
 import WhyUS from "../WhyUs/WhyUS.jsx";
 import StatsSection from "../StatsSection/StatsSection.jsx";
@@ -16,14 +13,14 @@ import { Helmet } from "react-helmet";
 import HeroSlider from "../HeroSlider/HeroSlider.jsx";
 import ContactSection from "../Contact/ContactSection.jsx";
 import FeaturedProjectsSection from "../Project/FeaturedProjectsSection.jsx";
+import { useTranslation } from "react-i18next";
 
 function Home() {
-
-
+  const { t } = useTranslation();
 
   useEffect(() => {
-    window.document.title = "الأمين لاندسكيب - حلول زراعة، لاندسكيب، وهاردسكيب متكاملة";
-  }, []);
+    window.document.title = t("home.title");
+  }, [t]);
 
   const { ref: aboutRef, inView: aboutInView } = useInView({ triggerOnce: true });
   const { ref: whyUsRef, inView: whyUsInView } = useInView({ triggerOnce: true });
@@ -37,30 +34,18 @@ function Home() {
   return (
     <>
       <Helmet>
-        <title>الأمين لاندسكيب - حلول زراعة، لاندسكيب، وهاردسكيب متكاملة</title>
-        <meta
-          name="description"
-          content="الأمين لاندسكيب تقدم حلول متكاملة في الزراعة، اللاند سكيب، الهارد سكيب، وتوفير أفضل الخامات الزراعية بأسلوب احترافي وحديث."
-        />
-        <meta
-          name="keywords"
-          content="الأمين لاندسكيب, شركة زراعة, تنسيق حدائق, لاندسكيب, هاردسكيب, خامات زراعية, نجيل صناعي, تصميم حدائق, أنظمة ري"
-        />
+        <title>{t("home.title")}</title>
+        <meta name="description" content={t("home.description")} />
+        <meta name="keywords" content={t("home.keywords")} />
         <meta name="robots" content="index, follow" />
-        <meta property="og:title" content="الأمين لاندسكيب | زراعة ولاندسكيب وهاردسكيب" />
-        <meta
-          property="og:description"
-          content="رواد في تقديم حلول الزراعة واللاندسكيب مع تنفيذ الهاردسكيب وتوفير الخامات الزراعية بأعلى جودة."
-        />
+        <meta property="og:title" content={t("home.ogTitle")} />
+        <meta property="og:description" content={t("home.ogDescription")} />
         <meta property="og:type" content="website" />
         <meta property="og:image" content="url_to_image.jpg" />
         <link rel="canonical" href="https://www.example.com/home" />
       </Helmet>
 
-
-
       <>
-        {/* <Hero /> */}
         <HeroSlider />
         <div ref={aboutRef} className={`section ${aboutInView ? 'fadeInUp' : ''}`}>
           <AboutSection />
@@ -90,7 +75,6 @@ function Home() {
         <FeaturedProjectsSection />
         <ContactSection />
       </>
-
     </>
   );
 }

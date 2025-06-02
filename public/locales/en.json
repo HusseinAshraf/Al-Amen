@@ -441,7 +441,7 @@
       "whatsapp": "Contact the founder via WhatsApp"
     }
   },
-  
+
   "direction": "ltr",
   "categories": {
     "all": "All",
@@ -459,7 +459,7 @@
     "view_category": "View {category} services",
     "service_details": "Details for {service} service",
     "service_image": "Image for {service} service",
-    
+
     "garden_design": {
       "title": "Garden Design & Landscaping",
       "short_desc": "Home garden landscaping using the best materials and designs.",
@@ -524,7 +524,7 @@
         "title": "Mena Garden City Compound",
         "description": "Construction of Mena Garden City Compound in 6th of October City.",
         "fullDescription": "Construction of Mena Garden City Compound in 6th of October City. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
-         "image": "https://ik.imagekit.io/hussein74/Al%20Amen/mennaGarden.jpg?updatedAt=1745446690125",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/mennaGarden.jpg?updatedAt=1745446690125",
 
         "category": "Construction"
       },
@@ -595,7 +595,7 @@
         "title": "Raya Holding Company Road Development",
         "description": "Development of Raya Holding Company road in 6th of October.",
         "fullDescription": "Development of Raya Holding Company road in 6th of October. The project includes design and implementation of all public facilities, green spaces, and internal roads.",
-         "image": "https://ik.imagekit.io/hussein74/Al%20Amen/Raya6-optimized.webp",
+        "image": "https://ik.imagekit.io/hussein74/Al%20Amen/Raya6-optimized.webp",
         "category": "Development"
       },
       {
@@ -615,7 +615,7 @@
       "closeModalButton": "Close modal"
     }
   },
-   "commonContact": {
+  "commonContact": {
     "companyName": "Al Amen Landscape",
     "ok": "OK",
     "close": "Close"
@@ -644,7 +644,7 @@
         "value": "amein2011@yahoo.com"
       },
       "hours": {
-        "title": "Working Hours", 
+        "title": "Working Hours",
         "weekdays": "Sunday - Thursday: 9 AM - 5 PM",
         "weekend": "Friday - Saturday: 10 AM - 2 PM"
       }
@@ -696,11 +696,15 @@
       }
     }
   },
-    "loading": {
+  "loading": {
     "text": "Loading .......",
     "alt": "Al Amen Landscape Logo"
+  },
+  "home": {
+    "title": "Al Amen Landscape - Integrated Solutions for Planting, Landscape, and Hardscape",
+    "description": "Al Amen Landscape offers integrated solutions in planting, landscaping, hardscaping, and provides the best agricultural materials in a professional and modern style.",
+    "keywords": "Al Amen Landscape, planting company, garden design, landscaping, hardscaping, agricultural materials, artificial grass, irrigation systems",
+    "ogTitle": "Al Amen Landscape | Planting, Landscaping, and Hardscaping",
+    "ogDescription": "Pioneers in providing planting and landscaping solutions, hardscape execution, and high-quality agricultural supplies."
   }
-
-
-
 }
